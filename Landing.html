@@ -11,6 +11,7 @@
 
     <!-- Path CSS disesuaikan ke folder assets/css/ -->
     <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/landing.css" />
   </head>
   <body>
@@ -22,31 +23,32 @@
       <div class="grid-bg" aria-hidden="true"></div>
 
       <!-- HEADER -->
-      <header class="header">
-        <div class="container-43">
+      <header class="navbar">
+        <div class="navbar__inner">
           <a
-            class="button-11"
+            class="navbar__brand"
             href="#beranda"
             aria-label="TechFixAr, kembali ke beranda"
           >
-            <div class="tech-fix-ar-wrapper">
-              <p class="tech-fix-ar-2">
-                <span class="text-wrapper-34">TechFix</span
-                ><span class="text-wrapper-35">Ar</span>
-              </p>
-            </div>
+            <img
+              class="navbar__logo"
+              src="assets/img/techfixar-logo-512-1-1.png"
+              alt=""
+            />
+            <span class="navbar__title">
+              <span class="navbar__title-text">TechFix</span
+              ><span class="navbar__title-accent">Ar</span>
+            </span>
           </a>
-          <nav class="navigation" aria-label="Navigasi utama">
-            <a class="button-12" href="#beranda" aria-current="page">
-              <span class="text-wrapper-41">Beranda</span>
+          <nav class="navbar__nav" aria-label="Navigasi utama">
+            <a class="navbar__link navbar__link--active" href="#beranda" aria-current="page">
+              Beranda
             </a>
-            <a class="panduan-servis-wrapper" href="Panduan.html">
-              <span class="text-wrapper-42">Panduan &amp; Servis</span>
+            <a class="navbar__link" href="Panduan.html">
+              Panduan &amp; Servis
             </a>
           </nav>
-          <a class="button-14" href="#masuk-daftar">
-            <span class="text-wrapper-44">Masuk / Daftar</span>
-          </a>
+          <a class="navbar__cta" href="login_admin.html">Masuk / Daftar</a>
         </div>
       </header>
 
@@ -938,7 +940,7 @@
         </footer>
       </main>
 
-      <a class="app-2" href="#admin" aria-label="Buka halaman admin">
+      <a class="app-2" href="login_admin.html" aria-label="Buka halaman admin">
         <span class="text-wrapper-45">ADMIN →</span>
       </a>
     </div>

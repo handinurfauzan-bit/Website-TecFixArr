@@ -1,0 +1,66 @@
+/* GLOBALS — Reset, base, dan font setup */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fallback fonts jika custom font tidak load */
+@font-face {
+  font-family: "Nunito-Regular";
+  src: local("Nunito"), local("Nunito Regular");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Nunito-SemiBold";
+  src: local("Nunito SemiBold"), local("Nunito");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Nunito-Bold";
+  src: local("Nunito Bold"), local("Nunito");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Nunito-ExtraBold";
+  src: local("Nunito ExtraBold"), local("Nunito");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "DM Mono-Regular";
+  src: local("DM Mono"), local("DM Mono Regular");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "DM Mono-Medium";
+  src: local("DM Mono Medium"), local("DM Mono");
+  font-weight: 500;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}

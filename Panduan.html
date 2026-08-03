@@ -9,6 +9,7 @@
       content="Kumpulan artikel edukasi perakitan hardware, servis laptop, dan solusi mengatasi error teknis."
     />
     <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/panduan.css" />
   </head>
   <body>
@@ -21,38 +22,34 @@
       <div class="container-2" aria-hidden="true"></div>
 
       <!-- HEADER -->
-      <header class="header">
-        <div class="container-27">
+      <header class="navbar">
+        <div class="navbar__inner">
           <a
-            class="button-6"
+            class="navbar__brand"
             href="Landing.html"
             aria-label="TechFixAr, kembali ke beranda"
           >
             <img
-              class="techfixar-logo"
+              class="navbar__logo"
               src="assets/img/techfixar-logo-512-1-1.png"
               alt="TechFixAr Logo"
             />
-            <span class="tech-fix-ar">
-              <span class="span">TechFix</span
-              ><span class="text-wrapper-19">Ar</span>
+            <span class="navbar__title">
+              <span class="navbar__title-text">TechFix</span
+              ><span class="navbar__title-accent">Ar</span>
             </span>
           </a>
-          <nav class="navigation" aria-label="Navigasi utama">
-            <a class="button-7" href="Landing.html">
-              <span class="text-wrapper-20">Beranda</span>
-            </a>
+          <nav class="navbar__nav" aria-label="Navigasi utama">
+            <a class="navbar__link" href="Landing.html">Beranda</a>
             <a
-              class="panduan-servis-wrapper"
+              class="navbar__link navbar__link--active"
               href="Panduan.html"
               aria-current="page"
             >
-              <span class="panduan-servis">Panduan &amp; Servis</span>
+              Panduan &amp; Servis
             </a>
           </nav>
-          <a class="button-8" href="#masuk">
-            <span class="text-wrapper-22">Masuk / Daftar</span>
-          </a>
+          <a class="navbar__cta" href="login_admin.html">Masuk / Daftar</a>
         </div>
       </header>
 
@@ -158,6 +155,7 @@
         <section class="container-margin" aria-label="Daftar artikel panduan">
           <div class="container-10">
             <!-- Artikel 1 -->
+            <a class="artikel-link" href="#">
             <article class="container-11">
               <div class="container-12">
                 <div
@@ -244,8 +242,10 @@
                 </div>
               </div>
             </article>
+            </a>
 
             <!-- Artikel 2 -->
+            <a class="artikel-link" href="Tutorial_panduan.html">
             <article class="container-17">
               <div class="container-12">
                 <div
@@ -332,8 +332,10 @@
                 </div>
               </div>
             </article>
+            </a>
 
             <!-- Artikel 3 -->
+            <a class="artikel-link" href="#">
             <article class="container-20">
               <div class="container-12">
                 <div
@@ -422,8 +424,10 @@
                 </div>
               </div>
             </article>
+            </a>
 
             <!-- Artikel 4 -->
+            <a class="artikel-link" href="#">
             <article class="container-21">
               <div class="container-12">
                 <div
@@ -508,8 +512,10 @@
                 </div>
               </div>
             </article>
+            </a>
 
             <!-- Artikel 5 -->
+            <a class="artikel-link" href="#">
             <article class="container-23">
               <div class="container-12">
                 <div
@@ -596,8 +602,10 @@
                 </div>
               </div>
             </article>
+            </a>
 
             <!-- Artikel 6 -->
+            <a class="artikel-link" href="#">
             <article class="container-24">
               <div class="container-12">
                 <div
@@ -684,6 +692,7 @@
                 </div>
               </div>
             </article>
+            </a>
           </div>
         </section>
 
@@ -773,7 +782,7 @@
         </section>
       </main>
 
-      <a class="app-2" href="#admin" aria-label="Masuk ke area admin">
+      <a class="app-2" href="login_admin.html" aria-label="Masuk ke area admin">
         <span class="text-wrapper-23">ADMIN →</span>
       </a>
     </div>
