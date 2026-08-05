@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Kelola artikel panduan, troubleshooting, dan tips hardware TechFixAr."
+    />
+    <title>Management Artikel & Tutorial | TechFixAr Admin</title>
+    <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/admin_theme.css" />
+    <link rel="stylesheet" href="assets/css/Kelola_panduan_admin.css" />
+  </head>
+  <body>
+    <div class="admin-app">
+      <aside class="admin-sidebar" aria-label="Navigasi admin">
+        <div class="admin-sidebar__top">
+          <a
+            class="admin-brand"
+            href="Landing.html"
+            aria-label="TechFixAr, kembali ke beranda"
+          >
+            <span class="admin-brand__mark" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+              >
+                <path
+                  d="M3 12h4l2-5 4 10 2-5h6"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="admin-brand__title">
+              <span class="admin-brand__title-text">TechFix</span
+              ><span class="admin-brand__title-accent">Ar</span>
+            </span>
+          </a>
+
+          <div class="admin-status" role="status">
+            <span class="admin-status__dot" aria-hidden="true"></span>
+            <span class="admin-status__text">System Online</span>
+          </div>
+
+          <nav class="admin-nav" aria-label="Menu utama">
+            <a
+              class="admin-nav__item admin-nav__item--active"
+              href="Kelola_panduan_admin.html"
+              aria-current="page"
+            >
+              <svg
+                class="admin-nav__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              >
+                <rect
+                  x="3"
+                  y="3"
+                  width="7"
+                  height="7"
+                  rx="1.5"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <rect
+                  x="14"
+                  y="3"
+                  width="7"
+                  height="7"
+                  rx="1.5"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <rect
+                  x="3"
+                  y="14"
+                  width="7"
+                  height="7"
+                  rx="1.5"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <rect
+                  x="14"
+                  y="14"
+                  width="7"
+                  height="7"
+                  rx="1.5"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+              </svg>
+              <span>Kelola Panduan &amp; Troubleshooting</span>
+            </a>
+            <a class="admin-nav__item" href="Registerasi_admin.html">
+              <svg
+                class="admin-nav__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Verifikasi Akun Admin</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="admin-user">
+          <div class="admin-user__info">
+            <span class="admin-user__avatar" aria-hidden="true">AT</span>
+            <span class="admin-user__meta">
+              <span class="admin-user__name">Admin Tech</span>
+              <span class="admin-user__role">Super Admin</span>
+            </span>
+          </div>
+          <a class="admin-user__logout" href="login_admin.html">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 17l5-5-5-5"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M21 12H9"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Logout
+          </a>
+        </div>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="admin-header__copy">
+            <nav class="admin-breadcrumb" aria-label="Breadcrumb">
+              <a href="#">Dashboard</a>
+              <span aria-hidden="true">›</span>
+              <span>Management Artikel</span>
+            </nav>
+            <h1 class="admin-header__title">Management Artikel &amp; Tutorial</h1>
+            <p class="admin-header__desc">
+              Kelola seluruh konten panduan, troubleshooting, dan tips hardware.
+            </p>
+          </div>
+          <a class="admin-header__cta" href="Panduan_baru_admin.html">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 5v14M5 12h14"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              />
+            </svg>
+            Tulis Artikel Baru
+          </a>
+        </header>
+
+        <div class="admin-filters" role="tablist" aria-label="Filter kategori">
+          <button
+            class="admin-filter admin-filter--active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+          >
+            Semua (48)
+          </button>
+          <button
+            class="admin-filter"
+            type="button"
+            role="tab"
+            aria-selected="false"
+          >
+            Troubleshooting (20)
+          </button>
+          <button
+            class="admin-filter"
+            type="button"
+            role="tab"
+            aria-selected="false"
+          >
+            Assembly (18)
+          </button>
+          <button
+            class="admin-filter"
+            type="button"
+            role="tab"
+            aria-selected="false"
+          >
+            Tips &amp; Trik (10)
+          </button>
+        </div>
+
+        <section class="article-grid" aria-label="Daftar artikel">
+          <article class="article-card">
+            <div class="article-card__cover article-card__cover--purple">
+              <span class="article-card__tag">TROUBLESHOOTING</span>
+              <span class="article-card__emoji" aria-hidden="true">⚠️</span>
+            </div>
+            <div class="article-card__body">
+              <h2 class="article-card__title">
+                Cara Fix Lampu LED CPU Merah di Motherboard
+              </h2>
+              <p class="article-card__meta">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+                1,240x Dibaca
+              </p>
+              <div class="article-card__actions">
+                <a class="article-btn article-btn--edit" href="Edit_panduan_admin.html">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 20h9"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Edit
+                </a>
+                <button class="article-btn article-btn--delete" type="button">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 6h18"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 6V4h8v2M19 6l-1 14H6L5 6"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Hapus
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card__cover article-card__cover--teal">
+              <span class="article-card__tag">ASSEMBLY</span>
+              <span class="article-card__emoji" aria-hidden="true">🔧</span>
+            </div>
+            <div class="article-card__body">
+              <h2 class="article-card__title">
+                Panduan Lengkap Pasang RAM DDR5 di Motherboard Baru
+              </h2>
+              <p class="article-card__meta">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+                3,890x Dibaca
+              </p>
+              <div class="article-card__actions">
+                <a class="article-btn article-btn--edit" href="Edit_panduan_admin.html">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 20h9"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Edit
+                </a>
+                <button class="article-btn article-btn--delete" type="button">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 6h18"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 6V4h8v2M19 6l-1 14H6L5 6"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Hapus
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card__cover article-card__cover--orange">
+              <span class="article-card__tag">TIPS &amp; TRIK</span>
+              <span class="article-card__emoji" aria-hidden="true">⚡</span>
+            </div>
+            <div class="article-card__body">
+              <h2 class="article-card__title">
+                5 Cara Ampuh Turunkan Suhu GPU Saat Gaming Berat
+              </h2>
+              <p class="article-card__meta">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+                5,120x Dibaca
+              </p>
+              <div class="article-card__actions">
+                <a class="article-btn article-btn--edit" href="Edit_panduan_admin.html">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 20h9"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Edit
+                </a>
+                <button class="article-btn article-btn--delete" type="button">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 6h18"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 6V4h8v2M19 6l-1 14H6L5 6"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Hapus
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card__cover article-card__cover--red">
+              <span class="article-card__tag">TROUBLESHOOTING</span>
+              <span class="article-card__emoji" aria-hidden="true">💀</span>
+            </div>
+            <div class="article-card__body">
+              <h2 class="article-card__title">
+                PC Mati Total Setelah Update BIOS? Ini Solusinya
+              </h2>
+              <p class="article-card__meta">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+                2,450x Dibaca
+              </p>
+              <div class="article-card__actions">
+                <a class="article-btn article-btn--edit" href="Edit_panduan_admin.html">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 20h9"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Edit
+                </a>
+                <button class="article-btn article-btn--delete" type="button">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 6h18"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 6V4h8v2M19 6l-1 14H6L5 6"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Hapus
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card__cover article-card__cover--blue">
+              <span class="article-card__tag">ASSEMBLY</span>
+              <span class="article-card__emoji" aria-hidden="true">🧠</span>
+            </div>
+            <div class="article-card__body">
+              <h2 class="article-card__title">
+                Checklist Sebelum First Boot PC Rakitan Baru
+              </h2>
+              <p class="article-card__meta">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+                4,670x Dibaca
+              </p>
+              <div class="article-card__actions">
+                <a class="article-btn article-btn--edit" href="Edit_panduan_admin.html">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 20h9"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Edit
+                </a>
+                <button class="article-btn article-btn--delete" type="button">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 6h18"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 6V4h8v2M19 6l-1 14H6L5 6"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Hapus
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card__cover article-card__cover--cyan">
+              <span class="article-card__tag">TIPS &amp; TRIK</span>
+              <span class="article-card__emoji" aria-hidden="true">🌡️</span>
+            </div>
+            <div class="article-card__body">
+              <h2 class="article-card__title">
+                Setting Fan Curve Ideal untuk Case Mid-Tower
+              </h2>
+              <p class="article-card__meta">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+                1,980x Dibaca
+              </p>
+              <div class="article-card__actions">
+                <a class="article-btn article-btn--edit" href="Edit_panduan_admin.html">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 20h9"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Edit
+                </a>
+                <button class="article-btn article-btn--delete" type="button">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 6h18"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M8 6V4h8v2M19 6l-1 14H6L5 6"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Hapus
+                </button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <footer class="admin-footer">
+          <p class="admin-footer__info">Menampilkan 6 dari 48 artikel</p>
+          <nav class="admin-pagination" aria-label="Paginasi">
+            <a
+              class="admin-page admin-page--active"
+              href="#"
+              aria-current="page"
+              >1</a
+            >
+            <a class="admin-page" href="#">2</a>
+            <a class="admin-page" href="#">3</a>
+            <span class="admin-page admin-page--ellipsis" aria-hidden="true"
+              >…</span
+            >
+            <a class="admin-page" href="#">5</a>
+          </nav>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      (() => {
+        const filters = document.querySelectorAll(".admin-filter");
+        filters.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            filters.forEach((item) => {
+              item.classList.remove("admin-filter--active");
+              item.setAttribute("aria-selected", "false");
+            });
+            btn.classList.add("admin-filter--active");
+            btn.setAttribute("aria-selected", "true");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

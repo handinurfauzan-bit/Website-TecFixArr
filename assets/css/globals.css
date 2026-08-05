@@ -1,4 +1,60 @@
-/* GLOBALS — Reset, base, dan font setup */
+/* GLOBALS — Reset, base, font setup, dan design tokens bersama */
+
+/* ===========================================
+   DESIGN TOKENS — TechFixAr
+   Dipakai di seluruh halaman (landing, login,
+   registrasi, dan semua halaman admin).
+   Warna primer: slate gelap + emerald accent.
+   =========================================== */
+:root {
+  /* Background */
+  --color-bg:          #0f172a;
+  --color-bg-elevated: #111827;
+  --color-panel:       #1e293b;
+  --color-panel-2:     #243447;
+
+  /* Border & divider */
+  --color-border:      #334155;
+  --color-border-soft: #1e293b;
+
+  /* Text */
+  --color-text:        #f8fafc;
+  --color-muted:       #94a3b8;
+  --color-faint:       #64748b;
+
+  /* Accent — emerald (warna primer) */
+  --color-accent:        #10b981;
+  --color-accent-bright: #34d399;
+  --color-accent-deep:   #059669;
+  --color-accent-dim:    rgba(16, 185, 129, 0.14);
+  --color-accent-border: rgba(16, 185, 129, 0.45);
+  --color-accent-glow:   rgba(16, 185, 129, 0.10);
+
+  /* Danger — merah */
+  --color-danger:      #ef4444;
+  --color-danger-dim:  rgba(239, 68, 68, 0.12);
+
+  /* Blue — hanya sebagai aksen sekunder / badge */
+  --color-blue:        #3b82f6;
+  --color-blue-dim:    rgba(59, 130, 246, 0.14);
+
+  /* Typography */
+  --font-sans:  "Nunito", Helvetica, sans-serif;
+  --font-mono:  "DM Mono", monospace;
+
+  /* Radius */
+  --radius-sm:  8px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+  --radius-xl:  18px;
+  --radius-full: 999px;
+
+  /* Transition */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+}
+
+
 
 *, *::before, *::after {
   box-sizing: border-box;

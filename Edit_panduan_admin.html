@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Edit artikel panduan TechFixAr: judul, tipe, alat, dan langkah."
+    />
+    <title>Edit Artikel | TechFixAr Admin</title>
+    <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/admin_theme.css" />
+    <link rel="stylesheet" href="assets/css/Edit_panduan_admin.css" />
+  </head>
+  <body>
+    <div class="admin-app">
+      <aside class="admin-sidebar" aria-label="Navigasi admin">
+        <div class="admin-sidebar__top">
+          <a
+            class="admin-brand"
+            href="Landing.html"
+            aria-label="TechFixAr, kembali ke beranda"
+          >
+            <span class="admin-brand__mark" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                width="22"
+                height="22"
+              >
+                <path
+                  d="M3 12h4l2-5 4 10 2-5h6"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="admin-brand__title">
+              <span class="admin-brand__title-text">TechFix</span
+              ><span class="admin-brand__title-accent">Ar</span>
+            </span>
+          </a>
+
+          <div class="admin-status" role="status">
+            <span class="admin-status__dot" aria-hidden="true"></span>
+            System Online
+          </div>
+
+          <nav class="admin-nav" aria-label="Menu utama">
+            <a
+              class="admin-nav__item admin-nav__item--active"
+              href="Kelola_panduan_admin.html"
+              aria-current="page"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Kelola Panduan &amp; Troubleshooting</span>
+            </a>
+            <a class="admin-nav__item" href="Registerasi_admin.html">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Verifikasi Akun Admin</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="admin-user">
+          <div class="admin-user__info">
+            <span class="admin-user__avatar" aria-hidden="true">AT</span>
+            <span class="admin-user__meta">
+              <span class="admin-user__name">Admin Tech</span>
+              <span class="admin-user__role">Super Admin</span>
+            </span>
+          </div>
+          <a class="admin-user__logout" href="login_admin.html">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              width="15"
+              height="15"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Logout
+          </a>
+        </div>
+      </aside>
+
+      <div class="editor-shell">
+        <header class="editor-header">
+          <div class="editor-header__row">
+            <div class="editor-header__left">
+              <a class="editor-back" href="Kelola_panduan_admin.html">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M15 18l-6-6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Kembali
+              </a>
+              <span class="edit-mode-badge">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  width="12"
+                  height="12"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 20h9"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                EDIT MODE
+              </span>
+            </div>
+
+            <h1 class="editor-header__title" id="page-title">
+              Panduan Lengkap: Cara Memasang Processor AMD AM5 dengan Benar &amp;
+              Aman
+            </h1>
+
+            <div class="editor-header__actions">
+              <button class="btn-delete" type="button">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Hapus
+              </button>
+              <button class="btn-draft" type="button">Simpan Draft</button>
+              <button
+                class="btn-update"
+                type="submit"
+                form="form-edit-panduan"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M23 4v6h-6M1 20v-6h6"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3.5 9a9 9 0 0 1 14.1-3.4L23 10M1 14l5.4 4.4A9 9 0 0 0 20.5 15"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Perbarui Artikel
+              </button>
+            </div>
+          </div>
+
+          <div class="editor-tabs" role="tablist" aria-label="Bag editor">
+            <button
+              class="editor-tab editor-tab--active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-tab="guide"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                width="15"
+                height="15"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+              </svg>
+              Guide
+            </button>
+            <button
+              class="editor-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-tab="steps"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                width="15"
+                height="15"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Steps
+              <span class="editor-tab__badge" aria-label="4 langkah">4</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="editor-main">
+          <div
+            class="editor-panel"
+            id="panel-guide"
+            role="tabpanel"
+            data-panel="guide"
+          >
+            <form
+              class="guide-form"
+              id="form-edit-panduan"
+              action="#"
+              method="post"
+            >
+              <section class="guide-col">
+                <h2 class="guide-label">Judul Panduan</h2>
+                <textarea
+                  class="guide-title"
+                  id="judul"
+                  name="judul"
+                  rows="5"
+                  required
+                >
+Panduan Lengkap: Cara Memasang Processor AMD AM5 dengan Benar &amp; Aman</textarea
+                >
+                <p class="guide-hint">
+                  Judul akan tampil sebagai heading utama panduan.
+                </p>
+              </section>
+
+              <section class="guide-col">
+                <h2 class="guide-label">Tipe Panduan</h2>
+                <div class="type-list" role="radiogroup">
+                  <label class="type-card type-card--active">
+                    <input
+                      type="radio"
+                      name="tipe"
+                      value="assembly"
+                      checked
+                      hidden
+                    />
+                    <span class="type-card__icon" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        width="20"
+                        height="20"
+                      >
+                        <path
+                          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <span class="type-card__text">
+                      <span class="type-card__title">Assembly / Perakitan</span>
+                      <span class="type-card__desc"
+                        >Panduan merakit komponen hardware</span
+                      >
+                    </span>
+                  </label>
+
+                  <label class="type-card">
+                    <input
+                      type="radio"
+                      name="tipe"
+                      value="troubleshooting"
+                      hidden
+                    />
+                    <span class="type-card__icon" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        width="20"
+                        height="20"
+                      >
+                        <path
+                          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <span class="type-card__text">
+                      <span class="type-card__title"
+                        >Troubleshooting &amp; Servis</span
+                      >
+                      <span class="type-card__desc"
+                        >Diagnosa dan perbaikan masalah</span
+                      >
+                    </span>
+                  </label>
+
+                  <label class="type-card">
+                    <input type="radio" name="tipe" value="tips" hidden />
+                    <span class="type-card__icon" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        width="20"
+                        height="20"
+                      >
+                        <path
+                          d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <span class="type-card__text">
+                      <span class="type-card__title">Tips &amp; Trik</span>
+                      <span class="type-card__desc"
+                        >Optimasi, overclocking, perawatan</span
+                      >
+                    </span>
+                  </label>
+                </div>
+              </section>
+
+              <section class="guide-col">
+                <h2 class="guide-label">Alat yang Dibutuhkan</h2>
+                <div class="tools-list" id="tools-list">
+                  <div class="tool-row">
+                    <div class="tool-fields">
+                      <input
+                        class="tool-input"
+                        type="text"
+                        name="alat_nama[]"
+                        value="Thermal paste"
+                        autocomplete="off"
+                      />
+                      <input
+                        class="tool-input tool-input--sub"
+                        type="text"
+                        name="alat_ket[]"
+                        value="Arctic MX-4 atau setara"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <button
+                      class="tool-remove"
+                      type="button"
+                      aria-label="Hapus alat"
+                    >
+                      ×
+                    </button>
+                  </div>
+
+                  <div class="tool-row">
+                    <div class="tool-fields">
+                      <input
+                        class="tool-input"
+                        type="text"
+                        name="alat_nama[]"
+                        value="Obeng Phillips #2"
+                        autocomplete="off"
+                      />
+                      <input
+                        class="tool-input tool-input--sub"
+                        type="text"
+                        name="alat_ket[]"
+                        value="Untuk baut cooler"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <button
+                      class="tool-remove"
+                      type="button"
+                      aria-label="Hapus alat"
+                    >
+                      ×
+                    </button>
+                  </div>
+
+                  <div class="tool-row">
+                    <div class="tool-fields">
+                      <input
+                        class="tool-input"
+                        type="text"
+                        name="alat_nama[]"
+                        value="Isopropyl alcohol 99%"
+                        autocomplete="off"
+                      />
+                      <input
+                        class="tool-input tool-input--sub"
+                        type="text"
+                        name="alat_ket[]"
+                        value="Pembersih sisa thermal paste"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <button
+                      class="tool-remove"
+                      type="button"
+                      aria-label="Hapus alat"
+                    >
+                      ×
+                    </button>
+                  </div>
+                </div>
+                <button class="tools-add" type="button" id="tambah-alat">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 5v14M5 12h14"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Tambah alat
+                </button>
+              </section>
+            </form>
+          </div>
+
+          <div
+            class="editor-panel editor-panel--hidden"
+            id="panel-steps"
+            role="tabpanel"
+            data-panel="steps"
+            hidden
+          >
+            <div class="steps-layout">
+              <aside class="steps-rail">
+                <p class="steps-rail__label">
+                  Langkah — <span id="steps-total">4</span> Total
+                </p>
+                <div class="steps-list" id="steps-list">
+                  <button
+                    class="step-chip step-chip--active"
+                    type="button"
+                    data-step="1"
+                    data-title="Buka Tuas Pengunci Socket Motherboard"
+                  >
+                    <span class="step-chip__num">Langkah 1</span>
+                    <span class="step-chip__title"
+                      >Buka Tuas Pengunci Socket Motherboard</span
+                    >
+                  </button>
+                  <button
+                    class="step-chip"
+                    type="button"
+                    data-step="2"
+                    data-title="Orientasi & Penempatan CPU"
+                  >
+                    <span class="step-chip__num">Langkah 2</span>
+                    <span class="step-chip__title"
+                      >Orientasi &amp; Penempatan CPU</span
+                    >
+                  </button>
+                  <button
+                    class="step-chip"
+                    type="button"
+                    data-step="3"
+                    data-title="Kunci Tuas Socket dengan Aman"
+                  >
+                    <span class="step-chip__num">Langkah 3</span>
+                    <span class="step-chip__title"
+                      >Kunci Tuas Socket dengan Aman</span
+                    >
+                  </button>
+                  <button
+                    class="step-chip"
+                    type="button"
+                    data-step="4"
+                    data-title="Troubleshooting Pin Bent"
+                  >
+                    <span class="step-chip__num">Langkah 4</span>
+                    <span class="step-chip__title"
+                      >Troubleshooting Pin Bent</span
+                    >
+                  </button>
+                </div>
+                <button class="steps-add-btn" type="button" id="add-step">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    width="15"
+                    height="15"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 5v14M5 12h14"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Add a step
+                </button>
+              </aside>
+
+              <section class="step-canvas">
+                <div class="step-canvas__top">
+                  <span class="step-pill" id="step-editor-heading"
+                    >Langkah 1</span
+                  >
+                  <input
+                    class="step-title-field"
+                    id="step-title-input"
+                    type="text"
+                    value="Buka Tuas Pengunci Socket Motherboard"
+                    autocomplete="off"
+                  />
+                </div>
+
+                <div class="step-canvas__grid">
+                  <div class="media-block">
+                    <label class="media-drop">
+                      <input
+                        type="file"
+                        accept="image/png,image/jpeg"
+                        hidden
+                      />
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        width="32"
+                        height="32"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="3"
+                          y="5"
+                          width="18"
+                          height="14"
+                          rx="2"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                        />
+                        <circle cx="8.5" cy="10" r="1.5" fill="currentColor" />
+                        <path
+                          d="M21 15l-5-5-8 8"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <span class="media-drop__title">Tambah Gambar</span>
+                      <span class="media-drop__hint">PNG, JPG - max 5MB</span>
+                    </label>
+                    <label class="media-video">
+                      <input type="file" accept="video/*" hidden />
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M23 7l-7 5 7 5V7Z"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                          stroke-linejoin="round"
+                        />
+                        <rect
+                          x="1"
+                          y="5"
+                          width="15"
+                          height="14"
+                          rx="2"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                        />
+                      </svg>
+                      Tambah Video
+                    </label>
+                  </div>
+
+                  <div class="instr-block">
+                    <div class="instr-lines" id="instruction-lines">
+                      <div class="instr-row">
+                        <span class="instr-handle" aria-hidden="true">⋮⋮</span>
+                        <textarea
+                          class="instr-input"
+                          rows="2"
+                        >Pastikan motherboard sudah terpasang di case atau di atas anti-static mat.</textarea>
+                        <button
+                          class="instr-remove"
+                          type="button"
+                          aria-label="Hapus baris"
+                        >
+                          ×
+                        </button>
+                      </div>
+                      <div class="instr-row">
+                        <span class="instr-handle" aria-hidden="true">⋮⋮</span>
+                        <textarea
+                          class="instr-input"
+                          rows="2"
+                        >Cari tuas pengunci (load lever) di sisi socket AM5 — biasanya di sebelah kanan.</textarea>
+                        <button
+                          class="instr-remove"
+                          type="button"
+                          aria-label="Hapus baris"
+                        >
+                          ×
+                        </button>
+                      </div>
+                      <div class="instr-row">
+                        <span class="instr-handle" aria-hidden="true">⋮⋮</span>
+                        <textarea
+                          class="instr-input"
+                          rows="2"
+                        >Tekan tuas sedikit ke bawah lalu dorong ke samping untuk melepaskan dari kait pengaman.</textarea>
+                        <button
+                          class="instr-remove"
+                          type="button"
+                          aria-label="Hapus baris"
+                        >
+                          ×
+                        </button>
+                      </div>
+                      <div class="instr-row">
+                        <span class="instr-handle" aria-hidden="true">⋮⋮</span>
+                        <textarea
+                          class="instr-input"
+                          rows="2"
+                        >Angkat tuas hingga terbuka penuh ke atas (sekitar 90–135 derajat).</textarea>
+                        <button
+                          class="instr-remove"
+                          type="button"
+                          aria-label="Hapus baris"
+                        >
+                          ×
+                        </button>
+                      </div>
+                      <div class="instr-row instr-row--warn">
+                        <span class="instr-handle" aria-hidden="true">⋮⋮</span>
+                        <div class="instr-warn">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            width="16"
+                            height="16"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12 9v4M12 17h.01"
+                              stroke="currentColor"
+                              stroke-width="1.8"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                          <textarea
+                            class="instr-input instr-input--warn"
+                            rows="2"
+                          >Jangan pernah memaksakan CPU masuk sebelum tuas terbuka penuh.</textarea>
+                        </div>
+                        <button
+                          class="instr-remove"
+                          type="button"
+                          aria-label="Hapus baris"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    </div>
+                    <button
+                      class="instr-add"
+                      type="button"
+                      id="add-instruction"
+                    >
+                      + Add a line
+                    </button>
+                  </div>
+                </div>
+
+                <div class="step-canvas__foot">
+                  <button class="btn-delete-step" type="button" id="delete-step">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      width="14"
+                      height="14"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Hapus Step
+                  </button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const titleField = document.getElementById("judul");
+        const pageTitle = document.getElementById("page-title");
+        titleField?.addEventListener("input", () => {
+          if (pageTitle) {
+            pageTitle.textContent =
+              titleField.value.trim() || "Tanpa judul";
+          }
+        });
+
+        document.querySelectorAll(".type-card").forEach((card) => {
+          card.addEventListener("click", () => {
+            document
+              .querySelectorAll(".type-card")
+              .forEach((c) => c.classList.remove("type-card--active"));
+            card.classList.add("type-card--active");
+          });
+        });
+
+        const toolsList = document.getElementById("tools-list");
+        const bindToolRemove = (btn) => {
+          btn.addEventListener("click", () => {
+            btn.closest(".tool-row")?.remove();
+          });
+        };
+        toolsList
+          ?.querySelectorAll(".tool-remove")
+          .forEach((btn) => bindToolRemove(btn));
+
+        document.getElementById("tambah-alat")?.addEventListener("click", () => {
+          const row = document.createElement("div");
+          row.className = "tool-row";
+          row.innerHTML = `
+            <div class="tool-fields">
+              <input class="tool-input" type="text" name="alat_nama[]" placeholder="Nama alat / komponen" autocomplete="off" />
+              <input class="tool-input tool-input--sub" type="text" name="alat_ket[]" placeholder="Keterangan (opsional)" autocomplete="off" />
+            </div>
+            <button class="tool-remove" type="button" aria-label="Hapus alat">×</button>
+          `;
+          toolsList.appendChild(row);
+          bindToolRemove(row.querySelector(".tool-remove"));
+          row.querySelector(".tool-input")?.focus();
+        });
+
+        const tabs = document.querySelectorAll(".editor-tab");
+        const panels = document.querySelectorAll(".editor-panel");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => {
+              t.classList.remove("editor-tab--active");
+              t.setAttribute("aria-selected", "false");
+            });
+            tab.classList.add("editor-tab--active");
+            tab.setAttribute("aria-selected", "true");
+            panels.forEach((panel) => {
+              const on = panel.dataset.panel === tab.dataset.tab;
+              panel.classList.toggle("editor-panel--hidden", !on);
+              panel.hidden = !on;
+            });
+          });
+        });
+
+        const stepsList = document.getElementById("steps-list");
+        const stepsTotal = document.getElementById("steps-total");
+        const stepsBadge = document.querySelector(".editor-tab__badge");
+        const stepTitleInput = document.getElementById("step-title-input");
+        const stepHeading = document.getElementById("step-editor-heading");
+        const instructionLines = document.getElementById("instruction-lines");
+        let activeStep = 1;
+
+        const recount = () => {
+          const items = [...stepsList.querySelectorAll(".step-chip")];
+          items.forEach((item, i) => {
+            const n = i + 1;
+            item.dataset.step = String(n);
+            item.querySelector(".step-chip__num").textContent = `Langkah ${n}`;
+          });
+          const count = items.length;
+          stepsTotal.textContent = String(count);
+          if (stepsBadge) {
+            stepsBadge.textContent = String(count);
+            stepsBadge.setAttribute("aria-label", `${count} langkah`);
+          }
+          return count;
+        };
+
+        const setActiveStep = (num) => {
+          activeStep = num;
+          document.querySelectorAll(".step-chip").forEach((item) => {
+            item.classList.toggle(
+              "step-chip--active",
+              Number(item.dataset.step) === num,
+            );
+          });
+          stepHeading.textContent = `Langkah ${num}`;
+          const active = stepsList.querySelector(
+            `.step-chip[data-step="${num}"]`,
+          );
+          stepTitleInput.value = active?.dataset.title || "";
+        };
+
+        stepsList.addEventListener("click", (e) => {
+          const item = e.target.closest(".step-chip");
+          if (!item) return;
+          setActiveStep(Number(item.dataset.step));
+        });
+
+        stepTitleInput.addEventListener("input", () => {
+          const active = stepsList.querySelector(
+            `.step-chip[data-step="${activeStep}"]`,
+          );
+          if (!active) return;
+          active.dataset.title = stepTitleInput.value;
+          active.querySelector(".step-chip__title").textContent =
+            stepTitleInput.value.trim() || "Judul langkah...";
+        });
+
+        document.getElementById("add-step").addEventListener("click", () => {
+          const n = recount() + 1;
+          const btn = document.createElement("button");
+          btn.className = "step-chip";
+          btn.type = "button";
+          btn.dataset.step = String(n);
+          btn.dataset.title = "";
+          btn.innerHTML = `
+            <span class="step-chip__num">Langkah ${n}</span>
+            <span class="step-chip__title">Judul langkah...</span>
+          `;
+          stepsList.appendChild(btn);
+          recount();
+          setActiveStep(n);
+          stepTitleInput.focus();
+        });
+
+        document.getElementById("delete-step").addEventListener("click", () => {
+          if (stepsList.querySelectorAll(".step-chip").length <= 1) return;
+          stepsList
+            .querySelector(`.step-chip[data-step="${activeStep}"]`)
+            ?.remove();
+          const count = recount();
+          setActiveStep(Math.min(activeStep, count));
+        });
+
+        const bindInstrRemove = (btn) => {
+          btn.addEventListener("click", () => {
+            btn.closest(".instr-row")?.remove();
+          });
+        };
+        instructionLines
+          .querySelectorAll(".instr-remove")
+          .forEach((btn) => bindInstrRemove(btn));
+
+        document
+          .getElementById("add-instruction")
+          .addEventListener("click", () => {
+            const row = document.createElement("div");
+            row.className = "instr-row";
+            row.innerHTML = `
+              <span class="instr-handle" aria-hidden="true">⋮⋮</span>
+              <textarea class="instr-input" rows="2" placeholder="Tulis instruksi..."></textarea>
+              <button class="instr-remove" type="button" aria-label="Hapus baris">×</button>
+            `;
+            instructionLines.appendChild(row);
+            bindInstrRemove(row.querySelector(".instr-remove"));
+            row.querySelector(".instr-input")?.focus();
+          });
+      })();
+    </script>
+  </body>
+</html>
