@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="TechFixAr menyediakan simulasi kompatibilitas PC, panduan perakitan hardware, servis laptop, dan troubleshooting."
+      content="TechFixAr menyediakan panduan perakitan hardware, servis laptop, troubleshooting, dan perawatan perangkat keras secara lengkap dan interaktif."
     />
     <title>TechFixAr — Panduan Hardware Terpercaya</title>
 
@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/css/globals.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/landing.css" />
+    <!-- Theme toggle (script dijalankan awal agar tidak FOUC) -->
+    <script src="assets/js/theme.js"></script>
   </head>
   <body>
     <div class="responsive-landing">
@@ -32,7 +34,7 @@
           >
             <img
               class="navbar__logo"
-              src="assets/img/techfixar-logo-512-1-1.png"
+              src="assets/css/img/Logo.jpg"
               alt=""
             />
             <span class="navbar__title">
@@ -48,6 +50,23 @@
               Panduan &amp; Servis
             </a>
           </nav>
+          <button
+            class="navbar__theme-toggle"
+            data-theme-toggle
+            aria-label="Ganti ke mode terang"
+            title="Mode Terang"
+            type="button"
+          >
+            <!-- Ikon bulan (ditampilkan saat dark mode) -->
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <!-- Ikon matahari (ditampilkan saat light mode) -->
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="navbar__cta" href="login_admin.html">Masuk / Daftar</a>
         </div>
       </header>
@@ -68,19 +87,36 @@
           </div>
           <div class="heading">
             <h1 class="simulasi-PC-anti" id="hero-title">
-              <span class="span">Simulasi PC Anti-Bottleneck &amp;<br /></span>
-              <span class="text-wrapper-2"
-                >Pusat Panduan Perakitan Hardware</span
-              >
+              <span class="span">Pusat Panduan Perakitan &amp;<br /></span>
+              <span class="text-wrapper-2">Servis Hardware Mandiri</span>
             </h1>
           </div>
           <div class="paragraph-margin">
             <p class="uji-kecocokan">
-              Uji kecocokan komponen PC kamu secara real-time, hitung persentase
-              bottleneck, dan pelajari panduan servis serta perakitan mandiri.
+              Pelajari cara merakit, memperbaiki, dan merawat perangkat keras
+              komputer dengan panduan lengkap, interaktif, dan mudah dipahami.
             </p>
           </div>
           <div class="container-3">
+            <a class="button" href="#simulasi">
+              <span class="icon-simulate" aria-hidden="true">
+                <svg
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="M3 4h10M3 7h10M3 10h6"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <span class="text-wrapper-3">Mulai Simulasi</span>
+            </a>
             <a class="button-2" href="#fitur">
               <span class="text-wrapper-4">Jelajahi Panduan</span>
               <span class="icon" aria-hidden="true">
@@ -93,7 +129,7 @@
                 >
                   <path
                     d="M3 7H11M8 4L11 7L8 10"
-                    stroke="#f8fafc"
+                    stroke="currentColor"
                     stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -430,7 +466,7 @@
                       >
                         <path
                           d="M3 7H11M8 4L11 7L8 10"
-                          stroke="#64748b"
+                          stroke="currentColor"
                           stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"
@@ -497,7 +533,7 @@
                       >
                         <path
                           d="M3 7H11M8 4L11 7L8 10"
-                          stroke="#64748b"
+                          stroke="currentColor"
                           stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"
@@ -554,7 +590,7 @@
                       >
                         <path
                           d="M3 7H11M8 4L11 7L8 10"
-                          stroke="#64748b"
+                          stroke="currentColor"
                           stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"
@@ -651,12 +687,12 @@
                             cx="7"
                             cy="7"
                             r="5.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.3"
                           />
                           <path
                             d="M7 4.5V7L8.5 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.3"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -730,12 +766,12 @@
                             cx="7"
                             cy="7"
                             r="5.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.3"
                           />
                           <path
                             d="M7 4.5V7L8.5 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.3"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -809,12 +845,12 @@
                             cx="7"
                             cy="7"
                             r="5.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.3"
                           />
                           <path
                             d="M7 4.5V7L8.5 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.3"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -910,7 +946,7 @@
             >
               <img
                 class="techfixar-logo"
-                src="assets/img/techfixar-logo-512-1-1.png"
+                src="assets/css/img/Logo.jpg"
                 alt=""
               />
               <p class="tech-fix-ar">
@@ -940,8 +976,13 @@
         </footer>
       </main>
 
-      <a class="app-2" href="login_admin.html" aria-label="Buka halaman admin">
-        <span class="text-wrapper-45">ADMIN →</span>
+      <a class="admin-fab" id="admin-fab" href="login_admin.html" aria-label="Masuk ke area admin" title="Admin Panel" style="display:none">
+        <span class="admin-fab__icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </span>
+        <span class="admin-fab__label">Admin</span>
       </a>
     </div>
 

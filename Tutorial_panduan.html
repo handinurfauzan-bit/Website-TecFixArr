@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="assets/css/globals.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/Tutorial_panduan.css" />
+    <!-- Theme toggle -->
+    <script src="assets/js/theme.js"></script>
   </head>
   <body>
     <div class="halaman-panduannya">
@@ -28,7 +30,7 @@
           >
             <img
               class="navbar__logo"
-              src="assets/img/techfixar-logo-512-1-1.png"
+              src="assets/css/img/Logo.jpg"
               alt=""
             />
             <span class="navbar__title">
@@ -58,6 +60,21 @@
               aria-label="Cari solusi servis atau panduan rakit"
             />
           </form>
+          <button
+            class="navbar__theme-toggle"
+            data-theme-toggle
+            aria-label="Ganti ke mode terang"
+            title="Mode Terang"
+            type="button"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="navbar__cta" href="login_admin.html">Masuk / Daftar</a>
         </div>
       </header>
@@ -115,8 +132,8 @@
                     <div class="text-6">
                       <span class="icon-clock" aria-hidden="true">
                         <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-                          <circle cx="6" cy="6" r="4.5" stroke="#64748b" stroke-width="1.2"/>
-                          <path d="M6 3.5V6L7.5 7.5" stroke="#64748b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.2"/>
+                          <path d="M6 3.5V6L7.5 7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                       </span>
                       <span class="text-wrapper-6">8 menit</span>
@@ -132,8 +149,8 @@
                     <div class="text-9" aria-label="24.1 ribu dilihat">
                       <span class="icon-eye" aria-hidden="true">
                         <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" width="11" height="11">
-                          <path d="M1 5.5C1 5.5 2.5 2 5.5 2C8.5 2 10 5.5 10 5.5C10 5.5 8.5 9 5.5 9C2.5 9 1 5.5 1 5.5Z" stroke="#64748b" stroke-width="1.2" stroke-linecap="round"/>
-                          <circle cx="5.5" cy="5.5" r="1.5" stroke="#64748b" stroke-width="1.2"/>
+                          <path d="M1 5.5C1 5.5 2.5 2 5.5 2C8.5 2 10 5.5 10 5.5C10 5.5 8.5 9 5.5 9C2.5 9 1 5.5 1 5.5Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                          <circle cx="5.5" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
                         </svg>
                       </span>
                       <span class="text-wrapper-9">24.1k</span>
@@ -512,8 +529,8 @@
                 <div class="container-27">
                   <div class="icon" aria-hidden="true">
                     <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-                      <path d="M8.5 2.5a3 3 0 0 1 0 4.24L4.5 10.74a1.5 1.5 0 0 1-2.12-2.12L6.26 4.74A3 3 0 0 1 8.5 2.5z" stroke="#94a3b8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M10 1l1 1-1.5 1.5" stroke="#94a3b8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M8.5 2.5a3 3 0 0 1 0 4.24L4.5 10.74a1.5 1.5 0 0 1-2.12-2.12L6.26 4.74A3 3 0 0 1 8.5 2.5z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M10 1l1 1-1.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </div>
                   <div class="text-16">
@@ -617,7 +634,7 @@
           >
             <img
               class="techfixar-logo-footer"
-              src="assets/img/techfixar-logo-512-1-1.png"
+              src="assets/css/img/Logo.jpg"
               alt=""
             />
             <p class="footer-brand">

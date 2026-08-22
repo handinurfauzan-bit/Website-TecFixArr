@@ -52,6 +52,51 @@
   /* Transition */
   --transition-fast: 0.15s ease;
   --transition-base: 0.2s ease;
+
+  /* Grid overlay color (dark default) */
+  --grid-line-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ===========================================
+   LIGHT THEME OVERRIDE
+   Aktif saat <html data-theme="light">
+   Palet: neutral off-white — lembut di mata,
+   tidak coklat, tidak menyilaukan.
+   =========================================== */
+[data-theme="light"] {
+  /* Background */
+  --color-bg:          #ededed;   /* bg utama halaman (selain navbar) */
+  --color-bg-elevated: #f9f9f9;   /* sedikit lebih terang */
+  --color-panel:       #f4f4f4;   /* panel / card */
+  --color-panel-2:     #e8e8e8;   /* panel sekunder */
+
+  /* Border & divider */
+  --color-border:      #d4d4d4;
+  --color-border-soft: #e4e4e4;
+
+  /* Text — warm near-black, tidak kontras keras */
+  --color-text:        #1c1917;
+  --color-muted:       #57534e;
+  --color-faint:       #78716c;
+
+  /* Accent — emerald sedikit lebih dalam agar terbaca di bg terang */
+  --color-accent:        #059669;
+  --color-accent-bright: #10b981;
+  --color-accent-deep:   #047857;
+  --color-accent-dim:    rgba(5, 150, 105, 0.10);
+  --color-accent-border: rgba(5, 150, 105, 0.38);
+  --color-accent-glow:   rgba(5, 150, 105, 0.06);
+
+  /* Danger */
+  --color-danger:      #dc2626;
+  --color-danger-dim:  rgba(220, 38, 38, 0.09);
+
+  /* Blue */
+  --color-blue:        #2563eb;
+  --color-blue-dim:    rgba(37, 99, 235, 0.09);
+
+  /* Grid overlay color (light) */
+  --grid-line-color: rgba(0, 0, 0, 0.045);
 }
 
 
@@ -67,11 +112,12 @@ html {
 }
 
 body {
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Fallback fonts jika custom font tidak load */
@@ -119,4 +165,90 @@ a {
 
 ul, ol {
   list-style: none;
+}
+
+/* ===========================================
+   ADMIN FAB — tombol admin fixed kanan bawah
+   =========================================== */
+.admin-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 10px 12px;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #a8a29e;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+              color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.admin-fab:hover {
+  background-color: #243447;
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #10b981;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.15);
+  transform: translateY(-2px);
+}
+
+.admin-fab:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 3px;
+}
+
+.admin-fab__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.admin-fab:hover .admin-fab__icon {
+  background-color: rgba(16, 185, 129, 0.2);
+}
+
+.admin-fab__label {
+  white-space: nowrap;
+}
+
+/* Light theme */
+[data-theme="light"] .admin-fab {
+  background-color: #f4f4f4;
+  border-color: #d4d4d4;
+  color: #57534e;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+[data-theme="light"] .admin-fab:hover {
+  background-color: #efefef;
+  border-color: rgba(5, 150, 105, 0.45);
+  color: #059669;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(5, 150, 105, 0.12);
+}
+
+[data-theme="light"] .admin-fab__icon {
+  background-color: rgba(5, 150, 105, 0.10);
+  border-color: rgba(5, 150, 105, 0.25);
+  color: #059669;
+}
+
+[data-theme="light"] .admin-fab:hover .admin-fab__icon {
+  background-color: rgba(5, 150, 105, 0.18);
 }

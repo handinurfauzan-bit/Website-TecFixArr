@@ -1,297 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daftar Akun Admin — TechFixAr</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Daftar akun admin TechFixAr. Pendaftaran memerlukan persetujuan Super Admin."
+    />
+    <title>Daftar Admin | TechFixAr</title>
+    <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/Registerasi_admin.css" />
+  </head>
+  <body>
+    <main class="halaman-register-admin">
+      <div class="register-grid-bg" aria-hidden="true"></div>
+      <div class="register-glow" aria-hidden="true"></div>
 
-  :root{
-    --bg: #11172B;
-    --panel: #1A2140;
-    --panel-border: #2B3459;
-    --field-bg: #141A33;
-    --field-border: #313A63;
-    --text: #F2F2F0;
-    --text-dim: #A8A8A6;
-    --text-faint: #6E6E6C;
-    --accent: #4C7CFF;
-    --accent-hover: #3E68E6;
-    --accent-green: #34D399;
-    --info-bg: rgba(76,124,255,0.08);
-    --info-border: rgba(76,124,255,0.35);
-  }
+      <section class="register-shell" aria-labelledby="register-heading">
+        <header class="register-brand">
+          <a
+            class="register-brand__link"
+            href="Landing.html"
+            aria-label="TechFixAr, kembali ke beranda"
+          >
+            <span class="register-brand__mark" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+              >
+                <path
+                  d="M3 12h4l2-5 4 10 2-5h6"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="register-brand__title">
+              <span class="register-brand__title-text">TechFix</span
+              ><span class="register-brand__title-accent">Ar</span>
+            </span>
+          </a>
+          <p class="register-brand__subtitle">DAFTAR AKUN ADMIN</p>
+        </header>
 
-  *{ box-sizing: border-box; }
+        <form class="register-form" action="#" method="post">
+          <div class="register-form__intro">
+            <h1 class="register-form__title" id="register-heading">
+              Buat Akun Admin Baru
+            </h1>
+            <p class="register-form__desc">
+              Pendaftaran memerlukan persetujuan Super Admin sebelum aktif.
+            </p>
+          </div>
 
-  body{
-    margin:0;
-    min-height:100vh;
-    background:
-      radial-gradient(circle at 20% 0%, rgba(76,124,255,0.16), transparent 45%),
-      radial-gradient(circle at 85% 100%, rgba(76,124,255,0.10), transparent 40%),
-      var(--bg);
-    color: var(--text);
-    font-family: 'Inter', -apple-system, sans-serif;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding: 48px 20px;
-  }
+          <div class="register-field">
+            <label class="register-field__label" for="nama">NAMA LENGKAP</label>
+            <input
+              class="register-field__input"
+              id="nama"
+              name="nama"
+              type="text"
+              placeholder="Budi Santoso"
+              autocomplete="name"
+              required
+            />
+          </div>
 
-  .wrap{
-    width:100%;
-    max-width: 400px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
+          <div class="register-field">
+            <label class="register-field__label" for="email">EMAIL</label>
+            <input
+              class="register-field__input"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="budi@rakitin.id"
+              autocomplete="email"
+              required
+            />
+          </div>
 
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    margin-bottom:4px;
-  }
-  .logo svg{ display:block; }
-  .logo-text{
-    font-size:19px;
-    font-weight:700;
-    letter-spacing:-0.01em;
-  }
-  .logo-text .accent{ color: var(--accent-green); }
-  .eyebrow{
-    font-family:'JetBrains Mono', monospace;
-    font-size:10px;
-    letter-spacing:0.22em;
-    color: var(--text-faint);
-    margin-bottom:28px;
-    margin-top:2px;
-  }
+          <div class="register-field">
+            <label class="register-field__label" for="password">PASSWORD</label>
+            <div class="register-field__password">
+              <input
+                class="register-field__input"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Min. 8 karakter"
+                autocomplete="new-password"
+                minlength="8"
+                required
+              />
+              <button
+                class="register-field__toggle"
+                type="button"
+                aria-label="Tampilkan password"
+                aria-controls="password"
+                aria-pressed="false"
+                data-toggle-password="password"
+              >
+                <svg
+                  class="register-field__eye"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
 
-  .card{
-    width:100%;
-    background: var(--panel);
-    border:1px solid var(--panel-border);
-    border-radius:14px;
-    padding:28px 26px 26px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-  }
+          <div class="register-field">
+            <label class="register-field__label" for="password-confirm"
+              >KONFIRMASI PASSWORD</label
+            >
+            <input
+              class="register-field__input"
+              id="password-confirm"
+              name="password_confirm"
+              type="password"
+              placeholder="Ulangi password"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+          </div>
 
-  .card h1{
-    font-size:19px;
-    font-weight:700;
-    margin:0 0 6px;
-    letter-spacing:-0.01em;
-  }
-  .card p.sub{
-    font-size:13px;
-    line-height:1.5;
-    color: var(--text-dim);
-    margin:0 0 18px;
-  }
-
-  .info-box{
-    background: var(--info-bg);
-    border:1px solid var(--info-border);
-    border-radius:8px;
-    padding:11px 13px;
-    font-size:12px;
-    line-height:1.55;
-    color:#C7D5FF;
-    margin-bottom:22px;
-  }
-
-  form{ display:flex; flex-direction:column; gap:16px; }
-
-  .field label{
-    display:block;
-    font-family:'JetBrains Mono', monospace;
-    font-size:10px;
-    letter-spacing:0.1em;
-    color: var(--text-faint);
-    margin-bottom:7px;
-  }
-
-  .field input, .field select{
-    width:100%;
-    background: var(--field-bg);
-    border:1px solid var(--field-border);
-    color: var(--text);
-    font-family:'Inter', sans-serif;
-    font-size:14px;
-    border-radius:8px;
-    padding:11px 13px;
-    outline:none;
-    transition: border-color .15s ease, box-shadow .15s ease;
-    appearance:none;
-  }
-  .field input::placeholder{ color: var(--text-faint); }
-  .field input:focus, .field select:focus{
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(76,124,255,0.18);
-  }
-
-  .field.select-wrap{ position:relative; }
-  .field.select-wrap::after{
-    content:"";
-    position:absolute;
-    right:14px;
-    top:38px;
-    width:8px; height:8px;
-    border-right:1.5px solid var(--text-dim);
-    border-bottom:1.5px solid var(--text-dim);
-    transform: rotate(45deg);
-    pointer-events:none;
-  }
-
-  .pw-wrap{ position:relative; }
-  .pw-wrap input{ padding-right:40px; }
-  .pw-toggle{
-    position:absolute;
-    right:12px;
-    top:50%;
-    transform:translateY(-50%);
-    background:none;
-    border:none;
-    color: var(--text-faint);
-    cursor:pointer;
-    padding:4px;
-    display:flex;
-    margin-top: 12px;
-  }
-  .pw-toggle:hover{ color: var(--text-dim); }
-
-  .submit-btn{
-    margin-top:6px;
-    width:100%;
-    background: var(--accent);
-    color:#fff;
-    border:none;
-    border-radius:8px;
-    padding:12px;
-    font-size:14px;
-    font-weight:600;
-    cursor:pointer;
-    transition: background .15s ease, transform .05s ease;
-  }
-  .submit-btn:hover{ background: var(--accent-hover); }
-  .submit-btn:active{ transform: translateY(1px); }
-
-  .login-link{
-    text-align:center;
-    font-size:12.5px;
-    color: var(--text-dim);
-    margin-top:16px;
-  }
-  .login-link a{ color: var(--accent-green); text-decoration:none; font-weight:600; }
-  .login-link a:hover{ text-decoration:underline; }
-
-  .back-link{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    margin-top:22px;
-    font-size:12.5px;
-    color: var(--text-faint);
-    text-decoration:none;
-    transition: color .15s ease;
-  }
-  .back-link:hover{ color: var(--text-dim); }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ transition:none !important; }
-  }
-</style>
-</head>
-<body>
-
-<div class="wrap">
-  <div class="logo">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-      <path d="M2 12h4l2-7 4 14 3-9 2 5h5" stroke="#4C7CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span class="logo-text">TechFix<span class="accent">Ar</span></span>
-  </div>
-  <div class="eyebrow">DAFTAR AKUN ADMIN</div>
-
-  <div class="card">
-    <h1>Buat Akun Admin Baru</h1>
-    <p class="sub">Pendaftaran memerlukan persetujuan Super Admin sebelum aktif.</p>
-
-    <div class="info-box">
-      Setelah mendaftar, akunmu akan masuk ke antrian verifikasi Super Admin. Kamu akan dinotifikasi via email saat akun aktif.
-    </div>
-
-    <form id="registerForm">
-      <div class="field">
-        <label for="nama">NAMA LENGKAP</label>
-        <input type="text" id="nama" placeholder="Masukan Nama Lengkap" required>
-      </div>
-
-      <div class="field">
-        <label for="email">EMAIL</label>
-        <input type="email" id="email" placeholder="Masukan Email Anda" required>
-      </div>
-
-      <div class="field select-wrap">
-        <label for="role">ROLE</label>
-        <select id="role" required>
-          <option>Pilih Role</option>
-          <option>User</option>
-          <option>Admin</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="password">PASSWORD</label>
-        <div class="pw-wrap">
-          <input type="password" id="password" placeholder="Min. 8 karakter" minlength="8" required>
-          <button type="button" class="pw-toggle" data-target="password" aria-label="Tampilkan password">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          <button class="register-form__submit" type="submit">
+            Kirim Pendaftaran
           </button>
-        </div>
-      </div>
 
-      <div class="field">
-        <label for="konfirmasi">KONFIRMASI PASSWORD</label>
-        <div class="pw-wrap">
-          <input type="password" id="konfirmasi" placeholder="Ulangi password" minlength="8" required>
-          <button type="button" class="pw-toggle" data-target="konfirmasi" aria-label="Tampilkan password">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          </button>
-        </div>
-      </div>
+          <p class="register-form__footer">
+            Sudah punya akun?
+            <a class="register-form__login" href="login_admin.html">Masuk</a>
+          </p>
+        </form>
 
-      <button type="submit" class="submit-btn">Kirim Pendaftaran</button>
-    </form>
+        <footer class="register-back">
+          <a class="register-back__link" href="Landing.html"
+            >← Kembali ke Beranda</a
+          >
+        </footer>
+      </section>
+    </main>
 
-    <div class="login-link">Sudah punya akun? <a href="login_admin.html">Masuk</a></div>
-  </div>
+    <script>
+      (() => {
+        const toggles = document.querySelectorAll("[data-toggle-password]");
 
-  <a href="Landing.html" class="back-link">← Kembali ke Beranda</a>
-</div>
+        toggles.forEach((toggle) => {
+          const inputId = toggle.getAttribute("data-toggle-password");
+          const input = document.getElementById(inputId);
+          if (!input) return;
 
-<script>
-  document.querySelectorAll('.pw-toggle').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const input = document.getElementById(btn.dataset.target);
-      input.type = input.type === 'password' ? 'text' : 'password';
-    });
-  });
-
-  document.getElementById('registerForm').addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const pw = document.getElementById('password').value;
-    const conf = document.getElementById('konfirmasi').value;
-    if(pw !== conf){
-      alert('Password dan konfirmasi password tidak cocok.');
-      return;
-    }
-    alert('Pendaftaran terkirim. Menunggu verifikasi Super Admin.');
-  });
-</script>
-
-</body>
+          toggle.addEventListener("click", () => {
+            const isVisible = input.type === "text";
+            input.type = isVisible ? "password" : "text";
+            toggle.setAttribute("aria-pressed", String(!isVisible));
+            toggle.setAttribute(
+              "aria-label",
+              isVisible ? "Tampilkan password" : "Sembunyikan password",
+            );
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>

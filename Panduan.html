@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="assets/css/globals.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/panduan.css" />
+    <!-- Theme toggle -->
+    <script src="assets/js/theme.js"></script>
   </head>
   <body>
     <div class="halaman-panduan">
+      <div class="grid-bg" aria-hidden="true"></div>
       <div class="app" aria-hidden="true">
         <div class="placeholder-for"></div>
         <div class="div"></div>
@@ -31,7 +34,7 @@
           >
             <img
               class="navbar__logo"
-              src="assets/img/techfixar-logo-512-1-1.png"
+              src="assets/css/img/Logo.jpg"
               alt="TechFixAr Logo"
             />
             <span class="navbar__title">
@@ -49,6 +52,21 @@
               Panduan &amp; Servis
             </a>
           </nav>
+          <button
+            class="navbar__theme-toggle"
+            data-theme-toggle
+            aria-label="Ganti ke mode terang"
+            title="Mode Terang"
+            type="button"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a class="navbar__cta" href="login_admin.html">Masuk / Daftar</a>
         </div>
       </header>
@@ -96,12 +114,12 @@
                       cx="7"
                       cy="7"
                       r="4.5"
-                      stroke="#475569"
+                      stroke="currentColor"
                       stroke-width="1.5"
                     />
                     <path
                       d="M10.5 10.5L13.5 13.5"
-                      stroke="#475569"
+                      stroke="currentColor"
                       stroke-width="1.5"
                       stroke-linecap="round"
                     />
@@ -195,12 +213,12 @@
                             cx="6"
                             cy="6"
                             r="4.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                           <path
                             d="M6 3.5V6L7.5 7.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -223,7 +241,7 @@
                         >
                           <path
                             d="M1 8.5C1 8.5 2.5 5 5.5 5C8.5 5 10 8.5 10 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                           />
@@ -231,7 +249,7 @@
                             cx="5.5"
                             cy="3.5"
                             r="1.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                         </svg>
@@ -285,12 +303,12 @@
                             cx="6"
                             cy="6"
                             r="4.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                           <path
                             d="M6 3.5V6L7.5 7.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -313,7 +331,7 @@
                         >
                           <path
                             d="M1 8.5C1 8.5 2.5 5 5.5 5C8.5 5 10 8.5 10 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                           />
@@ -321,7 +339,7 @@
                             cx="5.5"
                             cy="3.5"
                             r="1.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                         </svg>
@@ -377,12 +395,12 @@
                             cx="6"
                             cy="6"
                             r="4.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                           <path
                             d="M6 3.5V6L7.5 7.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -405,7 +423,7 @@
                         >
                           <path
                             d="M1 8.5C1 8.5 2.5 5 5.5 5C8.5 5 10 8.5 10 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                           />
@@ -413,7 +431,7 @@
                             cx="5.5"
                             cy="3.5"
                             r="1.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                         </svg>
@@ -465,12 +483,12 @@
                             cx="6"
                             cy="6"
                             r="4.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                           <path
                             d="M6 3.5V6L7.5 7.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -493,7 +511,7 @@
                         >
                           <path
                             d="M1 8.5C1 8.5 2.5 5 5.5 5C8.5 5 10 8.5 10 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                           />
@@ -501,7 +519,7 @@
                             cx="5.5"
                             cy="3.5"
                             r="1.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                         </svg>
@@ -555,12 +573,12 @@
                             cx="6"
                             cy="6"
                             r="4.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                           <path
                             d="M6 3.5V6L7.5 7.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -583,7 +601,7 @@
                         >
                           <path
                             d="M1 8.5C1 8.5 2.5 5 5.5 5C8.5 5 10 8.5 10 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                           />
@@ -591,7 +609,7 @@
                             cx="5.5"
                             cy="3.5"
                             r="1.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                         </svg>
@@ -645,12 +663,12 @@
                             cx="6"
                             cy="6"
                             r="4.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                           <path
                             d="M6 3.5V6L7.5 7.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -673,7 +691,7 @@
                         >
                           <path
                             d="M1 8.5C1 8.5 2.5 5 5.5 5C8.5 5 10 8.5 10 8.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                             stroke-linecap="round"
                           />
@@ -681,7 +699,7 @@
                             cx="5.5"
                             cy="3.5"
                             r="1.5"
-                            stroke="#64748b"
+                            stroke="currentColor"
                             stroke-width="1.2"
                           />
                         </svg>
@@ -710,7 +728,7 @@
               >
                 <path
                   d="M7 3V11M3 8L7 11L11 8"
-                  stroke="#94a3b8"
+                  stroke="currentColor"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -782,8 +800,13 @@
         </section>
       </main>
 
-      <a class="app-2" href="login_admin.html" aria-label="Masuk ke area admin">
-        <span class="text-wrapper-23">ADMIN →</span>
+      <a class="admin-fab" id="admin-fab" href="login_admin.html" aria-label="Masuk ke area admin" title="Admin Panel" style="display:none">
+        <span class="admin-fab__icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </span>
+        <span class="admin-fab__label">Admin</span>
       </a>
     </div>
   </body>

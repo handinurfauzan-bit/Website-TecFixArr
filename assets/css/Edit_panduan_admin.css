@@ -113,13 +113,13 @@
 
 .btn-draft {
   background: transparent;
-  border: 1px solid #475569;
+  border: 1px solid #57534e;
   color: var(--muted);
 }
 
 .btn-draft:hover {
   color: var(--text);
-  border-color: #64748b;
+  border-color: #78716c;
 }
 
 .btn-update {
@@ -247,7 +247,7 @@
 }
 
 .step-chip:hover {
-  border-color: #475569;
+  border-color: #57534e;
 }
 
 .step-chip--active {
@@ -300,7 +300,7 @@
 
 .steps-add-btn:hover {
   color: var(--text);
-  border-color: #475569;
+  border-color: #57534e;
 }
 
 .step-canvas {
@@ -621,7 +621,7 @@
 }
 
 .type-card:hover {
-  border-color: #475569;
+  border-color: #57534e;
 }
 
 .type-card--active {
@@ -739,7 +739,7 @@
   width: 100%;
   padding: 11px;
   border-radius: 8px;
-  border: 1px dashed #475569;
+  border: 1px dashed #57534e;
   background: transparent;
   color: var(--teal);
   font-family: inherit;
@@ -850,4 +850,90 @@
   .step-title-field {
     width: 100%;
   }
+}
+
+/* ===========================================
+   LIGHT THEME — Edit Panduan Admin
+   =========================================== */
+
+[data-theme="light"] .editor-shell {
+  background: #f2f2f0;
+}
+
+[data-theme="light"] .editor-header {
+  background: rgba(247, 244, 240, 0.95);
+  border-bottom-color: #e0dbd2;
+}
+
+[data-theme="light"] .editor-header__title {
+  color: #1c1917;
+}
+[data-theme="light"] .editor-back {
+  color: #78716c;
+}
+[data-theme="light"] .editor-back:hover {
+  color: #1c1917;
+}
+
+/* Edit mode badge */
+[data-theme="light"] .edit-mode-badge {
+  background: rgba(5, 150, 105, 0.10);
+  border-color: rgba(5, 150, 105, 0.35);
+  color: #059669;
+}
+
+/* Tabs */
+[data-theme="light"] .editor-tab {
+  color: #78716c;
+}
+[data-theme="light"] .editor-tab:hover {
+  color: #1c1917;
+}
+[data-theme="light"] .editor-tab__badge {
+  background: #e0dbd2;
+  color: #57534e;
+}
+
+/* Btn draft */
+[data-theme="light"] .btn-draft {
+  border-color: #d4d4d4;
+  color: #57534e;
+}
+[data-theme="light"] .btn-draft:hover {
+  color: #1c1917;
+  border-color: #a8a29e;
+}
+
+/* Steps placeholder */
+[data-theme="light"] .steps-placeholder {
+  color: #57534e;
+  border-color: #d4d4d4;
+  background: #f2f2f0;
+}
+
+/* Step chips */
+[data-theme="light"] .steps-rail__label {
+  color: #a8a29e;
+}
+[data-theme="light"] .step-chip {
+  background: #f4f4f4;
+  color: #1c1917;
+}
+[data-theme="light"] .step-chip:hover {
+  border-color: #a8a29e;
+}
+[data-theme="light"] .step-chip__num {
+  color: #a8a29e;
+}
+[data-theme="light"] .step-chip__title {
+  color: #57534e;
+}
+[data-theme="light"] .steps-add-btn {
+  background: #f2f2f0;
+  border-color: #e0dbd2;
+  color: #57534e;
+}
+[data-theme="light"] .steps-add-btn:hover {
+  color: #1c1917;
+  border-color: #a8a29e;
 }

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="assets/css/globals.css" />
     <link rel="stylesheet" href="assets/css/admin_theme.css" />
     <link rel="stylesheet" href="assets/css/Edit_panduan_admin.css" />
+    <!-- Theme toggle -->
+    <script src="assets/js/theme.js"></script>
   </head>
   <body>
     <div class="admin-app">
@@ -71,7 +73,7 @@
               </svg>
               <span>Kelola Panduan &amp; Troubleshooting</span>
             </a>
-            <a class="admin-nav__item" href="Registerasi_admin.html">
+            <a class="admin-nav__item" href="verifikasi_admin.html">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -100,6 +102,22 @@
               <span class="admin-user__role">Super Admin</span>
             </span>
           </div>
+          <button
+            class="admin-theme-toggle"
+            data-theme-toggle
+            aria-label="Ganti ke mode terang"
+            title="Mode Terang"
+            type="button"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Mode Terang</span>
+          </button>
           <a class="admin-user__logout" href="login_admin.html">
             <svg
               viewBox="0 0 24 24"
@@ -253,7 +271,7 @@
                   stroke-width="1.7"
                 />
               </svg>
-              Guide
+              Panduan
             </button>
             <button
               class="editor-tab"
@@ -276,7 +294,7 @@
                   stroke-linecap="round"
                 />
               </svg>
-              Steps
+              Langkah
               <span class="editor-tab__badge" aria-label="4 langkah">4</span>
             </button>
           </div>
@@ -582,7 +600,7 @@ Panduan Lengkap: Cara Memasang Processor AMD AM5 dengan Benar &amp; Aman</textar
                       stroke-linecap="round"
                     />
                   </svg>
-                  Add a step
+                  Tambah Langkah
                 </button>
               </aside>
 
@@ -765,7 +783,7 @@ Panduan Lengkap: Cara Memasang Processor AMD AM5 dengan Benar &amp; Aman</textar
                       type="button"
                       id="add-instruction"
                     >
-                      + Add a line
+                      + Tambah Instruksi
                     </button>
                   </div>
                 </div>
@@ -787,7 +805,7 @@ Panduan Lengkap: Cara Memasang Processor AMD AM5 dengan Benar &amp; Aman</textar
                         stroke-linejoin="round"
                       />
                     </svg>
-                    Hapus Step
+                    Hapus Langkah
                   </button>
                 </div>
               </section>

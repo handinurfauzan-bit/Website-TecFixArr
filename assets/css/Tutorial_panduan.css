@@ -3,7 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   position: relative;
-  background-color: #0f172a;
+  background-color: var(--color-bg);
 }
 
 /* hide Figma placeholder divs */
@@ -71,7 +71,7 @@
 .halaman-panduannya .text-wrapper {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 500;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 12.8px;
   line-height: 19.2px;
   white-space: nowrap;
@@ -80,7 +80,7 @@
 .halaman-panduannya .text-wrapper-3 {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 500;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 12.8px;
   line-height: 19.2px;
   white-space: nowrap;
@@ -94,7 +94,7 @@
 .halaman-panduannya .text-wrapper-2 {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 11.2px;
   line-height: 16.8px;
 }
@@ -142,7 +142,7 @@
   margin: 0;
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 28px;
   letter-spacing: -0.56px;
   line-height: 1.3;
@@ -191,7 +191,7 @@
 .halaman-panduannya .text-wrapper-4 {
   font-family: "DM Mono", "DM Mono-Medium", monospace;
   font-weight: 500;
-  color: #ffffff;
+  color: #f7f4f0;
   font-size: 9.6px;
   line-height: 14.4px;
 }
@@ -204,7 +204,7 @@
 .halaman-panduannya .tech-team {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 12.8px;
   line-height: 19.2px;
   white-space: nowrap;
@@ -225,7 +225,7 @@
 .halaman-panduannya .text-wrapper-5 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 10.9px;
   line-height: 16.3px;
   white-space: nowrap;
@@ -252,7 +252,7 @@
 .halaman-panduannya .text-wrapper-6 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 10.9px;
   line-height: 16.3px;
   white-space: nowrap;
@@ -318,7 +318,7 @@
 .halaman-panduannya .text-wrapper-9 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 10.4px;
   line-height: 15.6px;
   white-space: nowrap;
@@ -349,7 +349,7 @@
 .halaman-panduannya .text-wrapper-10 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 11.2px;
   line-height: 16.8px;
   white-space: nowrap;
@@ -358,7 +358,7 @@
 .halaman-panduannya .text-wrapper-11 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 16.8px;
   line-height: 25.2px;
 }
@@ -376,7 +376,7 @@
   margin: 0;
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 14.1px;
   line-height: 24.6px;
 }
@@ -425,7 +425,7 @@
   left: 89px;
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 16px;
   line-height: 20.8px;
   white-space: nowrap;
@@ -547,7 +547,7 @@
 .halaman-panduannya .container-14 {
   width: 6px;
   height: 6px;
-  background-color: #64748b;
+  background-color: #78716c;
   border-radius: 3px;
   flex-shrink: 0;
 }
@@ -583,7 +583,7 @@
 .halaman-panduannya .text-wrapper-18 {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 13.8px;
   line-height: 23.4px;
 }
@@ -755,7 +755,7 @@
 .halaman-panduannya .text-wrapper-20 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 13.8px;
   line-height: 20.6px;
   white-space: nowrap;
@@ -799,7 +799,7 @@
 .halaman-panduannya .container-30 {
   width: 7px;
   height: 7px;
-  background-color: #64748b;
+  background-color: #78716c;
   border-radius: 3.5px;
   box-shadow: 0 0 5px #64748b60;
 }
@@ -852,7 +852,7 @@
 .halaman-panduannya .text-wrapper-26 {
   font-family: "Nunito", "Nunito-SemiBold", Helvetica, sans-serif;
   font-weight: 600;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 13.1px;
   line-height: 17px;
 }
@@ -872,7 +872,7 @@
 .halaman-panduannya .text-wrapper-27 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 9.3px;
   line-height: 13.9px;
 }
@@ -911,6 +911,11 @@
   height: 36px;
   object-fit: cover;
   border-radius: 6px;
+  mix-blend-mode: lighten;
+}
+
+[data-theme="light"] .halaman-panduannya .techfixar-logo-footer {
+  mix-blend-mode: multiply;
 }
 
 .halaman-panduannya .footer-brand {
@@ -938,19 +943,19 @@
   border-radius: 8px;
   font-family: "Nunito", "Nunito-SemiBold", Helvetica, sans-serif;
   font-weight: 600;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 14px;
   line-height: 21px;
 }
 
 .halaman-panduannya .footer-link:hover {
-  color: #f8fafc;
+  color: #f0ede8;
 }
 
 .halaman-panduannya .footer-copy small {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #475569;
+  color: #57534e;
   font-size: 11px;
   line-height: 16px;
 }
@@ -1013,4 +1018,176 @@
     white-space: normal;
     right: 0;
   }
+}
+
+/* ===========================================
+   LIGHT THEME — Tutorial / Detail Panduan
+   =========================================== */
+
+[data-theme="light"] body,
+[data-theme="light"] .halaman-panduannya {
+  background-color: #ededed;
+  color: #1c1917;
+}
+
+/* Grid background */
+[data-theme="light"] .halaman-panduannya .grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Breadcrumb */
+[data-theme="light"] .halaman-panduannya .text-wrapper,
+[data-theme="light"] .halaman-panduannya .text-wrapper-3 {
+  color: #78716c;
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-2 {
+  color: #a8a29e;
+}
+
+/* Article heading */
+[data-theme="light"] .halaman-panduannya .panduan-lengkap-cara {
+  color: #1c1917;
+}
+
+/* Meta bar */
+[data-theme="light"] .halaman-panduannya .container-3 {
+  border-bottom-color: #e0dbd2;
+}
+[data-theme="light"] .halaman-panduannya .tech-team {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduannya .text-4 {
+  background-color: #e2e2e2;
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-5,
+[data-theme="light"] .halaman-panduannya .text-wrapper-6 {
+  color: #78716c;
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-9 {
+  color: #a8a29e;
+}
+
+/* Section intro text */
+[data-theme="light"] .halaman-panduannya .text-wrapper-10 {
+  color: #a8a29e;
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-11 {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduannya .socket {
+  color: #57534e;
+}
+
+/* Step divider */
+[data-theme="light"] .halaman-panduannya .container-8 {
+  border-bottom-color: #e0dbd2;
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-12 {
+  /* badge warna emerald — tetap */
+}
+[data-theme="light"] .halaman-panduannya .p {
+  color: #1c1917;
+}
+
+/* Step image card */
+[data-theme="light"] .halaman-panduannya .container-10 {
+  background-color: #e2e2e2;
+  border-color: #d4d4d4;
+}
+[data-theme="light"] .halaman-panduannya .container-11 {
+  background: linear-gradient(0deg, rgba(240, 237, 232, 0.9) 0%, rgba(240, 237, 232, 0) 100%);
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-13 {
+  color: rgba(15, 23, 42, 0.55);
+}
+
+/* Step list text */
+[data-theme="light"] .halaman-panduannya .letakkan-motherboard,
+[data-theme="light"] .halaman-panduannya .cari-tanda-segitiga,
+[data-theme="light"] .halaman-panduannya .tekan-tuas-ke-bawah,
+[data-theme="light"] .halaman-panduannya .setelah-CPU-masuk,
+[data-theme="light"] .halaman-panduannya .pastikan-tuas,
+[data-theme="light"] .halaman-panduannya .matikan-PC-dan-cabut,
+[data-theme="light"] .halaman-panduannya .cek-apakah-tuas,
+[data-theme="light"] .halaman-panduannya .periksa-konektor,
+[data-theme="light"] .halaman-panduannya .text-wrapper-14,
+[data-theme="light"] .halaman-panduannya .text-wrapper-17,
+[data-theme="light"] .halaman-panduannya .text-wrapper-18 {
+  color: #57534e;
+}
+
+/* Bullet dots list */
+[data-theme="light"] .halaman-panduannya .container-14 {
+  background-color: #a8a29e;
+}
+
+/* Warning box */
+[data-theme="light"] .halaman-panduannya .container-15,
+[data-theme="light"] .halaman-panduannya .container-24 {
+  background-color: rgba(220, 38, 38, 0.06);
+  border-color: rgba(220, 38, 38, 0.25);
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-15 {
+  color: #dc2626;
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-16,
+[data-theme="light"] .halaman-panduannya .jika-ada-pin-socket {
+  color: #b91c1c;
+}
+
+/* Tips box */
+[data-theme="light"] .halaman-panduannya .container-18,
+[data-theme="light"] .halaman-panduannya .container-23 {
+  background-color: rgba(5, 150, 105, 0.07);
+  border-color: rgba(5, 150, 105, 0.25);
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-19 {
+  color: #059669;
+}
+[data-theme="light"] .halaman-panduannya .jika-CPU-tidak-mau,
+[data-theme="light"] .halaman-panduannya .jika-menggunakan-CPU {
+  color: #047857;
+}
+
+/* Sidebar */
+[data-theme="light"] .halaman-panduannya .container-26 {
+  background-color: #f4f4f4;
+  border-color: #e2e2e2;
+}
+[data-theme="light"] .halaman-panduannya .container-27 {
+  border-bottom-color: #e0dbd2;
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-20 {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduannya .container-29 {
+  border-bottom-color: rgba(203, 213, 225, 0.7);
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-21,
+[data-theme="light"] .halaman-panduannya .text-wrapper-23,
+[data-theme="light"] .halaman-panduannya .text-wrapper-24,
+[data-theme="light"] .halaman-panduannya .text-wrapper-26 {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduannya .text-wrapper-22,
+[data-theme="light"] .halaman-panduannya .text-wrapper-25,
+[data-theme="light"] .halaman-panduannya .text-wrapper-27 {
+  color: #a8a29e;
+}
+
+/* Footer */
+[data-theme="light"] .halaman-panduannya .footer {
+  background-color: #e2e2e2;
+  border-top-color: #d6d0c8;
+}
+[data-theme="light"] .halaman-panduannya .footer-link {
+  color: #57534e;
+}
+[data-theme="light"] .halaman-panduannya .footer-link:hover {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduannya .footer-copy small {
+  color: #78716c;
 }

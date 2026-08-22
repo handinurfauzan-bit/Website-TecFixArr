@@ -672,3 +672,154 @@
     width: 100%;
   }
 }
+
+/* ===========================================
+   LIGHT THEME — Panduan Baru Admin
+   =========================================== */
+
+[data-theme="light"] .editor-shell {
+  background: #f2f2f0;
+}
+
+[data-theme="light"] .editor-header {
+  background: rgba(247, 244, 240, 0.95);
+  border-bottom-color: #e0dbd2;
+}
+
+[data-theme="light"] .editor-header__title {
+  color: #1c1917;
+}
+[data-theme="light"] .editor-back {
+  color: #78716c;
+}
+[data-theme="light"] .editor-back:hover {
+  color: #1c1917;
+}
+
+/* Tabs */
+[data-theme="light"] .editor-tab {
+  color: #78716c;
+}
+[data-theme="light"] .editor-tab:hover {
+  color: #1c1917;
+}
+
+/* Btn draft */
+[data-theme="light"] .btn-draft {
+  border-color: #d4d4d4;
+  color: #57534e;
+}
+[data-theme="light"] .btn-draft:hover {
+  color: #1c1917;
+  border-color: #a8a29e;
+}
+
+/* Guide form */
+[data-theme="light"] .guide-label {
+  color: #78716c;
+}
+[data-theme="light"] .guide-title {
+  background: #f4f4f4;
+  border-color: #e0dbd2;
+  color: #1c1917;
+}
+[data-theme="light"] .guide-title:focus {
+  border-color: rgba(5, 150, 105, 0.5);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.10);
+}
+[data-theme="light"] .guide-hint {
+  color: #a8a29e;
+}
+
+/* Type cards */
+[data-theme="light"] .type-card {
+  background: #f4f4f4;
+  border-color: #e0dbd2;
+}
+[data-theme="light"] .type-card:hover {
+  border-color: #a8a29e;
+}
+[data-theme="light"] .type-card__title {
+  color: #1c1917;
+}
+[data-theme="light"] .type-card__desc {
+  color: #78716c;
+}
+[data-theme="light"] .type-card__icon {
+  color: #78716c;
+}
+
+/* Tools input */
+[data-theme="light"] .tool-input {
+  background: #f4f4f4;
+  border-color: #e0dbd2;
+  color: #1c1917;
+}
+[data-theme="light"] .tool-input::placeholder {
+  color: #a8a29e;
+}
+[data-theme="light"] .tool-input:focus {
+  border-color: rgba(5, 150, 105, 0.5);
+}
+
+/* Steps rail */
+[data-theme="light"] .steps-rail__label {
+  color: #a8a29e;
+}
+[data-theme="light"] .step-chip {
+  background: #f4f4f4;
+  border-color: #e0dbd2;
+  color: #1c1917;
+}
+[data-theme="light"] .step-chip:hover {
+  border-color: #a8a29e;
+}
+[data-theme="light"] .step-chip__num {
+  color: #a8a29e;
+}
+[data-theme="light"] .step-chip__title {
+  color: #57534e;
+}
+[data-theme="light"] .steps-add-btn {
+  background: #f2f2f0;
+  border-color: #e0dbd2;
+  color: #57534e;
+}
+[data-theme="light"] .steps-add-btn:hover {
+  color: #1c1917;
+  border-color: #a8a29e;
+}
+
+/* Step canvas */
+[data-theme="light"] .step-canvas {
+  background: #f4f4f4;
+  border-color: #e0dbd2;
+}
+[data-theme="light"] .step-title-field {
+  color: #1c1917;
+}
+[data-theme="light"] .step-title-field::placeholder {
+  color: #a8a29e;
+}
+[data-theme="light"] .media-drop {
+  background: #f2f2f0;
+  border-color: #e0dbd2;
+  color: #78716c;
+}
+[data-theme="light"] .media-drop__hint {
+  color: #a8a29e;
+}
+[data-theme="light"] .media-video {
+  background: #f2f2f0;
+  border-color: #e0dbd2;
+  color: #78716c;
+}
+[data-theme="light"] .instr-row {
+  color: #a8a29e;
+}
+[data-theme="light"] .instr-input {
+  color: #1c1917;
+}
+[data-theme="light"] .instr-input::placeholder {
+  color: #a8a29e;
+}

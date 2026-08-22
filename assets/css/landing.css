@@ -12,8 +12,8 @@ html {
 }
 
 body {
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,7 +48,7 @@ a {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #0f172a;
+  background-color: var(--color-bg);
   overflow-x: hidden;
   position: relative;
 }
@@ -167,7 +167,7 @@ a {
 }
 
 .responsive-landing .span {
-  color: #f8fafc;
+  color: #f0ede8;
 }
 
 .responsive-landing .text-wrapper-2 {
@@ -185,7 +185,7 @@ a {
 .responsive-landing .uji-kecocokan {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 16px;
   line-height: 1.7;
   text-align: center;
@@ -237,7 +237,7 @@ a {
 .responsive-landing .text-wrapper-3 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #ffffff;
+  color: #f7f4f0;
   font-size: 15px;
   white-space: nowrap;
 }
@@ -258,7 +258,7 @@ a {
 .responsive-landing .text-wrapper-4 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 15px;
   white-space: nowrap;
 }
@@ -346,7 +346,7 @@ a {
 .responsive-landing .p {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: clamp(20px, 3vw, 30px);
   text-align: center;
 }
@@ -509,7 +509,7 @@ a {
 .responsive-landing .text-wrapper-8 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 16px;
   line-height: 1.4;
 }
@@ -517,7 +517,7 @@ a {
 .responsive-landing .text-wrapper-9 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 13.5px;
   line-height: 1.6;
 }
@@ -634,7 +634,7 @@ a {
 .responsive-landing .text-wrapper-25 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: clamp(20px, 3vw, 28px);
 }
 
@@ -821,7 +821,7 @@ a {
 .responsive-landing .text-wrapper-19 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 15.5px;
 }
 
@@ -832,7 +832,7 @@ a {
 .responsive-landing .text-wrapper-20 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -859,7 +859,7 @@ a {
 .responsive-landing .text-wrapper-24 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 11px;
 }
 
@@ -897,7 +897,7 @@ a {
   position: relative;
   width: 100%;
   height: 160px;
-  background-color: #0f172a;
+  background-color: #1c1917;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -996,7 +996,7 @@ a {
 .responsive-landing .text-wrapper-27 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 15px;
   line-height: 1.4;
 }
@@ -1008,7 +1008,7 @@ a {
 .responsive-landing .text-wrapper-28 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 12.8px;
   line-height: 1.55;
 }
@@ -1049,7 +1049,7 @@ a {
 .responsive-landing .text-wrapper-29 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 10.9px;
 }
 
@@ -1142,7 +1142,7 @@ a {
 .responsive-landing .text-wrapper-32 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: clamp(22px, 3.5vw, 34px);
   line-height: 1.2;
   text-align: center;
@@ -1156,7 +1156,7 @@ a {
 .responsive-landing .pilih-cocokkan-dan {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 15px;
   line-height: 1.7;
   text-align: center;
@@ -1187,7 +1187,7 @@ a {
 .responsive-landing .text-wrapper-33 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #ffffff;
+  color: #f7f4f0;
   font-size: 15.5px;
   white-space: nowrap;
 }
@@ -1203,7 +1203,7 @@ a {
   gap: 20px;
   padding: 28px 48px;
   width: 100%;
-  background-color: #0a1120;
+  background-color: #0c1525;
   border-top: 1px solid #1e293b;
   position: relative;
   z-index: 1;
@@ -1227,6 +1227,11 @@ a {
   height: 32px;
   object-fit: contain;
   border-radius: 6px;
+  mix-blend-mode: lighten;
+}
+
+[data-theme="light"] .responsive-landing .techfixar-logo {
+  mix-blend-mode: multiply;
 }
 
 .responsive-landing .tech-fix-ar {
@@ -1275,7 +1280,7 @@ a {
 .responsive-landing .text-wrapper-39 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 13px;
   transition: color 0.2s;
 }
@@ -1284,7 +1289,7 @@ a {
 .responsive-landing .button-8:hover .text-wrapper-37,
 .responsive-landing .button-9:hover .text-wrapper-38,
 .responsive-landing .button-10:hover .text-wrapper-39 {
-  color: #94a3b8;
+  color: #a8a29e;
 }
 
 .responsive-landing .text-14 {
@@ -1295,7 +1300,7 @@ a {
 .responsive-landing .text-wrapper-40 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #475569;
+  color: #57534e;
   font-size: 12px;
 }
 
@@ -1324,7 +1329,7 @@ a {
 .responsive-landing .text-wrapper-45 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #64748b;
+  color: #78716c;
   font-size: 11px;
   letter-spacing: 0.5px;
 }
@@ -1442,4 +1447,164 @@ a {
 
 .responsive-landing .icon-clock svg {
   display: block;
+}
+
+/* ===========================================
+   LIGHT THEME — Landing Page
+   =========================================== */
+
+/* Root wrapper & body */
+[data-theme="light"] body,
+[data-theme="light"] .responsive-landing {
+  background-color: #ededed;
+  color: #1c1917;
+}
+
+/* Grid background lebih soft */
+[data-theme="light"] .responsive-landing .grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Hero text */
+[data-theme="light"] .responsive-landing .span {
+  color: #1c1917;
+}
+[data-theme="light"] .responsive-landing .uji-kecocokan {
+  color: #57534e;
+}
+[data-theme="light"] .responsive-landing .p {
+  color: #1c1917;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-16,
+[data-theme="light"] .responsive-landing .text-wrapper-25 {
+  color: #1c1917;
+}
+
+/* Tombol outline hero */
+[data-theme="light"] .responsive-landing .button-2 {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: #d4d4d4;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-4 {
+  color: #1c1917;
+}
+
+/* Cards fitur (section 2) */
+[data-theme="light"] .responsive-landing .container-8,
+[data-theme="light"] .responsive-landing .container-14,
+[data-theme="light"] .responsive-landing .container-18 {
+  background-color: #f4f4f4;
+  border-color: #e2e2e2;
+}
+[data-theme="light"] .responsive-landing .container-8  { border-color: rgba(5, 150, 105, 0.30); }
+[data-theme="light"] .responsive-landing .container-14 { border-color: rgba(37, 99, 235, 0.30); }
+[data-theme="light"] .responsive-landing .container-18 { border-color: rgba(139, 92, 246, 0.30); }
+
+[data-theme="light"] .responsive-landing .text-wrapper-8 {
+  color: #1c1917;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-9 {
+  color: #57534e;
+}
+
+/* Footer link kartu */
+[data-theme="light"] .responsive-landing .container-13,
+[data-theme="light"] .responsive-landing .container-17,
+[data-theme="light"] .responsive-landing .container-21 {
+  border-top-color: #e2e2e2;
+}
+
+/* Cards kategori (section 3) */
+[data-theme="light"] .responsive-landing .container-25,
+[data-theme="light"] .responsive-landing .container-29,
+[data-theme="light"] .responsive-landing .container-30 {
+  background-color: #f4f4f4;
+  border-color: #e2e2e2;
+}
+[data-theme="light"] .responsive-landing .container-25:hover { border-color: rgba(37, 99, 235, 0.50); }
+[data-theme="light"] .responsive-landing .container-29:hover { border-color: rgba(245, 158, 11, 0.50); }
+[data-theme="light"] .responsive-landing .container-30:hover { border-color: rgba(239, 68, 68, 0.50); }
+
+[data-theme="light"] .responsive-landing .text-wrapper-19 {
+  color: #1c1917;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-20 {
+  color: #57534e;
+}
+[data-theme="light"] .responsive-landing .container-28 {
+  border-top-color: #e2e2e2;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-21,
+[data-theme="light"] .responsive-landing .text-wrapper-24 {
+  color: #78716c;
+}
+
+/* Cards tutorial (section 4) */
+[data-theme="light"] .responsive-landing .tut-card,
+[data-theme="light"] .responsive-landing .tut-card-2,
+[data-theme="light"] .responsive-landing .tut-card-3 {
+  background-color: #f4f4f4;
+  border-color: #e2e2e2;
+}
+[data-theme="light"] .responsive-landing .container-33 {
+  background-color: #e2e2e2;
+}
+[data-theme="light"] .responsive-landing .container-34 {
+  background: linear-gradient(0deg, rgba(240, 237, 232, 0.9) 0%, transparent 55%);
+}
+[data-theme="light"] .responsive-landing .text-wrapper-27 {
+  color: #1c1917;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-28 {
+  color: #57534e;
+}
+[data-theme="light"] .responsive-landing .container-37 {
+  border-top-color: #e2e2e2;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-29 {
+  color: #78716c;
+}
+
+/* Section 5 — CTA card */
+[data-theme="light"] .responsive-landing .container-38 {
+  background-color: #f4f4f4;
+  border-color: rgba(5, 150, 105, 0.25);
+}
+[data-theme="light"] .responsive-landing .text-wrapper-32 {
+  color: #1c1917;
+}
+[data-theme="light"] .responsive-landing .pilih-cocokkan-dan {
+  color: #57534e;
+}
+
+/* Footer */
+[data-theme="light"] .responsive-landing .footer {
+  background-color: #e2e2e2;
+  border-top-color: #d6d0c8;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-36,
+[data-theme="light"] .responsive-landing .text-wrapper-37,
+[data-theme="light"] .responsive-landing .text-wrapper-38,
+[data-theme="light"] .responsive-landing .text-wrapper-39 {
+  color: #78716c;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-40 {
+  color: #78716c;
+}
+[data-theme="light"] .responsive-landing .button-7:hover .text-wrapper-36,
+[data-theme="light"] .responsive-landing .button-8:hover .text-wrapper-37,
+[data-theme="light"] .responsive-landing .button-9:hover .text-wrapper-38,
+[data-theme="light"] .responsive-landing .button-10:hover .text-wrapper-39 {
+  color: #57534e;
+}
+
+/* Admin fixed button */
+[data-theme="light"] .responsive-landing .app-2 {
+  background-color: #f4f4f4;
+  border-color: #d4d4d4;
+}
+[data-theme="light"] .responsive-landing .text-wrapper-45 {
+  color: #78716c;
 }

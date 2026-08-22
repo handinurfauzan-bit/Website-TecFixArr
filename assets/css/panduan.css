@@ -14,9 +14,24 @@ html {
 }
 
 body {
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Grid kotak-kotak latar */
+.halaman-panduan .grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 img {
@@ -49,7 +64,7 @@ a {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #0f172a;
+  background-color: var(--color-bg);
   overflow-x: hidden;
   position: relative;
 }
@@ -156,7 +171,7 @@ a {
 .halaman-panduan .pusat-panduan-servis {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: clamp(24px, 3.5vw, 36px);
   letter-spacing: -0.96px;
   line-height: 1.2;
@@ -169,7 +184,7 @@ a {
 .halaman-panduan .kumpulan-artikel {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 15px;
   line-height: 1.65;
 }
@@ -253,7 +268,7 @@ a {
   border: 0;
   outline: 0;
   background: transparent;
-  color: #f8fafc;
+  color: #f0ede8;
   font-family: "Nunito", Helvetica, sans-serif;
   font-size: 13.8px;
   padding: 0;
@@ -284,7 +299,7 @@ a {
 .halaman-panduan .text-wrapper-3 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 10.4px;
   white-space: nowrap;
 }
@@ -344,13 +359,13 @@ a {
 
 .halaman-panduan .button-2:hover,
 .halaman-panduan .button-3:hover {
-  border-color: #475569;
+  border-color: #57534e;
 }
 
 .halaman-panduan .text-wrapper-6 {
   font-family: "Nunito", "Nunito-SemiBold", Helvetica, sans-serif;
   font-weight: 600;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 13px;
   white-space: nowrap;
 }
@@ -358,7 +373,7 @@ a {
 .halaman-panduan .text-wrapper-7 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 9.9px;
   opacity: 0.75;
 }
@@ -406,7 +421,7 @@ a {
 .halaman-panduan .container-21:hover,
 .halaman-panduan .container-23:hover,
 .halaman-panduan .container-24:hover {
-  border-color: #475569;
+  border-color: #57534e;
   transform: translateY(-2px);
 }
 
@@ -415,7 +430,7 @@ a {
   position: relative;
   width: 100%;
   height: 170px;
-  background-color: #0f172a;
+  background-color: #1c1917;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -528,7 +543,7 @@ a {
 .halaman-panduan .panduan-ganti {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: 14.7px;
   letter-spacing: -0.15px;
   line-height: 1.5;
@@ -543,7 +558,7 @@ a {
 .halaman-panduan .text-wrapper-9 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 12.5px;
   line-height: 1.6;
 }
@@ -592,7 +607,7 @@ a {
 .halaman-panduan .text-wrapper-13 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 9.9px;
   white-space: nowrap;
 }
@@ -629,7 +644,7 @@ a {
 .halaman-panduan .text-wrapper-14 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 9.9px;
   white-space: nowrap;
 }
@@ -668,13 +683,13 @@ a {
 }
 
 .halaman-panduan .button-4:hover {
-  border-color: #475569;
+  border-color: #57534e;
 }
 
 .halaman-panduan .text-wrapper-15 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 14px;
   white-space: nowrap;
 }
@@ -747,7 +762,7 @@ a {
 .halaman-panduan .text-wrapper-17 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f8fafc;
+  color: #f0ede8;
   font-size: clamp(18px, 2.5vw, 22px);
   letter-spacing: -0.45px;
   line-height: 1.4;
@@ -761,7 +776,7 @@ a {
 .halaman-panduan .gunakan-simulasi {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #94a3b8;
+  color: #a8a29e;
   font-size: 13.8px;
   line-height: 1.6;
 }
@@ -803,7 +818,7 @@ a {
 .halaman-panduan .text-wrapper-18 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #ffffff;
+  color: #f7f4f0;
   font-size: 14.4px;
 }
 
@@ -832,7 +847,7 @@ a {
 .halaman-panduan .text-wrapper-23 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #64748b;
+  color: #78716c;
   font-size: 9.6px;
   letter-spacing: 0.67px;
 }
@@ -892,10 +907,156 @@ a {
 .halaman-panduan .artikel-link:focus-visible > article {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  border-color: #475569;
+  border-color: #57534e;
 }
 
 .halaman-panduan .artikel-link:focus-visible > article {
   outline: 2px solid #10b981;
   outline-offset: 2px;
+}
+
+/* ===========================================
+   LIGHT THEME — Halaman Panduan
+   =========================================== */
+
+[data-theme="light"] body,
+[data-theme="light"] .halaman-panduan {
+  background-color: #ededed;
+  color: #1c1917;
+}
+
+[data-theme="light"] .halaman-panduan .grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Hero text */
+[data-theme="light"] .halaman-panduan .pusat-panduan-servis {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduan .kumpulan-artikel {
+  color: #57534e;
+}
+
+/* Filter bar — search */
+[data-theme="light"] .halaman-panduan .container-8 {
+  background-color: #f4f4f4;
+  border-color: #d4d4d4;
+}
+[data-theme="light"] .halaman-panduan .container-8:focus-within {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+}
+[data-theme="light"] .halaman-panduan .text-input input {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduan .text-input input::placeholder {
+  color: rgba(15, 23, 42, 0.35);
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-2 {
+  color: rgba(15, 23, 42, 0.4);
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-3 {
+  color: #a8a29e;
+}
+
+/* Filter tombol non-aktif */
+[data-theme="light"] .halaman-panduan .button-2,
+[data-theme="light"] .halaman-panduan .button-3 {
+  background-color: #f4f4f4;
+  border-color: #d4d4d4;
+}
+[data-theme="light"] .halaman-panduan .button-2:hover,
+[data-theme="light"] .halaman-panduan .button-3:hover {
+  border-color: #a8a29e;
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-6 {
+  color: #57534e;
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-7 {
+  color: #57534e;
+}
+
+/* Cards artikel */
+[data-theme="light"] .halaman-panduan .container-11,
+[data-theme="light"] .halaman-panduan .container-17,
+[data-theme="light"] .halaman-panduan .container-20,
+[data-theme="light"] .halaman-panduan .container-21,
+[data-theme="light"] .halaman-panduan .container-23,
+[data-theme="light"] .halaman-panduan .container-24 {
+  background-color: #f4f4f4;
+  border-color: #e2e2e2;
+}
+[data-theme="light"] .halaman-panduan .container-11:hover,
+[data-theme="light"] .halaman-panduan .container-17:hover,
+[data-theme="light"] .halaman-panduan .container-20:hover,
+[data-theme="light"] .halaman-panduan .container-21:hover,
+[data-theme="light"] .halaman-panduan .container-23:hover,
+[data-theme="light"] .halaman-panduan .container-24:hover {
+  border-color: #a8a29e;
+}
+
+/* Image placeholder lebih terang */
+[data-theme="light"] .halaman-panduan .container-12 {
+  background-color: #e2e2e2;
+}
+[data-theme="light"] .halaman-panduan .container-13 {
+  background: linear-gradient(0deg, rgba(240, 237, 232, 0.88) 0%, rgba(240, 237, 232, 0.08) 55%);
+}
+
+/* Judul & deskripsi kartu */
+[data-theme="light"] .halaman-panduan .p,
+[data-theme="light"] .halaman-panduan .panduan-ganti {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-9 {
+  color: #78716c;
+}
+
+/* Footer kartu */
+[data-theme="light"] .halaman-panduan .container-wrapper {
+  border-top-color: rgba(203, 213, 225, 0.8);
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-10,
+[data-theme="light"] .halaman-panduan .text-wrapper-13,
+[data-theme="light"] .halaman-panduan .text-wrapper-11,
+[data-theme="light"] .halaman-panduan .text-wrapper-14 {
+  color: #a8a29e;
+}
+[data-theme="light"] .halaman-panduan .text-4 {
+  background-color: #d6d0c8;
+}
+
+/* Tombol muat lebih */
+[data-theme="light"] .halaman-panduan .button-4 {
+  background-color: #f4f4f4;
+  border-color: #d4d4d4;
+}
+[data-theme="light"] .halaman-panduan .button-4:hover {
+  border-color: #a8a29e;
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-15 {
+  color: #57534e;
+}
+
+/* Banner CTA simulasi */
+[data-theme="light"] .halaman-panduan .container-25 {
+  background: linear-gradient(117deg, rgba(5, 150, 105, 0.07) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border-color: rgba(5, 150, 105, 0.25);
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-17 {
+  color: #1c1917;
+}
+[data-theme="light"] .halaman-panduan .gunakan-simulasi {
+  color: #57534e;
+}
+
+/* Admin fixed button */
+[data-theme="light"] .halaman-panduan .app-2 {
+  background-color: #f4f4f4;
+  border-color: #d4d4d4;
+}
+[data-theme="light"] .halaman-panduan .text-wrapper-23 {
+  color: #78716c;
 }

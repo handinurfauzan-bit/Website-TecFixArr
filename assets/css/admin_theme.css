@@ -15,9 +15,9 @@
   --border: #334155;
   --line: #334155;
   --line-soft: #1e293b;
-  --text: #f8fafc;
-  --muted: #94a3b8;
-  --faint: #64748b;
+  --text: #f0ede8;
+  --muted: #a8a29e;
+  --faint: #78716c;
   --accent: #10b981;
   --accent-bright: #34d399;
   --accent-dim: rgba(16, 185, 129, 0.14);
@@ -115,7 +115,7 @@
   height: 40px;
   border-radius: 10px;
   background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
-  color: #ffffff;
+  color: #f7f4f0;
   box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
   flex-shrink: 0;
 }
@@ -242,7 +242,7 @@
   height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: #ffffff;
+  color: #f7f4f0;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -342,7 +342,7 @@
 
 .btn-draft:hover {
   color: var(--text);
-  border-color: #475569;
+  border-color: #57534e;
 }
 
 .btn-publish,
@@ -415,4 +415,96 @@
     flex: 1;
     min-width: 200px;
   }
+}
+
+/* ===========================================
+   THEME TOGGLE — Admin Sidebar
+   =========================================== */
+.admin-theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: "Nunito", Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.admin-theme-toggle:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.admin-theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.admin-theme-toggle .icon-moon { display: block; }
+.admin-theme-toggle .icon-sun  { display: none;  }
+
+[data-theme="light"] .admin-theme-toggle .icon-moon { display: none;  }
+[data-theme="light"] .admin-theme-toggle .icon-sun  { display: block; }
+
+/* ===========================================
+   LIGHT THEME — Admin
+   =========================================== */
+[data-theme="light"] .admin-app {
+  --bg: #ededed;
+  --bg-elevated: #f4f4f4;
+  --bg-2: #f0ede8;
+  --panel: #f7f4f0;
+  --panel-2: #f0ede8;
+  --panel-hover: #f0ede8;
+  --border: #d6d0c8;
+  --line: #d6d0c8;
+  --line-soft: #e0dbd2;
+  --text: #1c1917;
+  --muted: #57534e;
+  --faint: #a8a29e;
+  --accent: #059669;
+  --accent-bright: #10b981;
+  --accent-dim: rgba(5, 150, 105, 0.10);
+  --accent-border: rgba(5, 150, 105, 0.35);
+  --accent-deep: #047857;
+  --teal: #059669;
+  --teal-dim: rgba(5, 150, 105, 0.10);
+  --teal-border: rgba(5, 150, 105, 0.35);
+  --blue: #2563eb;
+  --blue-dim: rgba(37, 99, 235, 0.10);
+  --sky: #2563eb;
+  --sky-dim: rgba(37, 99, 235, 0.10);
+  --danger: #dc2626;
+  --danger-dim: rgba(220, 38, 38, 0.10);
+  background-color: var(--bg);
+}
+
+/* Grid overlay — light */
+[data-theme="light"] .admin-app::before {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Glow overlay — lighter tint */
+[data-theme="light"] .admin-app::after {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(5, 150, 105, 0.06) 0%,
+    transparent 70%
+  );
+}
+
+/* Sidebar */
+[data-theme="light"] .admin-sidebar {
+  background: rgba(247, 244, 240, 0.95);
+  border-right-color: #d6d0c8;
 }
