@@ -417,6 +417,39 @@
   }
 }
 
+/* ---------- Sidebar bottom ---------- */
+
+.admin-sidebar__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.admin-logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: transparent;
+  color: var(--danger);
+  font-family: "Nunito", Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.admin-logout:hover {
+  background: var(--danger-dim);
+}
+
 /* ===========================================
    THEME TOGGLE — Admin Sidebar
    =========================================== */
