@@ -1,0 +1,17 @@
+# ── CodeIgniter 4 ──────────────────────────
+techfixar-backend/.env
+techfixar-backend/vendor/
+techfixar-backend/writable/cache/*
+techfixar-backend/writable/debugbar/*
+techfixar-backend/writable/logs/*
+techfixar-backend/writable/session/*
+techfixar-backend/writable/uploads/*
+!techfixar-backend/writable/**/.gitkeep
+!techfixar-backend/writable/**/index.html
+
+# ── OS & Editor ────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/settings.json
+*.log
