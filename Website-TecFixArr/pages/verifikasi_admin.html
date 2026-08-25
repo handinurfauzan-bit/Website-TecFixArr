@@ -1,0 +1,419 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Verifikasi dan kelola pendaftaran akun admin baru TechFixAr." />
+    <title>Verifikasi Admin | TechFixAr</title>
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/globals.css" />
+    <link rel="stylesheet" href="../assets/css/admin_theme.css" />
+    <link rel="stylesheet" href="../assets/css/verifikasi_admin.css" />
+  </head>
+  <body>
+    <div class="admin-app">
+
+      <!-- SIDEBAR -->
+      <aside class="admin-sidebar" aria-label="Navigasi admin">
+        <div class="admin-sidebar__top">
+          <a class="admin-brand" href="Landing.html" aria-label="TechFixAr, kembali ke beranda">
+            <span class="admin-brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                <path d="M3 12h4l2-5 4 10 2-5h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="admin-brand__title">
+              <span class="admin-brand__title-text">TechFix</span><span class="admin-brand__title-accent">Ar</span>
+            </span>
+          </a>
+
+          <nav class="admin-nav" aria-label="Menu admin">
+            <a href="Kelola_panduan_admin.html" class="admin-nav__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              <span>Kelola Panduan</span>
+            </a>
+            <a href="verifikasi_admin.html" class="admin-nav__item admin-nav__item--active">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>Verifikasi Admin</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="admin-sidebar__bottom">
+          <button class="admin-theme-toggle" data-theme-toggle aria-label="Ganti tema">
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <span>Tema</span>
+          </button>
+          <a href="Landing.html" class="admin-logout">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+            </svg>
+            <span>Keluar</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="verif-main">
+
+        <!-- HEADER -->
+        <header class="verif-header">
+          <div>
+            <h1 class="verif-header__title">Verifikasi Akun Admin</h1>
+            <p class="verif-header__subtitle">Tinjau dan setujui pendaftaran admin baru sebelum akun aktif.</p>
+          </div>
+          <div class="verif-pending-badge">
+            <span class="verif-dot verif-dot--yellow"></span>
+            <span>2 Menunggu Persetujuan</span>
+          </div>
+        </header>
+
+        <!-- STATS -->
+        <section class="verif-stats" aria-label="Statistik admin">
+          <div class="verif-stat-card">
+            <div class="verif-stat-card__value verif-stat-card__value--blue">5</div>
+            <div class="verif-stat-card__info">
+              <span class="verif-stat-card__label">TOTAL</span>
+              <span class="verif-stat-card__name">Total Admin Terdaftar</span>
+            </div>
+          </div>
+          <div class="verif-stat-card">
+            <div class="verif-stat-card__value verif-stat-card__value--green">2</div>
+            <div class="verif-stat-card__info">
+              <span class="verif-stat-card__label">AKTIF</span>
+              <span class="verif-stat-card__name">Admin Aktif</span>
+            </div>
+          </div>
+          <div class="verif-stat-card">
+            <div class="verif-stat-card__value verif-stat-card__value--yellow">2</div>
+            <div class="verif-stat-card__info">
+              <span class="verif-stat-card__label">PENDING</span>
+              <span class="verif-stat-card__name">Menunggu Verifikasi</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- FILTER & SEARCH -->
+        <section class="verif-controls">
+          <div class="verif-filter-tabs" role="tablist">
+            <button class="verif-filter-tab verif-filter-tab--active" role="tab">Semua (5)</button>
+            <button class="verif-filter-tab" role="tab">Pending (2)</button>
+            <button class="verif-filter-tab" role="tab">Aktif (2)</button>
+            <button class="verif-filter-tab" role="tab">Ditolak (1)</button>
+          </div>
+          <div class="verif-search">
+            <svg class="verif-search__icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input class="verif-search__input" type="text" placeholder="Cari nama atau email..." aria-label="Cari admin" />
+          </div>
+        </section>
+
+        <!-- TABLE -->
+        <section class="verif-table-wrap">
+          <table class="verif-table" aria-label="Daftar admin">
+            <thead>
+              <tr>
+                <th>Admin</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Terdaftar</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="verif-table__user">
+                  <div class="verif-avatar verif-avatar--yellow">RF</div>
+                  <div><span class="verif-table__name">Reza Firmansyah</span><span class="verif-table__email">reza@rakitin.id</span></div>
+                </td>
+                <td>Editor</td>
+                <td><span class="verif-badge verif-badge--pending"><span class="verif-dot verif-dot--yellow"></span>Pending</span></td>
+                <td>31 Jul 2026</td>
+                <td class="verif-table__actions">
+                  <button class="verif-btn verif-btn--approve">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Setujui
+                  </button>
+                  <button class="verif-btn verif-btn--reject">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Tolak
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="verif-table__user">
+                  <div class="verif-avatar verif-avatar--green">SM</div>
+                  <div><span class="verif-table__name">Siti Maharani</span><span class="verif-table__email">siti@rakitin.id</span></div>
+                </td>
+                <td>Moderator</td>
+                <td><span class="verif-badge verif-badge--pending"><span class="verif-dot verif-dot--yellow"></span>Pending</span></td>
+                <td>30 Jul 2026</td>
+                <td class="verif-table__actions">
+                  <button class="verif-btn verif-btn--approve">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Setujui
+                  </button>
+                  <button class="verif-btn verif-btn--reject">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Tolak
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="verif-table__user">
+                  <div class="verif-avatar verif-avatar--purple">DP</div>
+                  <div><span class="verif-table__name">Dimas Pratama</span><span class="verif-table__email">dimas@rakitin.id</span></div>
+                </td>
+                <td>Kontributor</td>
+                <td><span class="verif-badge verif-badge--active"><span class="verif-dot verif-dot--green"></span>Aktif</span></td>
+                <td>28 Jul 2026</td>
+                <td><span class="verif-table__status-done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sudah aktif</span></td>
+              </tr>
+              <tr>
+                <td class="verif-table__user">
+                  <div class="verif-avatar verif-avatar--blue">NK</div>
+                  <div><span class="verif-table__name">Nadia Kusuma</span><span class="verif-table__email">nadia@rakitin.id</span></div>
+                </td>
+                <td>Editor</td>
+                <td><span class="verif-badge verif-badge--active"><span class="verif-dot verif-dot--green"></span>Aktif</span></td>
+                <td>25 Jul 2026</td>
+                <td><span class="verif-table__status-done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sudah aktif</span></td>
+              </tr>
+              <tr>
+                <td class="verif-table__user">
+                  <div class="verif-avatar verif-avatar--red">FN</div>
+                  <div><span class="verif-table__name">Fajar Nugroho</span><span class="verif-table__email">fajar@rakitin.id</span></div>
+                </td>
+                <td>Kontributor</td>
+                <td><span class="verif-badge verif-badge--rejected"><span class="verif-dot verif-dot--red"></span>Ditolak</span></td>
+                <td>22 Jul 2026</td>
+                <td><span class="verif-table__status-reject"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Ditolak</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </main>
+    </div>
+  </body>
+</html>
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <div class="logo">
+            <img src="https://via.placeholder.com/24" alt="Logo" />
+            <!-- Ganti placeholder dengan logo asli -->
+            <span class="logo-text"
+              >TechFix<span class="ar-text">Ar</span></span
+            >
+          </div>
+
+          <nav class="nav-links">
+            <a href="#" class="nav-item">
+              <i class="bx bx-book-content"></i>
+              <span>Kelola Panduan & Troubleshooting</span>
+            </a>
+            <a href="#" class="nav-item active">
+              <i class="bx bx-user-check"></i>
+              <span>Verifikasi Akun Admin</span>
+            </a>
+          </nav>
+        </div>
+
+        <a href="#" class="logout-link">
+          <i class="bx bx-log-out"></i>
+          <span>Keluar</span>
+        </a>
+      </aside>
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="main-content">
+        <!-- HEADER -->
+        <header class="content-header">
+          <div>
+            <h1 class="page-title">Verifikasi Akun Admin</h1>
+            <p class="page-subtitle">
+              Tinjau dan setujui pendaftaran admin baru sebelum akun aktif.
+            </p>
+          </div>
+          <div class="pending-notification">
+            <span class="dot yellow-dot"></span>
+            <span>2 Menunggu Persetujuan</span>
+          </div>
+        </header>
+
+        <!-- STATS CARDS -->
+        <section class="stats-grid">
+          <div class="stat-card total">
+            <div class="stat-value text-blue">5</div>
+            <div class="stat-info">
+              <span class="stat-label">TOTAL</span>
+              <span class="stat-name">Total Admin Terdaftar</span>
+            </div>
+          </div>
+          <div class="stat-card total-active">
+            <div class="stat-value text-green">2</div>
+            <div class="stat-info">
+              <span class="stat-label">TOTAL</span>
+              <span class="stat-name">Admin Aktif</span>
+            </div>
+          </div>
+          <div class="stat-card pending">
+            <div class="stat-value text-yellow">2</div>
+            <div class="stat-info">
+              <span class="stat-label">TOTAL</span>
+              <span class="stat-name">Menunggu Verifikasi</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- FILTERS & SEARCH -->
+        <section class="controls-row">
+          <div class="filter-tabs">
+            <button class="filter-tab active">Semua (5)</button>
+            <button class="filter-tab">Pending (2)</button>
+            <button class="filter-tab">Aktif (2)</button>
+            <button class="filter-tab">Ditolak (1)</button>
+          </div>
+          <div class="search-box">
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Cari nama atau email..." />
+          </div>
+        </section>
+
+        <!-- TABLE CONTAINER -->
+        <section class="table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Admin</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Terdaftar</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- ROW 1 -->
+              <tr>
+                <td class="user-cell">
+                  <div class="avatar-circle av-rf">RF</div>
+                  <div>
+                    <span class="user-name">Reza Firmansyah</span>
+                    <span class="user-email">reza@rakitin.id</span>
+                  </div>
+                </td>
+                <td>Editor</td>
+                <td>
+                  <span class="badge badge-pending">
+                    <span class="dot yellow-dot"></span> Pending
+                  </span>
+                </td>
+                <td>31 Jul 2026</td>
+                <td class="action-cell">
+                  <button class="btn btn-approve">
+                    <i class="bx bx-check"></i> Setujui
+                  </button>
+                  <button class="btn btn-reject">
+                    <i class="bx bx-x"></i> Tolak
+                  </button>
+                </td>
+              </tr>
+              <!-- ROW 2 -->
+              <tr>
+                <td class="user-cell">
+                  <div class="avatar-circle av-sm">SM</div>
+                  <div>
+                    <span class="user-name">Siti Maharani</span>
+                    <span class="user-email">siti@rakitin.id</span>
+                  </div>
+                </td>
+                <td>Moderator</td>
+                <td>
+                  <span class="badge badge-pending">
+                    <span class="dot yellow-dot"></span> Pending
+                  </span>
+                </td>
+                <td>30 Jul 2026</td>
+                <td class="action-cell">
+                  <button class="btn btn-approve">
+                    <i class="bx bx-check"></i> Setujui
+                  </button>
+                  <button class="btn btn-reject">
+                    <i class="bx bx-x"></i> Tolak
+                  </button>
+                </td>
+              </tr>
+              <!-- ROW 3 -->
+              <tr>
+                <td class="user-cell">
+                  <div class="avatar-circle av-dp">DP</div>
+                  <div>
+                    <span class="user-name">Dimas Pratama</span>
+                    <span class="user-email">dimas@rakitin.id</span>
+                  </div>
+                </td>
+                <td>Kontributor</td>
+                <td>
+                  <span class="badge badge-active">
+                    <span class="dot green-dot"></span> Aktif
+                  </span>
+                </td>
+                <td>28 Jul 2026</td>
+                <td>
+                  <span class="status-disabled"
+                    ><i class="bx bx-check"></i> Sudah aktif</span
+                  >
+                </td>
+              </tr>
+              <!-- ROW 4 -->
+              <tr>
+                <td class="user-cell">
+                  <div class="avatar-circle av-nk">NK</div>
+                  <div>
+                    <span class="user-name">Nadia Kusuma</span>
+                    <span class="user-email">nadia@rakitin.id</span>
+                  </div>
+                </td>
+                <td>Editor</td>
+                <td>
+                  <span class="badge badge-active">
+                    <span class="dot green-dot"></span> Aktif
+                  </span>
+                </td>
+                <td>25 Jul 2026</td>
+                <td>
+                  <span class="status-disabled"
+                    ><i class="bx bx-check"></i> Sudah aktif</span
+                  >
+                </td>
+              </tr>
+              <!-- ROW 5 -->
+              <tr>
+                <td class="user-cell">
+                  <div class="avatar-circle av-fn">FN</div>
+                  <div>
+                    <span class="user-name">Fajar Nugroho</span>
+                    <span class="user-email">fajar@rakitin.id</span>
+                  </div>
+                </td>
+                <td>Kontributor</td>
+                <td>
+                  <span class="badge badge-rejected">
+                    <span class="dot red-dot"></span> Ditolak
+                  </span>
+                </td>
+                <td>22 Jul 2026</td>
+                <td>
+                  <span class="status-disabled"
+                    ><i class="bx bx-x"></i> Ditolak</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
