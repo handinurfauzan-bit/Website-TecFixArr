@@ -6,14 +6,12 @@
   background-color: var(--color-bg);
 }
 
-/* hide Figma placeholder divs */
 .halaman-panduannya .app,
 .halaman-panduannya .placeholder-for,
 .halaman-panduannya .div {
   display: none;
 }
 
-/*Subtle grid background (sama dengan Landing)*/
 .halaman-panduannya .grid-bg {
   position: fixed;
   top: 0;
@@ -28,7 +26,6 @@
   z-index: 0;
 }
 
-/*main page*/
 .halaman-panduannya .detail-panduan-page {
   display: flex;
   flex-direction: column;
@@ -42,7 +39,6 @@
   box-sizing: border-box;
 }
 
-/*Breadcrumb*/
 .halaman-panduannya .navigation {
   display: flex;
   align-items: center;
@@ -105,7 +101,6 @@
   opacity: 0.55;
 }
 
-/*Main content grid (article + sidebar)*/
 .halaman-panduannya .container-margin {
   display: flex;
   flex-direction: column;
@@ -129,7 +124,6 @@
   min-width: 0;
 }
 
-/* ---- Article heading ---- */
 .halaman-panduannya .heading {
   display: flex;
   flex-direction: column;
@@ -148,7 +142,6 @@
   line-height: 1.3;
 }
 
-/* ---- Article meta bar ---- */
 .halaman-panduannya .container-wrapper {
   display: flex;
   flex-direction: column;
@@ -324,7 +317,6 @@
   white-space: nowrap;
 }
 
-/*Intro Selction*/
 .halaman-panduannya .container-6 {
   display: flex;
   flex-direction: column;
@@ -381,7 +373,6 @@
   line-height: 24.6px;
 }
 
-/* STEP SECTIONS */
 .halaman-panduannya .container-7 {
   display: flex;
   flex-direction: column;
@@ -438,7 +429,6 @@
   width: 100%;
 }
 
-/* Step image + list grid*/
 .halaman-panduannya .container-9 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
@@ -446,7 +436,6 @@
   width: 100%;
 }
 
-/* Image card */
 .halaman-panduannya .container-10 {
   position: relative;
   width: 100%;
@@ -482,7 +471,6 @@
   background-image: url(../img/image-tuas-dikembalikan-ke-posisi-terkunci-di-bawah-kait-plastik.png);
 }
 
-/* Caption overlay */
 .halaman-panduannya .container-11 {
   width: 100%;
   padding: 20px 12px 10px;
@@ -505,7 +493,6 @@
   line-height: 13.4px;
 }
 
-/* Step list column */
 .halaman-panduannya .container-12,
 .halaman-panduannya .container-16 {
   display: flex;
@@ -515,7 +502,6 @@
   padding: 2px 0 0;
 }
 
-/* List items */
 .halaman-panduannya ol,
 .halaman-panduannya ul {
   display: contents;
@@ -552,7 +538,6 @@
   flex-shrink: 0;
 }
 
-/* List item text wrappers */
 .halaman-panduannya .letakkan-motherboard-wrapper,
 .halaman-panduannya .cari-tuas-logam-wrapper,
 .halaman-panduannya .tekan-tuas-ke-bawah-wrapper,
@@ -588,7 +573,6 @@
   line-height: 23.4px;
 }
 
-/* Warning box (red) */
 .halaman-panduannya .container-15,
 .halaman-panduannya .container-24 {
   display: flex;
@@ -634,7 +618,6 @@
   line-height: 22.2px;
 }
 
-/* Tips box (green) */
 .halaman-panduannya .container-18,
 .halaman-panduannya .container-23 {
   display: flex;
@@ -680,7 +663,6 @@
   line-height: 22.2px;
 }
 
-/*Troubleshooting*/
 .halaman-panduannya .container-19 {
   display: flex;
   flex-direction: column;
@@ -702,10 +684,9 @@
   padding: 2px 0 0;
 }
 
-/*sidebar*/
 .halaman-panduannya .container-25 {
   position: sticky;
-  top: 89px; /* header height + gap */
+  top: 89px; 
   width: 340px;
   display: flex;
   flex-direction: column;
@@ -723,7 +704,6 @@
   border: 1px solid #334155;
 }
 
-/* Sidebar header row */
 .halaman-panduannya .container-27 {
   display: flex;
   align-items: center;
@@ -761,7 +741,6 @@
   white-space: nowrap;
 }
 
-/* Sidebar list */
 .halaman-panduannya .container-28 {
   display: flex;
   flex-direction: column;
@@ -795,7 +774,6 @@
   flex-shrink: 0;
 }
 
-/* Colored dot indicators */
 .halaman-panduannya .container-30 {
   width: 7px;
   height: 7px;
@@ -828,7 +806,6 @@
   box-shadow: 0 0 5px #3b82f660;
 }
 
-/* Sidebar item text blocks */
 .halaman-panduannya .container-31,
 .halaman-panduannya .container-35,
 .halaman-panduannya .container-38,
@@ -877,7 +854,6 @@
   line-height: 13.9px;
 }
 
-/*footer*/
 .halaman-panduannya .footer {
   display: flex;
   align-items: center;
@@ -960,7 +936,6 @@
   line-height: 16px;
 }
 
-/*global untilities*/
 .halaman-panduannya a {
   color: inherit;
   text-decoration: none;
@@ -972,7 +947,6 @@
   outline-offset: 3px;
 }
 
-/*respnsive*/
 @media (max-width: 1024px) {
   .halaman-panduannya .container {
     grid-template-columns: 1fr;
@@ -1020,24 +994,18 @@
   }
 }
 
-/* ===========================================
-   LIGHT THEME — Tutorial / Detail Panduan
-   =========================================== */
-
 [data-theme="light"] body,
 [data-theme="light"] .halaman-panduannya {
   background-color: #ededed;
   color: #1c1917;
 }
 
-/* Grid background */
 [data-theme="light"] .halaman-panduannya .grid-bg {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
 
-/* Breadcrumb */
 [data-theme="light"] .halaman-panduannya .text-wrapper,
 [data-theme="light"] .halaman-panduannya .text-wrapper-3 {
   color: #78716c;
@@ -1046,12 +1014,10 @@
   color: #a8a29e;
 }
 
-/* Article heading */
 [data-theme="light"] .halaman-panduannya .panduan-lengkap-cara {
   color: #1c1917;
 }
 
-/* Meta bar */
 [data-theme="light"] .halaman-panduannya .container-3 {
   border-bottom-color: #e0dbd2;
 }
@@ -1069,7 +1035,6 @@
   color: #a8a29e;
 }
 
-/* Section intro text */
 [data-theme="light"] .halaman-panduannya .text-wrapper-10 {
   color: #a8a29e;
 }
@@ -1080,18 +1045,16 @@
   color: #57534e;
 }
 
-/* Step divider */
 [data-theme="light"] .halaman-panduannya .container-8 {
   border-bottom-color: #e0dbd2;
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-12 {
-  /* badge warna emerald — tetap */
+  
 }
 [data-theme="light"] .halaman-panduannya .p {
   color: #1c1917;
 }
 
-/* Step image card */
 [data-theme="light"] .halaman-panduannya .container-10 {
   background-color: #e2e2e2;
   border-color: #d4d4d4;
@@ -1103,7 +1066,6 @@
   color: rgba(15, 23, 42, 0.55);
 }
 
-/* Step list text */
 [data-theme="light"] .halaman-panduannya .letakkan-motherboard,
 [data-theme="light"] .halaman-panduannya .cari-tanda-segitiga,
 [data-theme="light"] .halaman-panduannya .tekan-tuas-ke-bawah,
@@ -1118,12 +1080,10 @@
   color: #57534e;
 }
 
-/* Bullet dots list */
 [data-theme="light"] .halaman-panduannya .container-14 {
   background-color: #a8a29e;
 }
 
-/* Warning box */
 [data-theme="light"] .halaman-panduannya .container-15,
 [data-theme="light"] .halaman-panduannya .container-24 {
   background-color: rgba(220, 38, 38, 0.06);
@@ -1137,7 +1097,6 @@
   color: #b91c1c;
 }
 
-/* Tips box */
 [data-theme="light"] .halaman-panduannya .container-18,
 [data-theme="light"] .halaman-panduannya .container-23 {
   background-color: rgba(5, 150, 105, 0.07);
@@ -1151,7 +1110,6 @@
   color: #047857;
 }
 
-/* Sidebar */
 [data-theme="light"] .halaman-panduannya .container-26 {
   background-color: #f4f4f4;
   border-color: #e2e2e2;
@@ -1177,7 +1135,6 @@
   color: #a8a29e;
 }
 
-/* Footer */
 [data-theme="light"] .halaman-panduannya .footer {
   background-color: #e2e2e2;
   border-top-color: #d6d0c8;

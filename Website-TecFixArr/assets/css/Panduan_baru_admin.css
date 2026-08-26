@@ -1,10 +1,3 @@
-/* ===========================================
-   PANDUAN BARU ADMIN — page-specific
-   Theme tokens/sidebar: admin_theme.css
-   =========================================== */
-
-/* ===== EDITOR SHELL ===== */
-
 .editor-shell {
   flex: 1;
   min-width: 0;
@@ -142,8 +135,6 @@
 .editor-panel--hidden {
   display: none !important;
 }
-
-/* ===== GUIDE ===== */
 
 .guide-form {
   display: grid;
@@ -299,8 +290,6 @@
 .link-add:hover {
   filter: brightness(1.15);
 }
-
-/* ===== STEPS ===== */
 
 .steps-layout {
   display: grid;
@@ -590,8 +579,6 @@
   background: rgba(248, 81, 73, 0.08);
 }
 
-/* ===== RESPONSIVE ===== */
-
 @media (max-width: 1100px) {
   .guide-form {
     grid-template-columns: 1fr 1fr;
@@ -673,10 +660,6 @@
   }
 }
 
-/* ===========================================
-   LIGHT THEME — Panduan Baru Admin
-   =========================================== */
-
 [data-theme="light"] .editor-shell {
   background: #f2f2f0;
 }
@@ -696,7 +679,6 @@
   color: #1c1917;
 }
 
-/* Tabs */
 [data-theme="light"] .editor-tab {
   color: #78716c;
 }
@@ -704,7 +686,6 @@
   color: #1c1917;
 }
 
-/* Btn draft */
 [data-theme="light"] .btn-draft {
   border-color: #d4d4d4;
   color: #57534e;
@@ -714,7 +695,6 @@
   border-color: #a8a29e;
 }
 
-/* Guide form */
 [data-theme="light"] .guide-label {
   color: #78716c;
 }
@@ -731,7 +711,6 @@
   color: #a8a29e;
 }
 
-/* Type cards */
 [data-theme="light"] .type-card {
   background: #f4f4f4;
   border-color: #e0dbd2;
@@ -749,7 +728,6 @@
   color: #78716c;
 }
 
-/* Tools input */
 [data-theme="light"] .tool-input {
   background: #f4f4f4;
   border-color: #e0dbd2;
@@ -762,7 +740,6 @@
   border-color: rgba(5, 150, 105, 0.5);
 }
 
-/* Steps rail */
 [data-theme="light"] .steps-rail__label {
   color: #a8a29e;
 }
@@ -790,7 +767,6 @@
   border-color: #a8a29e;
 }
 
-/* Step canvas */
 [data-theme="light"] .step-canvas {
   background: #f4f4f4;
   border-color: #e0dbd2;

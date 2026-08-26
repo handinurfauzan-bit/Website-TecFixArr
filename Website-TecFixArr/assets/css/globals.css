@@ -1,28 +1,17 @@
-/* GLOBALS — Reset, base, font setup, dan design tokens bersama */
-
-/* ===========================================
-   DESIGN TOKENS — TechFixAr
-   Dipakai di seluruh halaman (landing, login,
-   registrasi, dan semua halaman admin).
-   Warna primer: slate gelap + emerald accent.
-   =========================================== */
 :root {
-  /* Background */
+  
   --color-bg:          #0f172a;
   --color-bg-elevated: #111827;
   --color-panel:       #1e293b;
   --color-panel-2:     #243447;
 
-  /* Border & divider */
   --color-border:      #334155;
   --color-border-soft: #1e293b;
 
-  /* Text */
   --color-text:        #f8fafc;
   --color-muted:       #94a3b8;
   --color-faint:       #64748b;
 
-  /* Accent — emerald (warna primer) */
   --color-accent:        #10b981;
   --color-accent-bright: #34d399;
   --color-accent-deep:   #059669;
@@ -30,56 +19,41 @@
   --color-accent-border: rgba(16, 185, 129, 0.45);
   --color-accent-glow:   rgba(16, 185, 129, 0.10);
 
-  /* Danger — merah */
   --color-danger:      #ef4444;
   --color-danger-dim:  rgba(239, 68, 68, 0.12);
 
-  /* Blue — hanya sebagai aksen sekunder / badge */
   --color-blue:        #3b82f6;
   --color-blue-dim:    rgba(59, 130, 246, 0.14);
 
-  /* Typography */
   --font-sans:  "Nunito", Helvetica, sans-serif;
   --font-mono:  "DM Mono", monospace;
 
-  /* Radius */
   --radius-sm:  8px;
   --radius-md:  10px;
   --radius-lg:  14px;
   --radius-xl:  18px;
   --radius-full: 999px;
 
-  /* Transition */
   --transition-fast: 0.15s ease;
   --transition-base: 0.2s ease;
 
-  /* Grid overlay color (dark default) */
   --grid-line-color: rgba(255, 255, 255, 0.03);
 }
 
-/* ===========================================
-   LIGHT THEME OVERRIDE
-   Aktif saat <html data-theme="light">
-   Palet: neutral off-white — lembut di mata,
-   tidak coklat, tidak menyilaukan.
-   =========================================== */
 [data-theme="light"] {
-  /* Background */
-  --color-bg:          #ededed;   /* bg utama halaman (selain navbar) */
-  --color-bg-elevated: #f9f9f9;   /* sedikit lebih terang */
-  --color-panel:       #f4f4f4;   /* panel / card */
-  --color-panel-2:     #e8e8e8;   /* panel sekunder */
+  
+  --color-bg:          #ededed;   
+  --color-bg-elevated: #f9f9f9;   
+  --color-panel:       #f4f4f4;   
+  --color-panel-2:     #e8e8e8;   
 
-  /* Border & divider */
   --color-border:      #d4d4d4;
   --color-border-soft: #e4e4e4;
 
-  /* Text — warm near-black, tidak kontras keras */
   --color-text:        #1c1917;
   --color-muted:       #57534e;
   --color-faint:       #78716c;
 
-  /* Accent — emerald sedikit lebih dalam agar terbaca di bg terang */
   --color-accent:        #059669;
   --color-accent-bright: #10b981;
   --color-accent-deep:   #047857;
@@ -87,19 +61,14 @@
   --color-accent-border: rgba(5, 150, 105, 0.38);
   --color-accent-glow:   rgba(5, 150, 105, 0.06);
 
-  /* Danger */
   --color-danger:      #dc2626;
   --color-danger-dim:  rgba(220, 38, 38, 0.09);
 
-  /* Blue */
   --color-blue:        #2563eb;
   --color-blue-dim:    rgba(37, 99, 235, 0.09);
 
-  /* Grid overlay color (light) */
   --grid-line-color: rgba(0, 0, 0, 0.045);
 }
-
-
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -120,7 +89,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Fallback fonts jika custom font tidak load */
 @font-face {
   font-family: "Nunito-Regular";
   src: local("Nunito"), local("Nunito Regular");
@@ -167,9 +135,6 @@ ul, ol {
   list-style: none;
 }
 
-/* ===========================================
-   ADMIN FAB — tombol admin fixed kanan bawah
-   =========================================== */
 .admin-fab {
   position: fixed;
   bottom: 24px;
@@ -228,7 +193,6 @@ ul, ol {
   white-space: nowrap;
 }
 
-/* Light theme */
 [data-theme="light"] .admin-fab {
   background-color: #f4f4f4;
   border-color: #d4d4d4;

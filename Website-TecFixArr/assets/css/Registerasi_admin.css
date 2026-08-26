@@ -1,10 +1,3 @@
-/* ===========================================
-   REGISTERASI ADMIN — TechFixAr
-   Ciri khas: slate gelap, aksen emerald (selaras
-   landing page & login), Nunito + DM Mono,
-   glow emerald, grid bg.
-   =========================================== */
-
 .halaman-register-admin {
   --bg:           #0f172a;
   --panel:        #1e293b;
@@ -14,7 +7,6 @@
   --faint:        #78716c;
   --input-bg:     #0f172a;
 
-  /* Primer: emerald — selaras landing & login */
   --accent:        #10b981;
   --accent-bright: #34d399;
   --accent-deep:   #059669;
@@ -33,8 +25,6 @@
   overflow-x: hidden;
 }
 
-/* ---------- Background grid & glow ---------- */
-
 .register-grid-bg {
   position: fixed;
   inset: 0;
@@ -46,7 +36,6 @@
   z-index: 0;
 }
 
-/* Glow emerald — selaras login_admin.css */
 .register-glow {
   position: fixed;
   top: -120px;
@@ -64,8 +53,6 @@
   z-index: 0;
   filter: blur(4px);
 }
-
-/* ---------- Shell ---------- */
 
 .register-shell {
   position: relative;
@@ -89,8 +76,6 @@
   }
 }
 
-/* ---------- Brand ---------- */
-
 .register-brand {
   display: flex;
   flex-direction: column;
@@ -108,7 +93,6 @@
   padding-bottom: 4px;
 }
 
-/* Logo mark: gradient emerald — sama persis dengan login */
 .register-brand__mark {
   display: flex;
   align-items: center;
@@ -147,8 +131,6 @@
   letter-spacing: 0.83px;
 }
 
-/* ---------- Form card ---------- */
-
 .register-form {
   display: flex;
   flex-direction: column;
@@ -182,8 +164,6 @@
   font-size: 13.28px;
   line-height: 21.25px;
 }
-
-/* ---------- Fields ---------- */
 
 .register-field {
   display: flex;
@@ -228,13 +208,11 @@
   border-color: #57534e;
 }
 
-/* Focus: emerald — selaras login */
 .register-field__input:focus {
   border-color: var(--accent-border);
   box-shadow: 0 0 0 3px var(--accent-dim);
 }
 
-/* Password wrapper */
 .register-field__password {
   position: relative;
   display: flex;
@@ -268,12 +246,9 @@
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Toggle pressed: emerald */
 .register-field__toggle[aria-pressed="true"] {
   color: var(--accent);
 }
-
-/* ---------- Submit CTA — emerald, selaras login ---------- */
 
 .register-form__submit {
   display: flex;
@@ -307,8 +282,6 @@
   transform: translateY(1px);
 }
 
-/* ---------- Footer ---------- */
-
 .register-form__footer {
   margin-top: 18px;
   text-align: center;
@@ -331,8 +304,6 @@
   color: var(--accent-bright);
 }
 
-/* ---------- Back link ---------- */
-
 .register-back {
   width: 100%;
   display: flex;
@@ -354,8 +325,6 @@
   color: var(--text);
 }
 
-/* ---------- Focus visible — emerald outline ---------- */
-
 .register-brand__link:focus-visible,
 .register-field__toggle:focus-visible,
 .register-form__submit:focus-visible,
@@ -365,10 +334,6 @@
   outline-offset: 3px;
   border-radius: 6px;
 }
-
-/* ===========================================
-   RESPONSIVE
-   =========================================== */
 
 @media (max-width: 480px) {
   .halaman-register-admin {
@@ -389,9 +354,6 @@
   }
 }
 
-/* ===========================================
-   LIGHT THEME — Register Admin
-   =========================================== */
 [data-theme="light"] .halaman-register-admin {
   --bg: #ededed;
   --panel: #f4f4f4;
