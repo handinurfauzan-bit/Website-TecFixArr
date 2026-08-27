@@ -42,10 +42,6 @@
   content: "";
   position: fixed;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
 }
@@ -508,12 +504,6 @@
   --danger: #dc2626;
   --danger-dim: rgba(220, 38, 38, 0.10);
   background-color: var(--bg);
-}
-
-[data-theme="light"] .admin-app::before {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
 
 [data-theme="light"] .admin-app::after {

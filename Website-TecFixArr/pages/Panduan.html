@@ -97,7 +97,7 @@
         
         <section class="container-6" aria-label="Pencarian dan filter panduan">
           <div class="container-7">
-            <form class="container-8" role="search" action="Panduan.html" method="get">
+            <div class="container-8">
               <label class="visually-hidden" for="panduan-search"
                 >Cari kendala atau panduan</label
               >
@@ -127,9 +127,6 @@
                 </span>
               </span>
               <div class="text-input">
-                <span class="text-wrapper-2" aria-hidden="true"
-                  >Cari kendala atau panduan...</span
-                >
                 <input
                   type="search"
                   id="panduan-search"
@@ -138,9 +135,9 @@
                   autocomplete="off"
                 />
               </div>
-            </form>
+            </div>
             <div class="div-wrapper" aria-live="polite">
-              <span class="text-wrapper-3">6 artikel</span>
+              <span class="text-wrapper-3" id="artikel-count">6 artikel</span>
             </div>
           </div>
           <div
@@ -148,22 +145,28 @@
             role="group"
             aria-label="Filter kategori panduan"
           >
-            <button class="button" type="button" aria-pressed="true">
+            <button class="button filter-btn" type="button" aria-pressed="true" data-filter="semua">
               <span class="text-wrapper-4">Semua Panduan</span>
               <span class="text-2"
-                ><span class="text-wrapper-5">(6)</span></span
+                ><span class="text-wrapper-5" id="count-semua">(6)</span></span
               >
             </button>
-            <button class="button-2" type="button" aria-pressed="false">
+            <button class="button-2 filter-btn" type="button" aria-pressed="false" data-filter="Troubleshooting">
               <span class="text-wrapper-6">Troubleshooting</span>
               <span class="text-2"
-                ><span class="text-wrapper-7">(2)</span></span
+                ><span class="text-wrapper-7" id="count-troubleshooting">(2)</span></span
               >
             </button>
-            <button class="button-3" type="button" aria-pressed="false">
+            <button class="button-2 filter-btn" type="button" aria-pressed="false" data-filter="Tutorial Pasang">
+              <span class="text-wrapper-6">Tutorial Pasang</span>
+              <span class="text-2"
+                ><span class="text-wrapper-7" id="count-tutorial">(2)</span></span
+              >
+            </button>
+            <button class="button-3 filter-btn" type="button" aria-pressed="false" data-filter="Servis &amp; Perawatan">
               <span class="text-wrapper-6">Servis &amp; Perawatan</span>
               <span class="text-2"
-                ><span class="text-wrapper-7">(2)</span></span
+                ><span class="text-wrapper-7" id="count-servis">(2)</span></span
               >
             </button>
           </div>
@@ -174,13 +177,21 @@
           <div class="container-10">
             
             <a class="artikel-link" href="Tutorial_panduan.html">
-            <article class="container-11">
+            <article class="container-11" data-kategori="Troubleshooting">
               <div class="container-12">
                 <div
                   class="image-solusi-PC"
                   role="img"
                   aria-label="Kartu grafis pada PC"
-                ></div>
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1580584126903-c17d41830450?w=600&q=75&fit=crop&crop=entropy"
+                    alt="Red and black circuit board troubleshooting"
+                    class="card-img"
+                    loading="lazy"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
                 <div class="container-13" aria-hidden="true"></div>
                 <div class="container-14">
                   <span class="text-wrapper-8">Troubleshooting</span>
@@ -264,13 +275,21 @@
 
             
             <a class="artikel-link" href="Tutorial_panduan.html">
-            <article class="container-17">
+            <article class="container-17" data-kategori="Tutorial Pasang">
               <div class="container-12">
                 <div
                   class="image-cara-memasang"
                   role="img"
                   aria-label="Pemasangan processor AMD"
-                ></div>
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&q=75&fit=crop&crop=entropy"
+                    alt="CPU processor AMD closeup pada socket motherboard"
+                    class="card-img"
+                    loading="lazy"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
                 <div class="container-13" aria-hidden="true"></div>
                 <div class="container-18">
                   <span class="text-wrapper-12">Tutorial Pasang</span>
@@ -354,13 +373,21 @@
 
             
             <a class="artikel-link" href="Tutorial_panduan.html">
-            <article class="container-20">
+            <article class="container-20" data-kategori="Servis &amp; Perawatan">
               <div class="container-12">
                 <div
                   class="image-panduan-ganti"
                   role="img"
                   aria-label="Laptop Asus ROG thermal paste"
-                ></div>
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1705494833979-9377fbdee229?w=600&q=75&fit=crop&crop=entropy"
+                    alt="Motherboard laptop dibongkar untuk servis dan ganti thermal paste"
+                    class="card-img"
+                    loading="lazy"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
                 <div class="container-13" aria-hidden="true"></div>
                 <div class="servis-perawatan-wrapper">
                   <span class="text-wrapper-12">Servis &amp; Perawatan</span>
@@ -446,13 +473,21 @@
 
             
             <a class="artikel-link" href="Tutorial_panduan.html">
-            <article class="container-21">
+            <article class="container-21" data-kategori="Troubleshooting">
               <div class="container-12">
                 <div
                   class="image-cara-fix-lampu"
                   role="img"
                   aria-label="Motherboard dengan lampu LED CPU merah"
-                ></div>
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1515630278258-407f66498911?w=600&q=75&fit=crop&crop=entropy"
+                    alt="Closeup motherboard hijau dengan komponen elektronik detail"
+                    class="card-img"
+                    loading="lazy"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
                 <div class="container-13" aria-hidden="true"></div>
                 <div class="container-14">
                   <span class="text-wrapper-8">Troubleshooting</span>
@@ -534,13 +569,21 @@
 
             
             <a class="artikel-link" href="Tutorial_panduan.html">
-            <article class="container-23">
+            <article class="container-23" data-kategori="Tutorial Pasang">
               <div class="container-12">
                 <div
                   class="image-panduan-pasang"
                   role="img"
                   aria-label="Pemasangan RAM DDR5 dual channel"
-                ></div>
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1541029071515-84cc54f84dc5?w=600&q=75&fit=crop&crop=entropy"
+                    alt="Macro foto RAM stick DDR5 pada slot motherboard"
+                    class="card-img"
+                    loading="lazy"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
                 <div class="container-13" aria-hidden="true"></div>
                 <div class="container-18">
                   <span class="text-wrapper-12">Tutorial Pasang</span>
@@ -624,13 +667,21 @@
 
             
             <a class="artikel-link" href="Tutorial_panduan.html">
-            <article class="container-24">
+            <article class="container-24" data-kategori="Servis &amp; Perawatan">
               <div class="container-12">
                 <div
                   class="image-optimasi-fan"
                   role="img"
                   aria-label="Komponen PC dengan pencahayaan ungu"
-                ></div>
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1760631731124-69d85bdd195d?w=600&q=75&fit=crop&crop=entropy"
+                    alt="Interior PC case dengan fan dan graphics card terpasang"
+                    class="card-img"
+                    loading="lazy"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
                 <div class="container-13" aria-hidden="true"></div>
                 <div class="servis-perawatan-wrapper">
                   <span class="text-wrapper-12">Servis &amp; Perawatan</span>
@@ -809,5 +860,6 @@
         <span class="admin-fab__label">Admin</span>
       </a>
     </div>
+    <script src="../assets/js/panduan.js"></script>
   </body>
 </html>

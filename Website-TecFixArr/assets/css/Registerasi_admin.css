@@ -28,10 +28,6 @@
 .register-grid-bg {
   position: fixed;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
 }
@@ -382,12 +378,6 @@
   --accent-border: rgba(91, 61, 240, 0.35);
   --accent-glow: rgba(91, 61, 240, 0.06);
   background-color: var(--bg);
-}
-
-[data-theme="light"] .register-grid-bg {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
 
 [data-theme="light"] .register-glow {

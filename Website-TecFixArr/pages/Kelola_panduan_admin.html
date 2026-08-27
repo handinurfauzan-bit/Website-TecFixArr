@@ -213,6 +213,7 @@
             type="button"
             role="tab"
             aria-selected="true"
+            data-filter="all"
           >
             Semua (48)
           </button>
@@ -221,6 +222,7 @@
             type="button"
             role="tab"
             aria-selected="false"
+            data-filter="troubleshooting"
           >
             Troubleshooting (20)
           </button>
@@ -229,6 +231,7 @@
             type="button"
             role="tab"
             aria-selected="false"
+            data-filter="assembly"
           >
             Assembly (18)
           </button>
@@ -237,16 +240,16 @@
             type="button"
             role="tab"
             aria-selected="false"
+            data-filter="tips"
           >
             Tips &amp; Trik (10)
           </button>
         </div>
 
         <section class="article-grid" aria-label="Daftar artikel">
-          <article class="article-card">
+          <article class="article-card" data-category="troubleshooting">
             <div class="article-card__cover article-card__cover--purple">
               <span class="article-card__tag">TROUBLESHOOTING</span>
-              <span class="article-card__emoji" aria-hidden="true">⚠️</span>
             </div>
             <div class="article-card__body">
               <h2 class="article-card__title">
@@ -333,10 +336,9 @@
             </div>
           </article>
 
-          <article class="article-card">
+          <article class="article-card" data-category="assembly">
             <div class="article-card__cover article-card__cover--teal">
               <span class="article-card__tag">ASSEMBLY</span>
-              <span class="article-card__emoji" aria-hidden="true">🔧</span>
             </div>
             <div class="article-card__body">
               <h2 class="article-card__title">
@@ -423,10 +425,9 @@
             </div>
           </article>
 
-          <article class="article-card">
+          <article class="article-card" data-category="tips">
             <div class="article-card__cover article-card__cover--orange">
               <span class="article-card__tag">TIPS &amp; TRIK</span>
-              <span class="article-card__emoji" aria-hidden="true">⚡</span>
             </div>
             <div class="article-card__body">
               <h2 class="article-card__title">
@@ -513,10 +514,9 @@
             </div>
           </article>
 
-          <article class="article-card">
+          <article class="article-card" data-category="troubleshooting">
             <div class="article-card__cover article-card__cover--red">
               <span class="article-card__tag">TROUBLESHOOTING</span>
-              <span class="article-card__emoji" aria-hidden="true">💀</span>
             </div>
             <div class="article-card__body">
               <h2 class="article-card__title">
@@ -603,10 +603,9 @@
             </div>
           </article>
 
-          <article class="article-card">
+          <article class="article-card" data-category="assembly">
             <div class="article-card__cover article-card__cover--blue">
               <span class="article-card__tag">ASSEMBLY</span>
-              <span class="article-card__emoji" aria-hidden="true">🧠</span>
             </div>
             <div class="article-card__body">
               <h2 class="article-card__title">
@@ -693,10 +692,9 @@
             </div>
           </article>
 
-          <article class="article-card">
+          <article class="article-card" data-category="tips">
             <div class="article-card__cover article-card__cover--cyan">
               <span class="article-card__tag">TIPS &amp; TRIK</span>
-              <span class="article-card__emoji" aria-hidden="true">🌡️</span>
             </div>
             <div class="article-card__body">
               <h2 class="article-card__title">
@@ -807,14 +805,40 @@
     <script>
       (() => {
         const filters = document.querySelectorAll(".admin-filter");
+        const cards = document.querySelectorAll(".article-card");
+        const counter = document.querySelector(".admin-footer__info");
+        const totalText = "Menampilkan {n} dari 48 artikel";
+
         filters.forEach((btn) => {
           btn.addEventListener("click", () => {
+            const activeFilter = btn.getAttribute("data-filter");
+
+            // Update tab state
             filters.forEach((item) => {
               item.classList.remove("admin-filter--active");
               item.setAttribute("aria-selected", "false");
             });
             btn.classList.add("admin-filter--active");
             btn.setAttribute("aria-selected", "true");
+
+            // Show/hide cards based on category
+            let visibleCount = 0;
+            cards.forEach((card) => {
+              const cardCategory = card.getAttribute("data-category");
+              const shouldShow =
+                activeFilter === "all" || cardCategory === activeFilter;
+              if (shouldShow) {
+                card.style.display = "";
+                visibleCount += 1;
+              } else {
+                card.style.display = "none";
+              }
+            });
+
+            // Update counter
+            if (counter) {
+              counter.textContent = totalText.replace("{n}", visibleCount);
+            }
           });
         });
       })();

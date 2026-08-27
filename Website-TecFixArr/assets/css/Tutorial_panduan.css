@@ -18,10 +18,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
 }
@@ -459,16 +455,30 @@
   background-position: 50% 50%;
 }
 
+/* Tag <img> di dalam figure langkah */
+.halaman-panduannya .step-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Langkah 1: Tuas retention arm socket AM5 terbuka — closeup motherboard green circuit board */
 .halaman-panduannya .image-tuas-retention {
-  background-image: url(../img/image-tuas-retention-arm-socket-am5-posisi-terbuka-135.png);
+  background-image: url('https://images.unsplash.com/photo-1515630278258-407f66498911?w=700&q=80&fit=crop&crop=center');
 }
 
+/* Langkah 2: Orientasi CPU / segitiga emas notch alignment — orang memasang komponen elektronik */
 .halaman-panduannya .image-segitiga-emas {
-  background-image: url(../img/image-segitiga-emas-di-sudut-CPU-sejajar-dengan-tanda-di-socket.png);
+  background-image: url('https://images.unsplash.com/photo-1721332154191-ba5f1534266e?w=700&q=80&fit=crop&crop=center');
 }
 
+/* Langkah 3: Tuas dikunci kembali — inside PC case dengan cooling system */
 .halaman-panduannya .image-tuas {
-  background-image: url(../img/image-tuas-dikembalikan-ke-posisi-terkunci-di-bawah-kait-plastik.png);
+  background-image: url('https://images.unsplash.com/photo-1778333895677-8fc2d642a768?w=700&q=80&fit=crop&crop=center');
 }
 
 .halaman-panduannya .container-11 {
@@ -998,12 +1008,6 @@
 [data-theme="light"] .halaman-panduannya {
   background-color: #ececf5;
   color: #15121f;
-}
-
-[data-theme="light"] .halaman-panduannya .grid-bg {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
 
 [data-theme="light"] .halaman-panduannya .text-wrapper,

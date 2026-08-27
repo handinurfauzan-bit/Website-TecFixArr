@@ -134,6 +134,15 @@
   margin-bottom: 32px;
 }
 
+.article-grid:empty::after {
+  content: "Tidak ada artikel pada kategori ini.";
+  grid-column: 1 / -1;
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted, #8a8597);
+  font-size: 14px;
+}
+
 .article-card {
   display: flex;
   flex-direction: column;
@@ -163,27 +172,39 @@
 }
 
 .article-card__cover--purple {
-  background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);
+  background-image: url("https://images.unsplash.com/photo-1591799264550-6d7be9d0d7e3?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--teal {
-  background: linear-gradient(135deg, #0d9488 0%, #115e59 100%);
+  background-image: url("https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--orange {
-  background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+  background-image: url("https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--red {
-  background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--blue {
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  background-image: url("https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--cyan {
-  background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%);
+  background-image: url("https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__tag {
@@ -192,24 +213,13 @@
   left: 12px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: #fde68a;
-}
-
-.article-card__emoji {
-  font-size: 48px;
-  line-height: 1;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s ease;
-}
-
-.article-card:hover .article-card__emoji {
-  transform: scale(1.08);
+  color: #ffffff;
 }
 
 .article-card__body {
@@ -228,6 +238,7 @@
   color: var(--text);
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 2.8em;

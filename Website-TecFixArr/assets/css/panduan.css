@@ -22,10 +22,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
 }
@@ -422,25 +418,54 @@ a {
   opacity: 0.68;
   background-size: cover;
   background-position: 50% 50%;
+  position: relative;
 }
 
+/* Tag <img> di dalam kartu: mengisi penuh area gambar */
+.halaman-panduan .card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Kartu 1: PC Nyala Tapi Tidak Tampil Display — red & black circuit board troubleshooting */
 .halaman-panduan .image-solusi-PC {
   background-color: #1e3a5f;
+  background-image: url('https://images.unsplash.com/photo-1580584126903-c17d41830450?w=600&q=75&fit=crop&crop=entropy');
 }
+
+/* Kartu 2: Cara Memasang Processor AMD AM5 — CPU processor di socket motherboard */
 .halaman-panduan .image-cara-memasang {
   background-color: #1e3527;
+  background-image: url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&q=75&fit=crop&crop=entropy');
 }
+
+/* Kartu 3: Ganti Thermal Paste Laptop — laptop motherboard dibongkar untuk servis */
 .halaman-panduan .image-panduan-ganti {
   background-color: #2d1e3e;
+  background-image: url('https://images.unsplash.com/photo-1705494833979-9377fbdee229?w=600&q=75&fit=crop&crop=entropy');
 }
+
+/* Kartu 4: Fix Lampu LED CPU Merah — motherboard closeup green circuit board */
 .halaman-panduan .image-cara-fix-lampu {
   background-color: #3a1e1e;
+  background-image: url('https://images.unsplash.com/photo-1515630278258-407f66498911?w=600&q=75&fit=crop&crop=entropy');
 }
+
+/* Kartu 5: Pasang RAM DDR5 Dual Channel — macro foto RAM stick */
 .halaman-panduan .image-panduan-pasang {
   background-color: #1e2a3a;
+  background-image: url('https://images.unsplash.com/photo-1541029071515-84cc54f84dc5?w=600&q=75&fit=crop&crop=entropy');
 }
+
+/* Kartu 6: Optimasi Fan Curve & Airflow — interior PC case dengan fan dan GPU */
 .halaman-panduan .image-optimasi-fan {
   background-color: #1a2a1e;
+  background-image: url('https://images.unsplash.com/photo-1760631731124-69d85bdd195d?w=600&q=75&fit=crop&crop=entropy');
 }
 
 .halaman-panduan .container-13 {
@@ -806,6 +831,38 @@ a {
   letter-spacing: 0.67px;
 }
 
+/* Tombol filter aktif (semua kategori selain "Semua Panduan") */
+.halaman-panduan .filter-btn--active {
+  background-color: #7c5cfc26 !important;
+  border-color: #7c5cfc66 !important;
+}
+.halaman-panduan .filter-btn--active .text-wrapper-6 {
+  color: #7c5cfc !important;
+}
+.halaman-panduan .filter-btn--active .text-wrapper-7 {
+  color: #7c5cfc !important;
+}
+
+/* Pesan kosong saat tidak ada artikel yang cocok */
+.halaman-panduan .panduan-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  color: #6f6a85;
+  width: 100%;
+}
+.halaman-panduan .panduan-empty__icon svg {
+  stroke: #4a4458;
+}
+.halaman-panduan .panduan-empty__text {
+  font-family: "Nunito", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #6f6a85;
+}
+
 @media (max-width: 1024px) {
   .halaman-panduan .container-3 {
     padding: 90px 24px 60px;
@@ -866,12 +923,6 @@ a {
 [data-theme="light"] .halaman-panduan {
   background-color: #ececf5;
   color: #15121f;
-}
-
-[data-theme="light"] .halaman-panduan .grid-bg {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
 
 [data-theme="light"] .halaman-panduan .pusat-panduan-servis {
@@ -940,7 +991,16 @@ a {
   background-color: #e2dff2;
 }
 [data-theme="light"] .halaman-panduan .container-13 {
-  background: linear-gradient(0deg, rgba(245, 244, 250, 0.88) 0%, rgba(245, 244, 250, 0.08) 55%);
+  background: linear-gradient(0deg, rgba(240, 238, 250, 0.82) 0%, rgba(240, 238, 250, 0.05) 50%);
+}
+/* Light mode: gambar kartu sedikit lebih terang agar terlihat di background terang */
+[data-theme="light"] .halaman-panduan .image-solusi-PC,
+[data-theme="light"] .halaman-panduan .image-cara-memasang,
+[data-theme="light"] .halaman-panduan .image-panduan-ganti,
+[data-theme="light"] .halaman-panduan .image-cara-fix-lampu,
+[data-theme="light"] .halaman-panduan .image-panduan-pasang,
+[data-theme="light"] .halaman-panduan .image-optimasi-fan {
+  opacity: 0.82;
 }
 
 [data-theme="light"] .halaman-panduan .p,

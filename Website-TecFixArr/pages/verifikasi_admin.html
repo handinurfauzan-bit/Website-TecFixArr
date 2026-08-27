@@ -4,170 +4,299 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verifikasi Pendaftaran - TechFix AR Admin</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="../assets/css/globals.css">
-    <link rel="stylesheet" href="../assets/css/admin_sidebar.css">
+    <link rel="stylesheet" href="../assets/css/admin_theme.css">
     <link rel="stylesheet" href="../assets/css/verifikasi_admin.css">
+    <script src="../assets/js/theme.js"></script>
 </head>
-<body class="admin-body">
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <div class="logo-container">
-                <img src="../assets/css/img/Logo.jpg" alt="TechFix AR Logo" class="brand-logo">
-                <span class="logo-text">TechFix <span>AR</span></span>
-            </div>
-        </div>
-        <nav class="sidebar-menu">
-            <ul>
-                <li>
-                    <a href="dashboard_admin.html">
-                        <i class="fa-solid fa-chart-pie"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="verifikasi_admin.html">
-                        <i class="fa-solid fa-user-check"></i>
-                        <span>Verifikasi Akun</span>
-                        <span class="badge-count">3</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="manajemen_pengguna.html">
-                        <i class="fa-solid fa-users"></i>
-                        <span>Manajemen User</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="layanan_admin.html">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                        <span>Layanan Service</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="laporan_admin.html">
-                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                        <span>Laporan Keuangan</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <a href="login.html" class="logout-btn">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Keluar</span>
-            </a>
-        </div>
-    </aside>
-    <main class="main-content">
-        <header class="topbar">
-            <div class="topbar-left">
-                <h1>Verifikasi Pendaftaran Admin</h1>
-                <p class="subtitle">Tinjau dan setujui pendaftaran akun admin/teknisi baru</p>
-            </div>
-            <div class="topbar-right">
-                <div class="user-profile">
-                    <img src="../assets/css/img/Logo.jpg" alt="Super Admin" class="avatar">
-                    <div class="user-info">
-                        <span class="name">Super Admin</span>
-                        <span class="role">Administrator Utama</span>
-                    </div>
+<body>
+    <div class="admin-app">
+        <aside class="admin-sidebar" aria-label="Navigasi admin">
+            <div class="admin-sidebar__top">
+                <a class="admin-brand" href="Landing.html" aria-label="TechFixAr, kembali ke beranda">
+                    <span class="admin-brand__mark" aria-hidden="true">
+                        <img class="admin-brand__logo" src="../assets/css/img/Logo.jpg" alt="TechFixAr Logo" />
+                    </span>
+                    <span class="admin-brand__title">
+                        <span class="admin-brand__title-text">TechFix</span><span class="admin-brand__title-accent">Ar</span>
+                    </span>
+                </a>
+                <div class="admin-status" role="status">
+                    <span class="admin-status__dot" aria-hidden="true"></span>
+                    <span class="admin-status__text">System Online</span>
                 </div>
+                <nav class="admin-nav" aria-label="Menu utama">
+                    <a class="admin-nav__item" href="Kelola_panduan_admin.html">
+                        <svg class="admin-nav__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/>
+                        </svg>
+                        <span>Kelola Panduan</span>
+                    </a>
+                    <a class="admin-nav__item admin-nav__item--active" href="verifikasi_admin.html" aria-current="page">
+                        <svg class="admin-nav__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Verifikasi Akun Admin</span>
+                        <span class="admin-nav__badge">3</span>
+                    </a>
+                </nav>
             </div>
-        </header>
-        <section class="content-section">
-            
-            <div class="table-card">
-                <div class="card-header-actions">
-                    <div class="search-box">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cari nama atau email...">
-                    </div>
-                    <div class="filter-box">
-                        <select>
-                            <option value="">Semua Peran</option>
-                            <option value="admin">Admin Kasir</option>
-                            <option value="teknisi">Teknisi AR</option>
-                        </select>
-                    </div>
+            <div class="admin-user">
+                <div class="admin-user__info">
+                    <span class="admin-user__avatar" aria-hidden="true">AT</span>
+                    <span class="admin-user__meta">
+                        <span class="admin-user__name">Admin Tech</span>
+                        <span class="admin-user__role">Super Admin</span>
+                    </span>
                 </div>
+                <button class="admin-theme-toggle" data-theme-toggle aria-label="Ganti ke mode terang" title="Mode Terang" type="button">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Mode Terang</span>
+                </button>
+                <a class="admin-user__logout" href="login_admin.html">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Logout
+                </a>
+            </div>
+        </aside>
 
-                <div class="table-responsive">
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>Tanggal</th>
-                                <th>Pengguna</th>
-                                <th>Peran Diajukan</th>
-                                <th>Kontak</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>24 Mei 2026</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <span class="user-name">Budi Santoso</span>
-                                        <span class="user-email">budi.santoso@email.com</span>
-                                    </div>
-                                </td>
-                                <td><span class="role-pill">Teknisi AR</span></td>
-                                <td>+62 812-3456-7890</td>
-                                <td><span class="status-badge pending"><i class="fa-solid fa-clock"></i> Menunggu</span></td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-action approve" title="Setujui"><i class="fa-solid fa-check"></i></button>
-                                        <button class="btn-action reject" title="Tolak"><i class="fa-solid fa-xmark"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>23 Mei 2026</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <span class="user-name">Siti Rahma</span>
-                                        <span class="user-email">siti.rahma@email.com</span>
-                                    </div>
-                                </td>
-                                <td><span class="role-pill">Admin Kasir</span></td>
-                                <td>+62 857-1122-3344</td>
-                                <td><span class="status-badge pending"><i class="fa-solid fa-clock"></i> Menunggu</span></td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-action approve" title="Setujui"><i class="fa-solid fa-check"></i></button>
-                                        <button class="btn-action reject" title="Tolak"><i class="fa-solid fa-xmark"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>22 Mei 2026</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <span class="user-name">Andi Wijaya</span>
-                                        <span class="user-email">andi.wijaya@email.com</span>
-                                    </div>
-                                </td>
-                                <td><span class="role-pill">Teknisi AR</span></td>
-                                <td>+62 813-9988-7766</td>
-                                <td><span class="status-badge pending"><i class="fa-solid fa-clock"></i> Menunggu</span></td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-action approve" title="Setujui"><i class="fa-solid fa-check"></i></button>
-                                        <button class="btn-action reject" title="Tolak"><i class="fa-solid fa-xmark"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <main class="verif-main">
+            <div class="verif-header">
+                <div>
+                    <h1 class="verif-header__title">Verifikasi Pendaftaran</h1>
+                    <p class="verif-header__subtitle">Tinjau dan setujui pendaftaran akun admin/teknisi baru</p>
+                </div>
+                <div class="verif-pending-badge">
+                    <span class="verif-dot verif-dot--yellow"></span>
+                    3 Menunggu Persetujuan
                 </div>
             </div>
 
-        </section>
-    </main>
+            <div class="verif-stats">
+                <div class="verif-stat-card">
+                    <div class="verif-stat-card__value verif-stat-card__value--yellow">3</div>
+                    <div class="verif-stat-card__info">
+                        <span class="verif-stat-card__label">MENUNGGU</span>
+                        <span class="verif-stat-card__name">Pending</span>
+                    </div>
+                </div>
+                <div class="verif-stat-card">
+                    <div class="verif-stat-card__value verif-stat-card__value--green">12</div>
+                    <div class="verif-stat-card__info">
+                        <span class="verif-stat-card__label">DISETUJI</span>
+                        <span class="verif-stat-card__name">Approved</span>
+                    </div>
+                </div>
+                <div class="verif-stat-card">
+                    <div class="verif-stat-card__value verif-stat-card__value--blue">5</div>
+                    <div class="verif-stat-card__info">
+                        <span class="verif-stat-card__label">DITOLAK</span>
+                        <span class="verif-stat-card__name">Rejected</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="verif-controls">
+                <div class="verif-filter-tabs">
+                    <button class="verif-filter-tab verif-filter-tab--active" data-filter="all">Semua</button>
+                    <button class="verif-filter-tab" data-filter="pending">Menunggu</button>
+                    <button class="verif-filter-tab" data-filter="active">Disetujui</button>
+                    <button class="verif-filter-tab" data-filter="rejected">Ditolak</button>
+                </div>
+                <div class="verif-search">
+                    <svg class="verif-search__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <input class="verif-search__input" type="text" placeholder="Cari nama atau email..." />
+                </div>
+            </div>
+
+            <div class="verif-table-wrap">
+                <table class="verif-table">
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Pengguna</th>
+                            <th>Peran</th>
+                            <th>Kontak</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-status="pending">
+                            <td>24 Mei 2026</td>
+                            <td>
+                                <div class="verif-table__user">
+                                    <div class="verif-avatar verif-avatar--yellow">BS</div>
+                                    <div>
+                                        <span class="verif-table__name">Budi Santoso</span>
+                                        <span class="verif-table__email">budi.santoso@email.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="verif-badge verif-badge--pending">Teknisi AR</span></td>
+                            <td>+62 812-3456-7890</td>
+                            <td><span class="verif-badge verif-badge--pending">Menunggu</span></td>
+                            <td>
+                                <div class="verif-table__actions">
+                                    <button class="verif-btn verif-btn--approve" type="button">Setuju</button>
+                                    <button class="verif-btn verif-btn--reject" type="button">Tolak</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-status="pending">
+                            <td>23 Mei 2026</td>
+                            <td>
+                                <div class="verif-table__user">
+                                    <div class="verif-avatar verif-avatar--purple">SR</div>
+                                    <div>
+                                        <span class="verif-table__name">Siti Rahma</span>
+                                        <span class="verif-table__email">siti.rahma@email.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="verif-badge verif-badge--active">Admin Kasir</span></td>
+                            <td>+62 857-1122-3344</td>
+                            <td><span class="verif-badge verif-badge--pending">Menunggu</span></td>
+                            <td>
+                                <div class="verif-table__actions">
+                                    <button class="verif-btn verif-btn--approve" type="button">Setuju</button>
+                                    <button class="verif-btn verif-btn--reject" type="button">Tolak</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-status="pending">
+                            <td>22 Mei 2026</td>
+                            <td>
+                                <div class="verif-table__user">
+                                    <div class="verif-avatar verif-avatar--blue">AW</div>
+                                    <div>
+                                        <span class="verif-table__name">Andi Wijaya</span>
+                                        <span class="verif-table__email">andi.wijaya@email.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="verif-badge verif-badge--pending">Teknisi AR</span></td>
+                            <td>+62 813-9988-7766</td>
+                            <td><span class="verif-badge verif-badge--pending">Menunggu</span></td>
+                            <td>
+                                <div class="verif-table__actions">
+                                    <button class="verif-btn verif-btn--approve" type="button">Setuju</button>
+                                    <button class="verif-btn verif-btn--reject" type="button">Tolak</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-status="active" style="display: none;">
+                            <td>20 Mei 2026</td>
+                            <td>
+                                <div class="verif-table__user">
+                                    <div class="verif-avatar verif-avatar--green">DH</div>
+                                    <div>
+                                        <span class="verif-table__name">Dewi Handayani</span>
+                                        <span class="verif-table__email">dewi.handayani@email.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="verif-badge verif-badge--active">Admin Kasir</span></td>
+                            <td>+62 821-9876-5432</td>
+                            <td><span class="verif-badge verif-badge--active">Disetujui</span></td>
+                            <td><span class="verif-table__status-done">✓ Selesai</span></td>
+                        </tr>
+                        <tr data-status="rejected" style="display: none;">
+                            <td>19 Mei 2026</td>
+                            <td>
+                                <div class="verif-table__user">
+                                    <div class="verif-avatar verif-avatar--red">RK</div>
+                                    <div>
+                                        <span class="verif-table__name">Rudi Kurniawan</span>
+                                        <span class="verif-table__email">rudi.kurniawan@email.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="verif-badge verif-badge--rejected">Teknisi AR</span></td>
+                            <td>+62 856-7654-3210</td>
+                            <td><span class="verif-badge verif-badge--rejected">Ditolak</span></td>
+                            <td><span class="verif-table__status-reject">✕ Ditolak</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.verif-filter-tab');
+        const tableRows = document.querySelectorAll('.verif-table tbody tr');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                filterTabs.forEach(t => t.classList.remove('verif-filter-tab--active'));
+                tab.classList.add('verif-filter-tab--active');
+
+                const filter = tab.getAttribute('data-filter');
+
+                tableRows.forEach(row => {
+                    const status = row.getAttribute('data-status');
+                    if (filter === 'all' || status === filter) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.verif-search__input');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            tableRows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+        // Approve button
+        document.querySelectorAll('.verif-btn--approve').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const row = e.target.closest('tr');
+                const badge = row.querySelector('td:nth-child(5) .verif-badge');
+                const actionCell = row.querySelector('.verif-table__actions');
+                badge.className = 'verif-badge verif-badge--active';
+                badge.textContent = 'Disetujui';
+                actionCell.innerHTML = '<span class="verif-table__status-done">✓ Selesai</span>';
+                row.setAttribute('data-status', 'active');
+            });
+        });
+
+        // Reject button
+        document.querySelectorAll('.verif-btn--reject').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const row = e.target.closest('tr');
+                const badge = row.querySelector('td:nth-child(5) .verif-badge');
+                const actionCell = row.querySelector('.verif-table__actions');
+                badge.className = 'verif-badge verif-badge--rejected';
+                badge.textContent = 'Ditolak';
+                actionCell.innerHTML = '<span class="verif-table__status-reject">✕ Ditolak</span>';
+                row.setAttribute('data-status', 'rejected');
+            });
+        });
+    </script>
 </body>
 </html>
