@@ -1,15 +1,15 @@
 .halaman-login-admin {
-  --bg: #0f172a;
-  --panel: rgba(30, 41, 59, 0.55);
-  --panel-border: #334155;
-  --text: #f0ede8;
-  --muted: #a8a29e;
-  --faint: #78716c;
-  --input-bg: #1e293b;
-  --accent: #10b981;
-  --accent-dim: #10b98114;
-  --accent-border: #10b98147;
-  --accent-deep: #059669;
+  --bg: #0a0a14;
+  --panel: rgba(22, 22, 42, 0.55);
+  --panel-border: #2b2b45;
+  --text: #f5f4fa;
+  --muted: #9c96b8;
+  --faint: #6f6a85;
+  --input-bg: #16162a;
+  --accent: #7c5cfc;
+  --accent-dim: #7c5cfc14;
+  --accent-border: #7c5cfc47;
+  --accent-deep: #5b3df0;
 
   position: relative;
   display: flex;
@@ -49,7 +49,7 @@
   height: 360px;
   background: radial-gradient(
     50% 50% at 50% 50%,
-    rgba(16, 185, 129, 0.12) 0%,
+    rgba(124, 92, 252, 0.12) 0%,
     transparent 70%
   );
 }
@@ -139,13 +139,26 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #7c5cfc 0%, #5b3df0 100%);
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
   font-size: 13px;
-  color: #f7f4f0;
+  color: #ffffff;
   letter-spacing: -0.3px;
-  box-shadow: 0 4px 16px #10b98133;
+  box-shadow: 0 4px 16px #7c5cfc33;
+  overflow: hidden;
+}
+
+.login-brand__mark .admin-brand__logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 10px;
+  mix-blend-mode: lighten;
+}
+
+[data-theme="light"] .login-brand__mark .admin-brand__logo {
+  mix-blend-mode: multiply;
 }
 
 .login-brand__title {
@@ -234,16 +247,16 @@
 }
 
 .login-field__input::placeholder {
-  color: #57534e;
+  color: #4a4458;
 }
 
 .login-field__input:hover {
-  border-color: #57534e;
+  border-color: #4a4458;
 }
 
 .login-field__input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px #10b98126;
+  box-shadow: 0 0 0 3px #7c5cfc26;
 }
 
 .login-field__password {
@@ -299,7 +312,7 @@
 }
 
 .login-form__forgot-link:hover {
-  color: #34d399;
+  color: #a78bfa;
 }
 
 .login-form__submit {
@@ -315,11 +328,11 @@
     var(--accent) 0%,
     var(--accent-deep) 100%
   );
-  box-shadow: 0 4px 16px #10b98126;
+  box-shadow: 0 4px 16px #7c5cfc26;
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14.5px;
-  color: #f7f4f0;
+  color: #ffffff;
   cursor: pointer;
   transition:
     filter 0.2s,
@@ -329,7 +342,7 @@
 
 .login-form__submit:hover {
   filter: brightness(1.06);
-  box-shadow: 0 6px 20px #10b98140;
+  box-shadow: 0 6px 20px #7c5cfc40;
 }
 
 .login-form__submit:active {
@@ -354,7 +367,7 @@
 }
 
 .login-form__register:hover {
-  color: #34d399;
+  color: #a78bfa;
 }
 
 .login-back {
@@ -415,17 +428,17 @@
 }
 
 [data-theme="light"] .halaman-login-admin {
-  --bg: #ededed;
-  --panel: rgba(247, 244, 240, 0.88);
-  --panel-border: #d4d4d4;
-  --text: #1c1917;
-  --muted: #57534e;
-  --faint: #a8a29e;
-  --input-bg: #f0ede8;
-  --accent: #059669;
-  --accent-dim: rgba(5, 150, 105, 0.10);
-  --accent-border: rgba(5, 150, 105, 0.35);
-  --accent-deep: #047857;
+  --bg: #ececf5;
+  --panel: rgba(255, 255, 255, 0.88);
+  --panel-border: #d3cfe6;
+  --text: #15121f;
+  --muted: #4a4458;
+  --faint: #9c96b8;
+  --input-bg: #f5f4fa;
+  --accent: #5b3df0;
+  --accent-dim: rgba(91, 61, 240, 0.10);
+  --accent-border: rgba(91, 61, 240, 0.35);
+  --accent-deep: #4c1d95;
   background-color: var(--bg);
 }
 
@@ -439,52 +452,52 @@
 [data-theme="light"] .login-glow--bottom {
   background: radial-gradient(
     50% 50% at 50% 50%,
-    rgba(5, 150, 105, 0.07) 0%,
+    rgba(91, 61, 240, 0.07) 0%,
     transparent 70%
   );
 }
 
 [data-theme="light"] .login-shell {
-  background: rgba(247, 244, 240, 0.88);
-  border-color: #d4d4d4;
+  background: rgba(255, 255, 255, 0.88);
+  border-color: #d3cfe6;
 }
 
 [data-theme="light"] .login-form__title {
-  color: #1c1917;
+  color: #15121f;
 }
 
 [data-theme="light"] .login-form__desc,
 [data-theme="light"] .login-field__label {
-  color: #57534e;
+  color: #4a4458;
 }
 
 [data-theme="light"] .login-field__input {
-  background: #f2f2f0;
-  border-color: #d4d4d4;
-  color: #1c1917;
+  background: #f5f4fa;
+  border-color: #d3cfe6;
+  color: #15121f;
 }
 
 [data-theme="light"] .login-field__input::placeholder {
-  color: #a8a29e;
+  color: #9c96b8;
 }
 
 [data-theme="light"] .login-field__input:focus {
-  border-color: rgba(5, 150, 105, 0.6);
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.10);
+  border-color: rgba(91, 61, 240, 0.6);
+  box-shadow: 0 0 0 3px rgba(91, 61, 240, 0.10);
 }
 
 [data-theme="light"] .login-brand__title-text {
-  color: #1c1917;
+  color: #15121f;
 }
 
 [data-theme="light"] .login-back__link {
-  color: #57534e;
+  color: #4a4458;
 }
 
 [data-theme="light"] .login-back__link:hover {
-  color: #059669;
+  color: #5b3df0;
 }
 
 [data-theme="light"] .login-form__footer {
-  color: #78716c;
+  color: #6f6a85;
 }

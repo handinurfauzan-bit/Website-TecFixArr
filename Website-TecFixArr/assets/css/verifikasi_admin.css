@@ -56,7 +56,7 @@
   flex-shrink: 0;
 }
 .verif-dot--yellow { background-color: #f59e0b; }
-.verif-dot--green  { background-color: #10b981; }
+.verif-dot--green  { background-color: #7c5cfc; }
 .verif-dot--red    { background-color: #ef4444; }
 
 .verif-stats {
@@ -222,7 +222,7 @@
 }
 
 .verif-table tbody tr {
-  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  border-bottom: 1px solid rgba(43, 43, 69, 0.5);
   transition: background-color 0.15s ease;
 }
 
@@ -277,7 +277,7 @@
 }
 
 .verif-avatar--yellow { background-color: rgba(245, 158, 11, 0.18); color: #f59e0b; }
-.verif-avatar--green  { background-color: rgba(16, 185, 129, 0.18); color: #10b981; }
+.verif-avatar--green  { background-color: rgba(124, 92, 252, 0.18); color: #7c5cfc; }
 .verif-avatar--purple { background-color: rgba(139, 92, 246, 0.18); color: #a78bfa; }
 .verif-avatar--blue   { background-color: rgba(59, 130, 246, 0.18);  color: #60a5fa; }
 .verif-avatar--red    { background-color: rgba(239, 68, 68, 0.18);   color: #f87171; }
@@ -295,7 +295,7 @@
 }
 
 .verif-badge--pending  { background-color: rgba(245, 158, 11, 0.10); color: #f59e0b; border-color: rgba(245, 158, 11, 0.25); }
-.verif-badge--active   { background-color: rgba(16, 185, 129, 0.10); color: #10b981; border-color: rgba(16, 185, 129, 0.25); }
+.verif-badge--active   { background-color: rgba(124, 92, 252, 0.10); color: #7c5cfc; border-color: rgba(124, 92, 252, 0.25); }
 .verif-badge--rejected { background-color: rgba(239, 68, 68, 0.10);  color: #f87171; border-color: rgba(239, 68, 68, 0.25);  }
 
 .verif-table__actions {
@@ -318,13 +318,13 @@
 }
 
 .verif-btn--approve {
-  background-color: rgba(16, 185, 129, 0.12);
-  color: #10b981;
-  border-color: rgba(16, 185, 129, 0.30);
+  background-color: rgba(124, 92, 252, 0.12);
+  color: #7c5cfc;
+  border-color: rgba(124, 92, 252, 0.30);
 }
 .verif-btn--approve:hover {
-  background-color: rgba(16, 185, 129, 0.22);
-  border-color: rgba(16, 185, 129, 0.50);
+  background-color: rgba(124, 92, 252, 0.22);
+  border-color: rgba(124, 92, 252, 0.50);
 }
 
 .verif-btn--reject {
@@ -386,22 +386,22 @@
 
 [data-theme="light"] .verif-filter-tab--active {
   background-color: rgba(0, 0, 0, 0.07);
-  border-color: #d4d4d4;
+  border-color: #d3cfe6;
 }
 
 [data-theme="light"] .verif-btn--approve {
-  background-color: rgba(5, 150, 105, 0.10);
-  color: #059669;
-  border-color: rgba(5, 150, 105, 0.28);
+  background-color: rgba(91, 61, 240, 0.10);
+  color: #5b3df0;
+  border-color: rgba(91, 61, 240, 0.28);
 }
 [data-theme="light"] .verif-btn--approve:hover {
-  background-color: rgba(5, 150, 105, 0.18);
+  background-color: rgba(91, 61, 240, 0.18);
 }
 
 [data-theme="light"] .verif-badge--active {
-  background-color: rgba(5, 150, 105, 0.10);
-  color: #059669;
-  border-color: rgba(5, 150, 105, 0.25);
+  background-color: rgba(91, 61, 240, 0.10);
+  color: #5b3df0;
+  border-color: rgba(91, 61, 240, 0.25);
 }
 
-[data-theme="light"] .verif-avatar--green { color: #059669; }
+[data-theme="light"] .verif-avatar--green { color: #5b3df0; }

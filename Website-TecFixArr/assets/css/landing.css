@@ -59,10 +59,6 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
 }
@@ -92,6 +88,28 @@ a {
   position: relative;
 }
 
+.responsive-landing .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 0 0 32px 32px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(10,10,20,0.55) 0%, rgba(10,10,20,0.75) 55%, rgba(10,10,20,0.95) 100%),
+    radial-gradient(60% 60% at 50% 35%, rgba(124,92,252,0.30) 0%, transparent 70%),
+    url("https://images.pexels.com/photos/6636476/pexels-photo-6636476.jpeg?auto=compress&cs=tinysrgb&w=1920")
+      center / cover no-repeat;
+  pointer-events: none;
+}
+
+[data-theme="light"] .responsive-landing .hero-bg {
+  background:
+    linear-gradient(180deg, rgba(20,18,35,0.62) 0%, rgba(20,18,35,0.8) 55%, rgba(20,18,35,0.95) 100%),
+    radial-gradient(60% 60% at 50% 35%, rgba(91,61,240,0.30) 0%, transparent 70%),
+    url("https://images.pexels.com/photos/6636476/pexels-photo-6636476.jpeg?auto=compress&cs=tinysrgb&w=1920")
+      center / cover no-repeat;
+}
+
 .responsive-landing .container {
   display: flex;
   align-items: center;
@@ -105,17 +123,17 @@ a {
   align-items: center;
   gap: 8px;
   padding: 6px 16px 6px 12px;
-  background-color: #10b98114;
+  background-color: #7c5cfc14;
   border-radius: 20px;
-  border: 1px solid #10b98147;
+  border: 1px solid #7c5cfc47;
 }
 
 .responsive-landing .dot {
   width: 6px;
   height: 6px;
-  background-color: #10b981;
+  background-color: #7c5cfc;
   border-radius: 50%;
-  box-shadow: 0 0 7px #10b981;
+  box-shadow: 0 0 7px #7c5cfc;
   flex-shrink: 0;
 }
 
@@ -126,7 +144,7 @@ a {
 .responsive-landing .text-wrapper {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 10.4px;
   letter-spacing: 0.94px;
   white-space: nowrap;
@@ -150,11 +168,11 @@ a {
 }
 
 .responsive-landing .span {
-  color: #f0ede8;
+  color: #f5f4fa;
 }
 
 .responsive-landing .text-wrapper-2 {
-  color: #10b981;
+  color: #7c5cfc;
 }
 
 .responsive-landing .paragraph-margin {
@@ -167,7 +185,7 @@ a {
 .responsive-landing .uji-kecocokan {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 16px;
   line-height: 1.7;
   text-align: center;
@@ -190,8 +208,8 @@ a {
   gap: 9px;
   padding: 13px 28px;
   border-radius: 12px;
-  box-shadow: 0 6px 28px #10b98159;
-  background: linear-gradient(117deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 6px 28px #7c5cfc59;
+  background: linear-gradient(117deg, #7c5cfc 0%, #5b3df0 100%);
   text-decoration: none;
   cursor: pointer;
 }
@@ -218,7 +236,7 @@ a {
 .responsive-landing .text-wrapper-3 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f7f4f0;
+  color: #ffffff;
   font-size: 15px;
   white-space: nowrap;
 }
@@ -230,7 +248,7 @@ a {
   gap: 9px;
   padding: 13px 28px;
   border-radius: 12px;
-  border: 1px solid #334155;
+  border: 1px solid #2b2b45;
   background-color: #ffffff0a;
   text-decoration: none;
   cursor: pointer;
@@ -239,7 +257,7 @@ a {
 .responsive-landing .text-wrapper-4 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 15px;
   white-space: nowrap;
 }
@@ -259,7 +277,7 @@ a {
   width: 700px;
   max-width: 100%;
   height: 560px;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(16,185,129,0.09) 0%, transparent 65%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(124,92,252,0.09) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -299,8 +317,8 @@ a {
   align-items: center;
   justify-content: center;
   padding: 4px 12px;
-  background-color: #10b98126;
-  border: 1px solid #10b9814c;
+  background-color: #7c5cfc26;
+  border: 1px solid #7c5cfc4c;
   border-radius: 4px;
 }
 
@@ -309,7 +327,7 @@ a {
   font-weight: 500;
   font-size: 9.6px;
   letter-spacing: 0.96px;
-  color: #10b981;
+  color: #7c5cfc;
   white-space: nowrap;
 }
 
@@ -322,7 +340,7 @@ a {
 .responsive-landing .p {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: clamp(20px, 3vw, 30px);
   text-align: center;
 }
@@ -346,9 +364,9 @@ a {
 .responsive-landing .container-14,
 .responsive-landing .container-18 {
   position: relative;
-  background-color: #1e293b;
+  background-color: #16162a;
   border-radius: 16px;
-  border: 1px solid #334155;
+  border: 1px solid #2b2b45;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -356,7 +374,7 @@ a {
   min-height: 240px;
 }
 
-.responsive-landing .container-8  { border-color: #10b98140; }
+.responsive-landing .container-8  { border-color: #7c5cfc40; }
 .responsive-landing .container-14 { border-color: #3b82f640; }
 .responsive-landing .container-18 { border-color: #8b5cf640; }
 
@@ -396,8 +414,8 @@ a {
 }
 
 .responsive-landing .container-11 {
-  background-color: #10b98126;
-  border-color: #10b98140;
+  background-color: #7c5cfc26;
+  border-color: #7c5cfc40;
 }
 
 .responsive-landing .container-16 {
@@ -426,8 +444,8 @@ a {
 }
 
 .responsive-landing .text-2 {
-  background-color: #10b98126;
-  border-color: #10b98140;
+  background-color: #7c5cfc26;
+  border-color: #7c5cfc40;
 }
 .responsive-landing .text-4 {
   background-color: #3b82f626;
@@ -441,7 +459,7 @@ a {
 .responsive-landing .text-wrapper-7 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 9.3px;
   letter-spacing: 0.74px;
 }
@@ -479,7 +497,7 @@ a {
 .responsive-landing .text-wrapper-8 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 16px;
   line-height: 1.4;
 }
@@ -487,7 +505,7 @@ a {
 .responsive-landing .text-wrapper-9 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 13.5px;
   line-height: 1.6;
 }
@@ -506,7 +524,7 @@ a {
   gap: 6px;
   padding-top: 14px;
   margin-top: 14px;
-  border-top: 1px solid #334155;
+  border-top: 1px solid #2b2b45;
   text-decoration: none;
   position: relative;
   z-index: 1;
@@ -520,7 +538,7 @@ a {
 .responsive-landing .text-wrapper-10 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 12.8px;
 }
 
@@ -583,15 +601,15 @@ a {
   display: inline-flex;
   align-items: center;
   padding: 2px 8px;
-  background-color: #10b98126;
+  background-color: #7c5cfc26;
   border-radius: 4px;
-  border: 1px solid #10b9814c;
+  border: 1px solid #7c5cfc4c;
 }
 
 .responsive-landing .text-wrapper-15 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 9.6px;
   letter-spacing: 0.6px;
 }
@@ -600,7 +618,7 @@ a {
 .responsive-landing .text-wrapper-25 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: clamp(20px, 3vw, 28px);
 }
 
@@ -619,7 +637,7 @@ a {
 .responsive-landing .text-wrapper-17 {
   font-family: "Nunito", "Nunito-SemiBold", Helvetica, sans-serif;
   font-weight: 600;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 13.5px;
 }
 
@@ -650,8 +668,8 @@ a {
 .responsive-landing .container-25,
 .responsive-landing .container-29,
 .responsive-landing .container-30 {
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #16162a;
+  border: 1px solid #2b2b45;
   border-radius: 16px;
   padding: 24px;
   display: flex;
@@ -777,7 +795,7 @@ a {
 .responsive-landing .text-wrapper-19 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 15.5px;
 }
 
@@ -788,7 +806,7 @@ a {
 .responsive-landing .text-wrapper-20 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -799,7 +817,7 @@ a {
   justify-content: space-between;
   padding-top: 14px;
   margin-top: 4px;
-  border-top: 1px solid #334155;
+  border-top: 1px solid #2b2b45;
   text-decoration: none;
 }
 
@@ -814,7 +832,7 @@ a {
 .responsive-landing .text-wrapper-24 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 11px;
 }
 
@@ -835,8 +853,8 @@ a {
 .responsive-landing .tut-card,
 .responsive-landing .tut-card-2,
 .responsive-landing .tut-card-3 {
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #16162a;
+  border: 1px solid #2b2b45;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -847,7 +865,7 @@ a {
   position: relative;
   width: 100%;
   height: 160px;
-  background-color: #1c1917;
+  background-color: #15121f;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -882,7 +900,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 55%);
+  background: linear-gradient(0deg, rgba(10,10,20,0.9) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -942,7 +960,7 @@ a {
 .responsive-landing .text-wrapper-27 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 15px;
   line-height: 1.4;
 }
@@ -954,7 +972,7 @@ a {
 .responsive-landing .text-wrapper-28 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 12.8px;
   line-height: 1.55;
 }
@@ -965,7 +983,7 @@ a {
   justify-content: space-between;
   padding-top: 14px;
   margin-top: auto;
-  border-top: 1px solid #334155;
+  border-top: 1px solid #2b2b45;
   text-decoration: none;
 }
 
@@ -994,14 +1012,14 @@ a {
 .responsive-landing .text-wrapper-29 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 10.9px;
 }
 
 .responsive-landing .text-wrapper-30 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 12.5px;
 }
 
@@ -1023,8 +1041,8 @@ a {
   gap: 28px;
   width: 100%;
   max-width: 900px;
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #16162a;
+  border: 1px solid #2b2b45;
   border-radius: 24px;
   padding: 52px 44px;
   position: relative;
@@ -1038,7 +1056,7 @@ a {
   transform: translateX(-50%);
   width: 100%;
   height: 100%;
-  background: radial-gradient(60% 50% at 50% 0%, rgba(16,185,129,0.13) 0%, transparent 70%);
+  background: radial-gradient(60% 50% at 50% 0%, rgba(124,92,252,0.13) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1057,9 +1075,9 @@ a {
   align-items: center;
   gap: 8px;
   padding: 6px 16px 6px 12px;
-  background-color: #10b98114;
+  background-color: #7c5cfc14;
   border-radius: 20px;
-  border: 1px solid #10b98147;
+  border: 1px solid #7c5cfc47;
 }
 
 .responsive-landing .text-12 {
@@ -1069,7 +1087,7 @@ a {
 .responsive-landing .text-wrapper-31 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 10.4px;
   letter-spacing: 0.94px;
   white-space: nowrap;
@@ -1082,7 +1100,7 @@ a {
 .responsive-landing .text-wrapper-32 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: clamp(22px, 3.5vw, 34px);
   line-height: 1.2;
   text-align: center;
@@ -1096,7 +1114,7 @@ a {
 .responsive-landing .pilih-cocokkan-dan {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 15px;
   line-height: 1.7;
   text-align: center;
@@ -1109,8 +1127,8 @@ a {
   gap: 10px;
   padding: 14px 36px;
   border-radius: 12px;
-  box-shadow: 0 6px 28px #10b98159;
-  background: linear-gradient(117deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 6px 28px #7c5cfc59;
+  background: linear-gradient(117deg, #7c5cfc 0%, #5b3df0 100%);
   text-decoration: none;
   position: relative;
   z-index: 1;
@@ -1126,7 +1144,7 @@ a {
 .responsive-landing .text-wrapper-33 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f7f4f0;
+  color: #ffffff;
   font-size: 15.5px;
   white-space: nowrap;
 }
@@ -1139,8 +1157,8 @@ a {
   gap: 20px;
   padding: 28px 48px;
   width: 100%;
-  background-color: #0c1525;
-  border-top: 1px solid #1e293b;
+  background-color: #08080f;
+  border-top: 1px solid #16162a;
   position: relative;
   z-index: 1;
   box-sizing: border-box;
@@ -1215,7 +1233,7 @@ a {
 .responsive-landing .text-wrapper-39 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 13px;
   transition: color 0.2s;
 }
@@ -1224,7 +1242,7 @@ a {
 .responsive-landing .button-8:hover .text-wrapper-37,
 .responsive-landing .button-9:hover .text-wrapper-38,
 .responsive-landing .button-10:hover .text-wrapper-39 {
-  color: #a8a29e;
+  color: #9c96b8;
 }
 
 .responsive-landing .text-14 {
@@ -1235,7 +1253,7 @@ a {
 .responsive-landing .text-wrapper-40 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #57534e;
+  color: #4a4458;
   font-size: 12px;
 }
 
@@ -1246,8 +1264,8 @@ a {
   display: flex;
   align-items: center;
   padding: 8px 14px;
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #16162a;
+  border: 1px solid #2b2b45;
   border-radius: 8px;
   text-decoration: none;
   z-index: 200;
@@ -1255,13 +1273,13 @@ a {
 }
 
 .responsive-landing .app-2:hover {
-  border-color: #10b981;
+  border-color: #7c5cfc;
 }
 
 .responsive-landing .text-wrapper-45 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 11px;
   letter-spacing: 0.5px;
 }
@@ -1369,145 +1387,145 @@ a {
 
 [data-theme="light"] body,
 [data-theme="light"] .responsive-landing {
-  background-color: #ededed;
-  color: #1c1917;
+  background-color: #ececf5;
+  color: #15121f;
 }
 
-[data-theme="light"] .responsive-landing .grid-bg {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-}
 
-[data-theme="light"] .responsive-landing .span {
-  color: #1c1917;
+
+[data-theme="light"] .responsive-landing .section .span {
+  color: #f5f4fa;
 }
-[data-theme="light"] .responsive-landing .uji-kecocokan {
-  color: #57534e;
+[data-theme="light"] .responsive-landing .section .uji-kecocokan {
+  color: #cfccdd;
+}
+[data-theme="light"] .responsive-landing .section .button-2 {
+  border: 1px solid #ffffff40;
+  background-color: #ffffff14;
 }
 [data-theme="light"] .responsive-landing .p {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-16,
 [data-theme="light"] .responsive-landing .text-wrapper-25 {
-  color: #1c1917;
+  color: #15121f;
 }
 
 [data-theme="light"] .responsive-landing .button-2 {
   background-color: rgba(0, 0, 0, 0.04);
-  border-color: #d4d4d4;
+  border-color: #d3cfe6;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-4 {
-  color: #1c1917;
+  color: #15121f;
 }
 
 [data-theme="light"] .responsive-landing .container-8,
 [data-theme="light"] .responsive-landing .container-14,
 [data-theme="light"] .responsive-landing .container-18 {
-  background-color: #f4f4f4;
-  border-color: #e2e2e2;
+  background-color: #f1f0fa;
+  border-color: #e2dff2;
 }
-[data-theme="light"] .responsive-landing .container-8  { border-color: rgba(5, 150, 105, 0.30); }
+[data-theme="light"] .responsive-landing .container-8  { border-color: rgba(91, 61, 240, 0.30); }
 [data-theme="light"] .responsive-landing .container-14 { border-color: rgba(37, 99, 235, 0.30); }
 [data-theme="light"] .responsive-landing .container-18 { border-color: rgba(139, 92, 246, 0.30); }
 
 [data-theme="light"] .responsive-landing .text-wrapper-8 {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-9 {
-  color: #57534e;
+  color: #4a4458;
 }
 
 [data-theme="light"] .responsive-landing .container-13,
 [data-theme="light"] .responsive-landing .container-17,
 [data-theme="light"] .responsive-landing .container-21 {
-  border-top-color: #e2e2e2;
+  border-top-color: #e2dff2;
 }
 
 [data-theme="light"] .responsive-landing .container-25,
 [data-theme="light"] .responsive-landing .container-29,
 [data-theme="light"] .responsive-landing .container-30 {
-  background-color: #f4f4f4;
-  border-color: #e2e2e2;
+  background-color: #f1f0fa;
+  border-color: #e2dff2;
 }
 [data-theme="light"] .responsive-landing .container-25:hover { border-color: rgba(37, 99, 235, 0.50); }
 [data-theme="light"] .responsive-landing .container-29:hover { border-color: rgba(245, 158, 11, 0.50); }
 [data-theme="light"] .responsive-landing .container-30:hover { border-color: rgba(239, 68, 68, 0.50); }
 
 [data-theme="light"] .responsive-landing .text-wrapper-19 {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-20 {
-  color: #57534e;
+  color: #4a4458;
 }
 [data-theme="light"] .responsive-landing .container-28 {
-  border-top-color: #e2e2e2;
+  border-top-color: #e2dff2;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-21,
 [data-theme="light"] .responsive-landing .text-wrapper-24 {
-  color: #78716c;
+  color: #6f6a85;
 }
 
 [data-theme="light"] .responsive-landing .tut-card,
 [data-theme="light"] .responsive-landing .tut-card-2,
 [data-theme="light"] .responsive-landing .tut-card-3 {
-  background-color: #f4f4f4;
-  border-color: #e2e2e2;
+  background-color: #f1f0fa;
+  border-color: #e2dff2;
 }
 [data-theme="light"] .responsive-landing .container-33 {
-  background-color: #e2e2e2;
+  background-color: #e2dff2;
 }
 [data-theme="light"] .responsive-landing .container-34 {
-  background: linear-gradient(0deg, rgba(240, 237, 232, 0.9) 0%, transparent 55%);
+  background: linear-gradient(0deg, rgba(245, 244, 250, 0.9) 0%, transparent 55%);
 }
 [data-theme="light"] .responsive-landing .text-wrapper-27 {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-28 {
-  color: #57534e;
+  color: #4a4458;
 }
 [data-theme="light"] .responsive-landing .container-37 {
-  border-top-color: #e2e2e2;
+  border-top-color: #e2dff2;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-29 {
-  color: #78716c;
+  color: #6f6a85;
 }
 
 [data-theme="light"] .responsive-landing .container-38 {
-  background-color: #f4f4f4;
-  border-color: rgba(5, 150, 105, 0.25);
+  background-color: #f1f0fa;
+  border-color: rgba(91, 61, 240, 0.25);
 }
 [data-theme="light"] .responsive-landing .text-wrapper-32 {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .responsive-landing .pilih-cocokkan-dan {
-  color: #57534e;
+  color: #4a4458;
 }
 
 [data-theme="light"] .responsive-landing .footer {
-  background-color: #e2e2e2;
-  border-top-color: #d6d0c8;
+  background-color: #e2dff2;
+  border-top-color: #d0c9e6;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-36,
 [data-theme="light"] .responsive-landing .text-wrapper-37,
 [data-theme="light"] .responsive-landing .text-wrapper-38,
 [data-theme="light"] .responsive-landing .text-wrapper-39 {
-  color: #78716c;
+  color: #6f6a85;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-40 {
-  color: #78716c;
+  color: #6f6a85;
 }
 [data-theme="light"] .responsive-landing .button-7:hover .text-wrapper-36,
 [data-theme="light"] .responsive-landing .button-8:hover .text-wrapper-37,
 [data-theme="light"] .responsive-landing .button-9:hover .text-wrapper-38,
 [data-theme="light"] .responsive-landing .button-10:hover .text-wrapper-39 {
-  color: #57534e;
+  color: #4a4458;
 }
 
 [data-theme="light"] .responsive-landing .app-2 {
-  background-color: #f4f4f4;
-  border-color: #d4d4d4;
+  background-color: #f1f0fa;
+  border-color: #d3cfe6;
 }
 [data-theme="light"] .responsive-landing .text-wrapper-45 {
-  color: #78716c;
+  color: #6f6a85;
 }
