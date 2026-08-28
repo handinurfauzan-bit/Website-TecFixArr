@@ -1,7 +1,4 @@
-/* ============================================================
-   simulasi.css — Halaman Simulasi Perakitan PC TechFixAr
-   Tema: Purple Dark, setema dengan website
-   ============================================================ */
+ 
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -20,7 +17,7 @@ body {
 img  { display: block; max-width: 100%; height: auto; }
 a    { text-decoration: none; color: inherit; }
 
-/* ── Root wrapper ── */
+ 
 .halaman-simulasi {
   display: flex;
   flex-direction: column;
@@ -48,7 +45,7 @@ a    { text-decoration: none; color: inherit; }
   z-index: 0;
 }
 
-/* ── Main ── */
+ 
 .simulasi-main {
   flex: 1;
   padding-top: 66px;
@@ -56,7 +53,7 @@ a    { text-decoration: none; color: inherit; }
   z-index: 1;
 }
 
-/* ── Page header ── */
+ 
 .simulasi-header {
   padding: 52px 48px 36px;
   max-width: 1280px;
@@ -108,7 +105,7 @@ a    { text-decoration: none; color: inherit; }
   line-height: 1.65;
 }
 
-/* ── Layout 2 kolom ── */
+ 
 .simulasi-layout {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -119,14 +116,14 @@ a    { text-decoration: none; color: inherit; }
   align-items: start;
 }
 
-/* ── Form panel ── */
+ 
 .simulasi-form-panel {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* ── Komponen card ── */
+ 
 .komponen-card {
   background: var(--color-panel);
   border: 1px solid var(--color-border);
@@ -256,7 +253,7 @@ a    { text-decoration: none; color: inherit; }
   color: var(--color-accent-bright);
 }
 
-/* ── Dropdown opsi ── */
+ 
 .komponen-card__dropdown {
   border-top: 1px solid var(--color-border);
   overflow: hidden;
@@ -345,7 +342,7 @@ a    { text-decoration: none; color: inherit; }
   border-color: var(--color-accent);
 }
 
-/* ── Summary panel (sticky kanan) ── */
+ 
 .simulasi-summary {
   position: sticky;
   top: 82px;
@@ -388,7 +385,7 @@ a    { text-decoration: none; color: inherit; }
   color: var(--color-text);
 }
 
-/* ── Daftar komponen terpilih ── */
+ 
 .summary-list {
   padding: 12px 16px;
   display: flex;
@@ -441,7 +438,7 @@ a    { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 
-/* ── Total harga ── */
+ 
 .summary-total {
   padding: 14px 20px;
   border-top: 1px solid var(--color-border);
@@ -465,7 +462,7 @@ a    { text-decoration: none; color: inherit; }
   transition: color 0.2s ease;
 }
 
-/* ── Estimasi watt ── */
+ 
 .summary-watt {
   padding: 10px 20px;
   border-top: 1px solid var(--color-border);
@@ -486,7 +483,7 @@ a    { text-decoration: none; color: inherit; }
   color: #fbbf24;
 }
 
-/* ── Kompatibilitas panel ── */
+ 
 .compat-card {
   background: var(--color-panel);
   border: 1px solid var(--color-border);
@@ -549,7 +546,7 @@ a    { text-decoration: none; color: inherit; }
 
 .compat-item__icon { flex-shrink: 0; margin-top: 1px; }
 
-/* ── Reset button ── */
+ 
 .simulasi-reset-btn {
   display: flex;
   align-items: center;
@@ -574,7 +571,7 @@ a    { text-decoration: none; color: inherit; }
   color: #f87171;
 }
 
-/* ── PSU warning banner ── */
+ 
 .psu-warning {
   display: none;
   align-items: center;
@@ -591,7 +588,7 @@ a    { text-decoration: none; color: inherit; }
 
 .psu-warning.visible { display: flex; }
 
-/* ── Footer ── */
+ 
 .simulasi-footer {
   border-top: 1px solid var(--color-border);
   padding: 28px 48px;
@@ -654,9 +651,7 @@ a    { text-decoration: none; color: inherit; }
   color: var(--color-faint);
 }
 
-/* ================================================================
-   LIGHT MODE
-   ================================================================ */
+ 
 [data-theme="light"] .halaman-simulasi {
   background: linear-gradient(180deg,
     #f5f4fa 0%, #ececf5 40%, #e8e6f0 70%, #f5f4fa 100%);
@@ -726,9 +721,7 @@ a    { text-decoration: none; color: inherit; }
   color: var(--color-accent);
 }
 
-/* ================================================================
-   RESPONSIVE
-   ================================================================ */
+ 
 @media (max-width: 1024px) {
   .simulasi-layout {
     grid-template-columns: 1fr;

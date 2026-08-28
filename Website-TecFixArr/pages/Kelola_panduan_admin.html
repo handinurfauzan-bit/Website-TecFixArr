@@ -249,6 +249,13 @@
         <section class="article-grid" aria-label="Daftar artikel">
           <article class="article-card" data-category="troubleshooting">
             <div class="article-card__cover article-card__cover--purple">
+              <img
+                class="article-card__image"
+                src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=70"
+                alt="Motherboard dengan LED CPU merah menyala sebagai indikator troubleshooting"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
               <span class="article-card__tag">TROUBLESHOOTING</span>
             </div>
             <div class="article-card__body">
@@ -784,7 +791,7 @@
 
         <footer class="admin-footer">
           <p class="admin-footer__info">Menampilkan 6 dari 48 artikel</p>
-          <nav class="admin-pagination" aria-label="Paginasi">
+          <nav class="admin-pagination" aria-label="Paginasi" hidden>
             <a
               class="admin-page admin-page--active"
               href="#"
@@ -807,13 +814,69 @@
         const filters = document.querySelectorAll(".admin-filter");
         const cards = document.querySelectorAll(".article-card");
         const counter = document.querySelector(".admin-footer__info");
-        const totalText = "Menampilkan {n} dari 48 artikel";
+        const pagination = document.querySelector(".admin-pagination");
+        const totalText = "Menampilkan {n} dari 6 artikel";
+        const PER_PAGE = 6;
+
+        function buildPagination(totalPages) {
+          if (!pagination) return;
+          pagination.innerHTML = "";
+          if (totalPages <= 1) {
+            pagination.hidden = true;
+            return;
+          }
+          pagination.hidden = false;
+          const maxVisible = 5;
+          const pages = [];
+          for (let i = 1; i <= Math.min(maxVisible, totalPages); i++) pages.push(i);
+          if (totalPages > maxVisible) {
+            pages.push("…");
+            pages.push(totalPages);
+          }
+          pages.forEach((p) => {
+            if (p === "…") {
+              const span = document.createElement("span");
+              span.className = "admin-page admin-page--ellipsis";
+              span.setAttribute("aria-hidden", "true");
+              span.textContent = "…";
+              pagination.appendChild(span);
+            } else {
+              const a = document.createElement("a");
+              a.className = "admin-page" + (p === 1 ? " admin-page--active" : "");
+              a.href = "#";
+              a.setAttribute("aria-current", p === 1 ? "page" : null);
+              a.textContent = String(p);
+              pagination.appendChild(a);
+            }
+          });
+        }
+
+        function applyFilter(activeFilter) {
+          let visibleCount = 0;
+          cards.forEach((card) => {
+            const cardCategory = card.getAttribute("data-category");
+            const shouldShow =
+              activeFilter === "all" || cardCategory === activeFilter;
+            if (shouldShow) {
+              card.style.display = "";
+              visibleCount += 1;
+            } else {
+              card.style.display = "none";
+            }
+          });
+
+          if (counter) {
+            counter.textContent = totalText.replace("{n}", visibleCount);
+          }
+
+          const totalPages = Math.ceil(visibleCount / PER_PAGE);
+          buildPagination(totalPages);
+        }
 
         filters.forEach((btn) => {
           btn.addEventListener("click", () => {
             const activeFilter = btn.getAttribute("data-filter");
 
-            // Update tab state
             filters.forEach((item) => {
               item.classList.remove("admin-filter--active");
               item.setAttribute("aria-selected", "false");
@@ -821,26 +884,11 @@
             btn.classList.add("admin-filter--active");
             btn.setAttribute("aria-selected", "true");
 
-            // Show/hide cards based on category
-            let visibleCount = 0;
-            cards.forEach((card) => {
-              const cardCategory = card.getAttribute("data-category");
-              const shouldShow =
-                activeFilter === "all" || cardCategory === activeFilter;
-              if (shouldShow) {
-                card.style.display = "";
-                visibleCount += 1;
-              } else {
-                card.style.display = "none";
-              }
-            });
-
-            // Update counter
-            if (counter) {
-              counter.textContent = totalText.replace("{n}", visibleCount);
-            }
+            applyFilter(activeFilter);
           });
         });
+
+        applyFilter("all");
       })();
     </script>
   </body>

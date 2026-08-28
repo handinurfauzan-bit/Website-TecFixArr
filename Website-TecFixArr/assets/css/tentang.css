@@ -1,9 +1,6 @@
-/* ============================================================
-   tentang.css — Halaman Tentang TechFixAr
-   Tema: Purple Dark, setema dengan website
-   ============================================================ */
+ 
 
-/* ── Reset & base ── */
+ 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -31,7 +28,7 @@ a {
   color: inherit;
 }
 
-/* ── Root wrapper ── */
+ 
 .halaman-tentang {
   display: flex;
   flex-direction: column;
@@ -46,7 +43,7 @@ a {
   position: relative;
 }
 
-/* Subtle purple glow di atas */
+ 
 .halaman-tentang::before {
   content: "";
   position: fixed;
@@ -60,7 +57,7 @@ a {
   z-index: 0;
 }
 
-/* ── Main ── */
+ 
 .tentang-main {
   flex: 1;
   padding-top: 66px;
@@ -68,7 +65,7 @@ a {
   z-index: 1;
 }
 
-/* ── Hero ── */
+ 
 .tentang-hero {
   padding: 80px 48px 64px;
   max-width: 1200px;
@@ -134,7 +131,7 @@ a {
   flex-wrap: wrap;
 }
 
-/* ── Tombol primary ── */
+ 
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -163,7 +160,7 @@ a {
   outline-offset: 3px;
 }
 
-/* ── Tombol outline ── */
+ 
 .btn-outline {
   display: inline-flex;
   align-items: center;
@@ -191,7 +188,7 @@ a {
   outline-offset: 3px;
 }
 
-/* ── Hero visual card ── */
+ 
 .tentang-hero__visual {
   position: relative;
   display: flex;
@@ -290,7 +287,7 @@ a {
   font-weight: 600;
 }
 
-/* ── Visi Misi ── */
+ 
 .tentang-section {
   padding: 72px 48px;
   max-width: 1200px;
@@ -340,7 +337,7 @@ a {
   line-height: 1.65;
 }
 
-/* ── Visi Misi cards ── */
+ 
 .tentang-vm-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -410,7 +407,7 @@ a {
   line-height: 1.7;
 }
 
-/* ── Nilai-nilai ── */
+ 
 .tentang-nilai-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -493,7 +490,7 @@ a {
   line-height: 1.55;
 }
 
-/* ── Tim ── */
+ 
 .tentang-tim-grid {
   display: flex;
   justify-content: center;
@@ -562,7 +559,7 @@ a {
   line-height: 1.5;
 }
 
-/* ── Teknologi ── */
+ 
 .tentang-tech-list {
   display: flex;
   align-items: center;
@@ -606,7 +603,7 @@ a {
 .tentang-tech-badge__dot--ci     { background: #ef4223; }
 .tentang-tech-badge__dot--mysql  { background: #00758f; }
 
-/* ── CTA banner ── */
+ 
 .tentang-cta {
   padding: 72px 48px;
   max-width: 1200px;
@@ -671,7 +668,7 @@ a {
   position: relative;
 }
 
-/* ── Footer ── */
+ 
 .tentang-footer {
   border-top: 1px solid var(--color-border);
   padding: 32px 48px;
@@ -737,9 +734,7 @@ a {
   color: var(--color-faint);
 }
 
-/* ================================================================
-   LIGHT MODE
-   ================================================================ */
+ 
 [data-theme="light"] .halaman-tentang {
   background: linear-gradient(180deg,
     #f5f4fa 0%,
@@ -847,9 +842,7 @@ a {
   mix-blend-mode: multiply;
 }
 
-/* ================================================================
-   RESPONSIVE
-   ================================================================ */
+ 
 @media (max-width: 900px) {
   .tentang-hero {
     grid-template-columns: 1fr;

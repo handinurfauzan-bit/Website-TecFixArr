@@ -1,15 +1,5 @@
-/* ============================================================
-   simulasi.js — Logika Simulasi Perakitan PC TechFixAr
-   Fitur:
-   - Data komponen dengan harga, watt, dan metadata socket/tipe
-   - Dropdown accordion interaktif
-   - Cek kompatibilitas real-time (CPU↔Mobo socket, RAM tipe, PSU watt)
-   - Kalkulasi total harga & estimasi daya
-   ============================================================ */
-
 'use strict';
 
-/* ── Data Komponen ────────────────────────────────────────── */
 const DATA = {
   cpu: [
     { id: 'r5-7600x',  name: 'AMD Ryzen 5 7600X',      spec: '6-Core / 12-Thread, 4.7GHz, AM5', price: 2_850_000,  watt: 105, socket: 'AM5',  ramType: 'DDR5' },
@@ -79,10 +69,8 @@ const DATA = {
   ],
 };
 
-/* Watt base system (mobo + komponen kecil) */
 const BASE_SYSTEM_WATT = 50;
 
-/* ── State ──────────────────────────────────────────────── */
 const state = {
   cpu: null,
   mobo: null,
@@ -93,12 +81,10 @@ const state = {
   casing: null,
 };
 
-/* ── Helper format harga ─────────────────────────────────── */
 function formatRp(n) {
   return 'Rp ' + n.toLocaleString('id-ID');
 }
 
-/* ── Render dropdown options ─────────────────────────────── */
 function renderOptions(key, items) {
   const container = document.querySelector(`#dropdown-${key} .komponen-card__options`);
   if (!container) return;
@@ -130,17 +116,14 @@ function renderOptions(key, items) {
   });
 }
 
-/* ── Inisialisasi semua dropdown ─────────────────────────── */
 function initDropdowns() {
   Object.keys(DATA).forEach(key => renderOptions(key, DATA[key]));
 }
 
-/* ── Toggle accordion ────────────────────────────────────── */
 function toggleCard(key) {
   const card = document.getElementById(`card-${key}`);
   const isOpen = card.classList.contains('is-open');
 
-  // Tutup semua card lain
   document.querySelectorAll('.komponen-card.is-open').forEach(c => {
     if (c !== card) {
       c.classList.remove('is-open');
@@ -152,11 +135,9 @@ function toggleCard(key) {
   card.querySelector('.komponen-card__header').setAttribute('aria-expanded', String(!isOpen));
 }
 
-/* ── Pilih komponen ──────────────────────────────────────── */
 function selectItem(key, item) {
   state[key] = item;
 
-  // Update header display
   const nameEl  = document.getElementById(`${key}-name`);
   const priceEl = document.getElementById(`${key}-price`);
   if (nameEl) {
@@ -165,34 +146,28 @@ function selectItem(key, item) {
   }
   if (priceEl) priceEl.textContent = formatRp(item.price);
 
-  // Tandai card sebagai selected
   const card = document.getElementById(`card-${key}`);
   card.classList.add('is-selected');
 
-  // Re-render options (update active state)
   renderOptions(key, DATA[key]);
 
-  // Tutup dropdown setelah pilih
   card.classList.remove('is-open');
   card.querySelector('.komponen-card__header').setAttribute('aria-expanded', 'false');
 
-  // Update summary & kompatibilitas
   updateSummary();
   checkCompatibility();
 }
 
-/* ── Update ringkasan ────────────────────────────────────── */
 function updateSummary() {
   const keys = ['cpu', 'mobo', 'ram', 'gpu', 'storage', 'psu', 'casing'];
-  const shortKey = { cpu:'cpu', mobo:'mobo', ram:'ram', gpu:'gpu', storage:'storage', psu:'psu', casing:'casing' };
 
   let total = 0;
   let totalWatt = BASE_SYSTEM_WATT;
 
   keys.forEach(key => {
     const item = state[key];
-    const nameEl  = document.getElementById(`s-${key}`);
-    const priceEl = document.getElementById(`s-${key}-p`);
+    const nameEl  = document.getElementById(`${key}-name`);
+    const priceEl = document.getElementById(`${key}-price`);
     if (item) {
       if (nameEl)  { nameEl.textContent = item.name; nameEl.classList.remove('empty'); }
       if (priceEl) priceEl.textContent = formatRp(item.price);
@@ -208,12 +183,10 @@ function updateSummary() {
   document.getElementById('total-watt').textContent  = total > 0 ? `~${totalWatt} W` : '— W';
 }
 
-/* ── Cek kompatibilitas ──────────────────────────────────── */
 function checkCompatibility() {
   const results = [];
   const { cpu, mobo, ram, psu } = state;
 
-  // -- CPU & Mobo socket --
   if (cpu && mobo) {
     if (cpu.socket === mobo.socket) {
       results.push({ type: 'ok',   msg: `CPU & Mobo: socket ${cpu.socket} cocok ✓` });
@@ -222,7 +195,6 @@ function checkCompatibility() {
     }
   }
 
-  // -- RAM & CPU/Mobo tipe --
   if (ram) {
     if (cpu && mobo) {
       const cpuSupport  = cpu.ramType.includes(ram.type);
@@ -242,7 +214,6 @@ function checkCompatibility() {
     }
   }
 
-  // -- PSU watt cukup --
   if (psu) {
     let reqWatt = BASE_SYSTEM_WATT;
     if (cpu) reqWatt += cpu.watt;
@@ -250,7 +221,7 @@ function checkCompatibility() {
     if (state.ram) reqWatt += state.ram.watt;
     if (state.storage) reqWatt += state.storage.watt;
 
-    const recommended = Math.ceil(reqWatt * 1.25); // 25% headroom
+    const recommended = Math.ceil(reqWatt * 1.25);
     const psuEl = document.getElementById('psu-warning');
     const psuTxt = document.getElementById('psu-warning-text');
 
@@ -270,7 +241,6 @@ function checkCompatibility() {
     if (psuEl) psuEl.classList.remove('visible');
   }
 
-  // -- Casing & Mobo form factor --
   if (state.casing && mobo) {
     const casingSupports = state.casing.formFactor.includes(mobo.formFactor);
     if (casingSupports) {
@@ -280,13 +250,11 @@ function checkCompatibility() {
     }
   }
 
-  // -- Tidak ada komponen sama sekali --
   if (Object.values(state).every(v => v === null)) {
     renderCompatResult([]);
     return;
   }
 
-  // -- Semua lengkap & OK --
   const selectedCount = Object.values(state).filter(v => v !== null).length;
   if (selectedCount === 7 && results.every(r => r.type === 'ok')) {
     results.push({ type: 'ok', msg: 'Semua komponen kompatibel! Build siap dirakit 🎉' });
@@ -295,7 +263,6 @@ function checkCompatibility() {
   renderCompatResult(results);
 }
 
-/* ── Render hasil kompatibilitas ─────────────────────────── */
 function renderCompatResult(results) {
   const list = document.getElementById('compat-list');
   const dot  = document.getElementById('compat-dot');
@@ -328,11 +295,9 @@ function renderCompatResult(results) {
     </div>`).join('');
 }
 
-/* ── Reset semua ─────────────────────────────────────────── */
 function resetAll() {
   Object.keys(state).forEach(k => { state[k] = null; });
 
-  // Reset header tampilan
   ['cpu','mobo','ram','gpu','storage','psu','casing'].forEach(key => {
     const nameEl  = document.getElementById(`${key}-name`);
     const priceEl = document.getElementById(`${key}-price`);
@@ -341,11 +306,9 @@ function resetAll() {
     if (priceEl) priceEl.textContent = '';
     if (card)    { card.classList.remove('is-selected', 'is-open', 'has-error'); }
 
-    // Re-render options
     renderOptions(key, DATA[key]);
   });
 
-  // Reset PSU warning
   const psuEl = document.getElementById('psu-warning');
   if (psuEl) psuEl.classList.remove('visible');
 
@@ -353,9 +316,7 @@ function resetAll() {
   checkCompatibility();
 }
 
-/* ── Pasang event listeners ──────────────────────────────── */
 function initEvents() {
-  // Toggle accordion untuk setiap card
   ['cpu','mobo','ram','gpu','storage','psu','casing'].forEach(key => {
     const header = document.querySelector(`#card-${key} .komponen-card__header`);
     if (!header) return;
@@ -365,12 +326,10 @@ function initEvents() {
     });
   });
 
-  // Reset button
   const resetBtn = document.getElementById('reset-btn');
   if (resetBtn) resetBtn.addEventListener('click', resetAll);
 }
 
-/* ── Init ────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initDropdowns();
   initEvents();

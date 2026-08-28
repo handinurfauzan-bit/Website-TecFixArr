@@ -1,24 +1,15 @@
-/**
- * panduan.js
- * Filter kategori + pencarian artikel di halaman Panduan & Servis
- */
-
 (function () {
   'use strict';
 
-  // ── Elemen utama ──────────────────────────────────────────────────────────
   const searchInput   = document.getElementById('panduan-search');
   const artikelCount  = document.getElementById('artikel-count');
   const filterBtns    = document.querySelectorAll('.filter-btn');
 
-  // Setiap wrapper <a> berisi satu <article data-kategori="...">
   const artikelLinks  = document.querySelectorAll('.artikel-link');
 
-  // ── State ─────────────────────────────────────────────────────────────────
-  let activeFilter = 'semua';   // nilai dari data-filter tombol aktif
+  let activeFilter = 'semua';
   let searchQuery  = '';
 
-  // ── Fungsi utama: tampilkan / sembunyikan artikel ─────────────────────────
   function applyFilters() {
     let visible = 0;
 
@@ -31,12 +22,10 @@
       const deskripsi  = (article.querySelector('.text-wrapper-9')?.textContent || '').toLowerCase();
       const q          = searchQuery.toLowerCase();
 
-      // Filter kategori
       const passKategori =
         activeFilter === 'semua' ||
         kategori === activeFilter;
 
-      // Filter pencarian (cek judul + deskripsi)
       const passSearch =
         q === '' ||
         judul.includes(q) ||
@@ -48,16 +37,13 @@
       if (tampil) visible++;
     });
 
-    // Update penghitung artikel
     if (artikelCount) {
       artikelCount.textContent = visible + ' artikel';
     }
 
-    // Tampilkan pesan kosong jika tidak ada hasil
     showEmptyState(visible === 0);
   }
 
-  // ── Pesan "tidak ada artikel" ─────────────────────────────────────────────
   function showEmptyState(isEmpty) {
     let emptyEl = document.getElementById('panduan-empty');
 
@@ -81,19 +67,14 @@
     }
   }
 
-  // ── Event: klik tombol filter ─────────────────────────────────────────────
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      // Update state
       activeFilter = btn.dataset.filter || 'semua';
 
-      // Update aria-pressed dan gaya tombol aktif
       filterBtns.forEach(function (b) {
         const isActive = b === btn;
         b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
 
-        // Tombol "Semua Panduan" pakai class .button (ungu),
-        // sisanya pakai .button-2 / .button-3 (netral)
         if (b.dataset.filter === 'semua') {
           b.className = isActive
             ? 'button filter-btn filter-btn--active'
@@ -109,14 +90,12 @@
     });
   });
 
-  // ── Event: ketik di search input ──────────────────────────────────────────
   if (searchInput) {
     searchInput.addEventListener('input', function () {
       searchQuery = searchInput.value.trim();
       applyFilters();
     });
 
-    // Bersihkan hasil saat tekan Escape
     searchInput.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         searchInput.value = '';
@@ -127,7 +106,6 @@
     });
   }
 
-  // ── Inisialisasi awal ─────────────────────────────────────────────────────
   applyFilters();
 
 })();
