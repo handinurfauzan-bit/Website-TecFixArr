@@ -302,7 +302,23 @@
 
 .admin-main {
   padding: 32px 36px 40px;
-  background: transparent;
+  background: linear-gradient(180deg,
+    rgba(10, 10, 20, 1) 0%,
+    rgba(16, 16, 30, 1) 50%,
+    rgba(10, 10, 20, 1) 100%);
+}
+
+.admin-main::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 320px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124, 92, 252, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .btn-draft,
@@ -503,7 +519,10 @@
   --sky-dim: rgba(37, 99, 235, 0.10);
   --danger: #dc2626;
   --danger-dim: rgba(220, 38, 38, 0.10);
-  background-color: var(--bg);
+  background: linear-gradient(180deg,
+    #f5f4fa 0%,
+    #ececf5 50%,
+    #f5f4fa 100%);
 }
 
 [data-theme="light"] .admin-app::after {

@@ -3,7 +3,20 @@
   flex-direction: column;
   min-height: 100vh;
   position: relative;
-  background-color: var(--color-bg);
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-elevated) 50%, var(--color-bg) 100%);
+}
+
+.halaman-panduannya::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124, 92, 252, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .halaman-panduannya .app,

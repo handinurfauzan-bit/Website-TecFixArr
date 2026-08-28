@@ -1,18 +1,18 @@
 .halaman-register-admin {
-  --bg:           #0a0a14;
-  --panel:        #16162a;
+  --bg: #0a0a14;
+  --panel: #16162a;
   --panel-border: #2b2b45;
-  --text:         #f5f4fa;
-  --muted:        #9c96b8;
-  --faint:        #6f6a85;
-  --input-bg:     #0a0a14;
+  --text: #f5f4fa;
+  --muted: #9c96b8;
+  --faint: #6f6a85;
+  --input-bg: #0a0a14;
 
-  --accent:        #7c5cfc;
+  --accent: #7c5cfc;
   --accent-bright: #a78bfa;
-  --accent-deep:   #5b3df0;
-  --accent-dim:    rgba(124, 92, 252, 0.14);
+  --accent-deep: #5b3df0;
+  --accent-dim: rgba(124, 92, 252, 0.14);
   --accent-border: rgba(124, 92, 252, 0.45);
-  --accent-glow:   rgba(124, 92, 252, 0.10);
+  --accent-glow: rgba(124, 92, 252, 0.10);
 
   position: relative;
   display: flex;
@@ -21,7 +21,10 @@
   min-height: 100vh;
   width: 100%;
   padding: 32px 24px;
-  background-color: var(--bg);
+  background: linear-gradient(135deg,
+    rgba(10, 10, 20, 1) 0%,
+    rgba(16, 16, 30, 1) 50%,
+    rgba(10, 10, 20, 1) 100%);
   overflow-x: hidden;
 }
 
@@ -377,7 +380,10 @@
   --accent-dim: rgba(91, 61, 240, 0.10);
   --accent-border: rgba(91, 61, 240, 0.35);
   --accent-glow: rgba(91, 61, 240, 0.06);
-  background-color: var(--bg);
+  background: linear-gradient(135deg,
+    #f5f4fa 0%,
+    #ececf5 50%,
+    #f5f4fa 100%);
 }
 
 [data-theme="light"] .register-glow {

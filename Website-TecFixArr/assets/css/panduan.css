@@ -53,9 +53,25 @@ a {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: var(--color-bg);
+  background: linear-gradient(180deg,
+    rgba(10, 10, 20, 1) 0%,
+    rgba(14, 14, 27, 1) 50%,
+    rgba(10, 10, 20, 1) 100%);
   overflow-x: hidden;
   position: relative;
+}
+
+.halaman-panduan::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(91, 61, 240, 0.06) 0%, rgba(124, 92, 252, 0.03) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .halaman-panduan .app,
@@ -921,7 +937,10 @@ a {
 
 [data-theme="light"] body,
 [data-theme="light"] .halaman-panduan {
-  background-color: #ececf5;
+  background: linear-gradient(180deg,
+    #f5f4fa 0%,
+    #ececf5 50%,
+    #f5f4fa 100%);
   color: #15121f;
 }
 

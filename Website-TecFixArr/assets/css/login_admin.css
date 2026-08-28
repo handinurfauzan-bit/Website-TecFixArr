@@ -18,7 +18,10 @@
   min-height: 100vh;
   width: 100%;
   padding: 48px 24px;
-  background-color: var(--bg);
+  background: linear-gradient(135deg,
+    rgba(10, 10, 20, 1) 0%,
+    rgba(16, 16, 30, 1) 50%,
+    rgba(10, 10, 20, 1) 100%);
   overflow: hidden;
 }
 
@@ -435,7 +438,10 @@
   --accent-dim: rgba(91, 61, 240, 0.10);
   --accent-border: rgba(91, 61, 240, 0.35);
   --accent-deep: #4c1d95;
-  background-color: var(--bg);
+  background: linear-gradient(135deg,
+    #f5f4fa 0%,
+    #ececf5 50%,
+    #f5f4fa 100%);
 }
 
 [data-theme="light"] .login-glow--top,
