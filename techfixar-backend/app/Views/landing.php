@@ -961,9 +961,6 @@
             <a class="button-8" href="#tutorial">
               <span class="text-wrapper-37">Panduan</span>
             </a>
-            <a class="button-9" href="<?= site_url('/komunitas') ?>">
-              <span class="text-wrapper-38">Komunitas</span>
-            </a>
           </nav>
           <div class="text-14">
             <small class="text-wrapper-40">© 2026 TechFixAr</small>

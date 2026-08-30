@@ -60,7 +60,9 @@
 #--------------------------------------------------------------------
 
 # session.driver = 'CodeIgniter\Session\Handlers\FileHandler'
-# session.savePath = null
+# session.cookieName = 'techfixar_session'
+# session.expiration = 7200
+# Default save path: writable/session (jangan set null)
 
 #--------------------------------------------------------------------
 # LOGGER

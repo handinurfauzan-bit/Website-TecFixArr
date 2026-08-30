@@ -12,6 +12,9 @@ techfixar-backend/writable/uploads/*
 # ── Frontend assets (hanya di Website-TecFixArr/, disajikan lewat route) ──
 techfixar-backend/public/assets/
 
+# Session salah tempat (bug lama: session.savePath = null)
+techfixar-backend/public/null/
+
 # ── Deploy packages ────────────────────────
 release/
 
