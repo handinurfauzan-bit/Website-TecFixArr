@@ -225,9 +225,9 @@
           </a>
         </div>
         <nav class="footer-nav" aria-label="Navigasi footer">
-          <a class="footer-link" href="#tentang"><span>Tentang</span></a>
+          <a class="footer-link" href="<?= site_url('/tentang') ?>"><span>Tentang</span></a>
           <a class="footer-link" href="<?= site_url('/panduan') ?>"><span>Panduan</span></a>
-          <a class="footer-link" href="#komunitas"><span>Komunitas</span></a>
+          <a class="footer-link" href="<?= site_url('/komunitas') ?>"><span>Komunitas</span></a>
           <a class="footer-link" href="#kontak"><span>Kontak</span></a>
         </nav>
         <div class="footer-copy"><small>© 2026 TechFixAr</small></div>

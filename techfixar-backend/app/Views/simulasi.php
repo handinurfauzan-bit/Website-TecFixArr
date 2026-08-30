@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Simulasi Perakitan PC interaktif — pilih komponen, cek kompatibilitas, dan estimasi biaya real-time." />
+    <title>Simulasi Perakitan PC — TechFixAr</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/globals.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/navbar.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/simulasi.css') ?>" />
+    <script src="<?= base_url('assets/js/theme.js') ?>"></script>
+  </head>
+  <body>
+    <div class="halaman-simulasi">
+
+      
+      <header class="navbar">
+        <div class="navbar__inner">
+          <a class="navbar__brand" href="<?= site_url('/') ?>" aria-label="TechFixAr, kembali ke beranda">
+            <img class="navbar__logo" src="<?= base_url('assets/css/img/Logo.jpg') ?>" alt="" />
+            <span class="navbar__title">
+              <span class="navbar__title-text">TechFix</span><span class="navbar__title-accent">Ar</span>
+            </span>
+          </a>
+          <nav class="navbar__nav" aria-label="Navigasi utama">
+            <a class="navbar__link" href="<?= site_url('/') ?>">Beranda</a>
+            <a class="navbar__link" href="<?= site_url('/panduan') ?>">Panduan &amp; Servis</a>
+            <a class="navbar__link" href="<?= site_url('/komunitas') ?>">Komunitas</a>
+            <a class="navbar__link navbar__link--active" href="<?= site_url('/simulasi') ?>" aria-current="page">Simulasi PC</a>
+            <a class="navbar__link" href="<?= site_url('/tentang') ?>">Tentang</a>
+          </nav>
+          <button class="navbar__theme-toggle" data-theme-toggle aria-label="Ganti ke mode terang" title="Mode Terang" type="button">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <a class="navbar__cta" href="<?= site_url('/login') ?>">Masuk / Daftar</a>
+        </div>
+      </header>
+
+      
+      <main class="simulasi-main">
+
+        
+        <div class="simulasi-header">
+          <div class="simulasi-header__badge" aria-hidden="true">
+            <span class="simulasi-header__badge-dot"></span>
+            SIMULASI INTERAKTIF
+          </div>
+          <h1 class="simulasi-header__title">
+            Rakit PC <span>Impianmu</span>
+          </h1>
+          <p class="simulasi-header__desc">
+            Pilih komponen satu per satu — sistem akan otomatis mengecek kompatibilitas
+            dan menghitung estimasi total biaya secara real-time.
+          </p>
+        </div>
+
+        
+        <div class="simulasi-layout">
+
+          
+          <div class="simulasi-form-panel" id="form-panel">
+
+            
+            <div class="komponen-card" id="card-cpu" data-komponen="cpu">
+              <div class="komponen-card__header" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-cpu">
+                <div class="komponen-card__left">
+                  <div class="komponen-card__icon komponen-card__icon--purple" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="8" y="8" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M9 2v2M12 2v2M15 2v2M9 20v2M12 20v2M15 20v2M2 9h2M2 12h2M2 15h2M20 9h2M20 12h2M20 15h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="komponen-card__meta">
+                    <div class="komponen-card__label">Prosesor (CPU)</div>
+                    <div class="komponen-card__selected-name placeholder" id="cpu-name">Belum dipilih</div>
+                  </div>
+                </div>
+                <span class="komponen-card__selected-price" id="cpu-price"></span>
+                <svg class="komponen-card__chevron" viewBox="0 0 14 14" fill="none" width="14" height="14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="komponen-card__dropdown" id="dropdown-cpu">
+                <div class="komponen-card__options" role="listbox" aria-label="Pilih CPU"></div>
+              </div>
+            </div>
+
+            
+            <div class="komponen-card" id="card-mobo" data-komponen="mobo">
+              <div class="komponen-card__header" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-mobo">
+                <div class="komponen-card__left">
+                  <div class="komponen-card__icon komponen-card__icon--blue" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="6" y="6" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="6" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="6" y="13" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M13 15h5M13 17h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="komponen-card__meta">
+                    <div class="komponen-card__label">Motherboard</div>
+                    <div class="komponen-card__selected-name placeholder" id="mobo-name">Belum dipilih</div>
+                  </div>
+                </div>
+                <span class="komponen-card__selected-price" id="mobo-price"></span>
+                <svg class="komponen-card__chevron" viewBox="0 0 14 14" fill="none" width="14" height="14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="komponen-card__dropdown" id="dropdown-mobo">
+                <div class="komponen-card__options" role="listbox" aria-label="Pilih Motherboard"></div>
+              </div>
+            </div>
+
+            
+            <div class="komponen-card" id="card-ram" data-komponen="ram">
+              <div class="komponen-card__header" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-ram">
+                <div class="komponen-card__left">
+                  <div class="komponen-card__icon komponen-card__icon--green" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><rect x="2" y="8" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M6 8V6M9 8V6M12 8V6M15 8V6M18 8V6M6 16v2M9 16v2M12 16v2M15 16v2M18 16v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="komponen-card__meta">
+                    <div class="komponen-card__label">Memori (RAM)</div>
+                    <div class="komponen-card__selected-name placeholder" id="ram-name">Belum dipilih</div>
+                  </div>
+                </div>
+                <span class="komponen-card__selected-price" id="ram-price"></span>
+                <svg class="komponen-card__chevron" viewBox="0 0 14 14" fill="none" width="14" height="14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="komponen-card__dropdown" id="dropdown-ram">
+                <div class="komponen-card__options" role="listbox" aria-label="Pilih RAM"></div>
+              </div>
+            </div>
+
+            
+            <div class="komponen-card" id="card-gpu" data-komponen="gpu">
+              <div class="komponen-card__header" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-gpu">
+                <div class="komponen-card__left">
+                  <div class="komponen-card__icon komponen-card__icon--orange" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><rect x="1" y="6" width="22" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 18v2M8 18v2M16 18v2M20 18v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="komponen-card__meta">
+                    <div class="komponen-card__label">Kartu Grafis (GPU)</div>
+                    <div class="komponen-card__selected-name placeholder" id="gpu-name">Belum dipilih</div>
+                  </div>
+                </div>
+                <span class="komponen-card__selected-price" id="gpu-price"></span>
+                <svg class="komponen-card__chevron" viewBox="0 0 14 14" fill="none" width="14" height="14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="komponen-card__dropdown" id="dropdown-gpu">
+                <div class="komponen-card__options" role="listbox" aria-label="Pilih GPU"></div>
+              </div>
+            </div>
+
+            
+            <div class="komponen-card" id="card-storage" data-komponen="storage">
+              <div class="komponen-card__header" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-storage">
+                <div class="komponen-card__left">
+                  <div class="komponen-card__icon komponen-card__icon--teal" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="12" r="1.5" fill="currentColor"/><path d="M5 9h8M5 12h6M5 15h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="komponen-card__meta">
+                    <div class="komponen-card__label">Penyimpanan (Storage)</div>
+                    <div class="komponen-card__selected-name placeholder" id="storage-name">Belum dipilih</div>
+                  </div>
+                </div>
+                <span class="komponen-card__selected-price" id="storage-price"></span>
+                <svg class="komponen-card__chevron" viewBox="0 0 14 14" fill="none" width="14" height="14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="komponen-card__dropdown" id="dropdown-storage">
+                <div class="komponen-card__options" role="listbox" aria-label="Pilih Storage"></div>
+              </div>
+            </div>
+
+            
+            <div class="komponen-card" id="card-psu" data-komponen="psu">
+              <div class="komponen-card__header" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-psu">
+                <div class="komponen-card__left">
+                  <div class="komponen-card__icon komponen-card__icon--red" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M10 9l-3 3 3 3M14 9l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="komponen-card__meta">
+                    <div class="komponen-card__label">Power Supply (PSU)</div>
+                    <div class="komponen-card__selected-name placeholder" id="psu-name">Belum dipilih</div>
+                  </div>
+                </div>
+                <span class="komponen-card__selected-price" id="psu-price"></span>
+                <svg class="komponen-card__chevron" viewBox="0 0 14 14" fill="none" width="14" height="14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="komponen-card__dropdown" id="dropdown-psu">
+                <div class="komponen-card__options" role="listbox" aria-label="Pilih PSU"></div>
+              </div>
+            </div>
+
+            
+            <div class="komponen-card" id="card-casing" data-komponen="casing">
+              <div class="komponen-card__header" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-casing">
+                <div class="komponen-card__left">
+                  <div class="komponen-card__icon komponen-card__icon--indigo" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="8" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="17" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 15h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="komponen-card__meta">
+                    <div class="komponen-card__label">Casing</div>
+                    <div class="komponen-card__selected-name placeholder" id="casing-name">Belum dipilih</div>
+                  </div>
+                </div>
+                <span class="komponen-card__selected-price" id="casing-price"></span>
+                <svg class="komponen-card__chevron" viewBox="0 0 14 14" fill="none" width="14" height="14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="komponen-card__dropdown" id="dropdown-casing">
+                <div class="komponen-card__options" role="listbox" aria-label="Pilih Casing"></div>
+              </div>
+            </div>
+
+            
+            <div class="psu-warning" id="psu-warning" role="alert" aria-live="polite">
+              <svg viewBox="0 0 16 16" fill="none" width="16" height="16" aria-hidden="true" flex-shrink="0"><path d="M8 2L1.5 13h13L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 7v3M8 11.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span id="psu-warning-text"></span>
+            </div>
+
+          </div>
+
+          
+          <div class="simulasi-summary">
+
+            
+            <div class="summary-card">
+              <div class="summary-card__header">
+                <div class="summary-card__header-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M4 6h8M4 9h6M4 12h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><rect x="1.5" y="2" width="13" height="12" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg>
+                </div>
+                <span class="summary-card__title">Ringkasan Build</span>
+              </div>
+              <div class="summary-list" id="summary-list">
+                <div class="summary-row"><span class="summary-row__label">CPU</span><span class="summary-row__name empty" id="s-cpu">—</span><span class="summary-row__price" id="s-cpu-p"></span></div>
+                <div class="summary-row"><span class="summary-row__label">Mobo</span><span class="summary-row__name empty" id="s-mobo">—</span><span class="summary-row__price" id="s-mobo-p"></span></div>
+                <div class="summary-row"><span class="summary-row__label">RAM</span><span class="summary-row__name empty" id="s-ram">—</span><span class="summary-row__price" id="s-ram-p"></span></div>
+                <div class="summary-row"><span class="summary-row__label">GPU</span><span class="summary-row__name empty" id="s-gpu">—</span><span class="summary-row__price" id="s-gpu-p"></span></div>
+                <div class="summary-row"><span class="summary-row__label">SSD</span><span class="summary-row__name empty" id="s-storage">—</span><span class="summary-row__price" id="s-storage-p"></span></div>
+                <div class="summary-row"><span class="summary-row__label">PSU</span><span class="summary-row__name empty" id="s-psu">—</span><span class="summary-row__price" id="s-psu-p"></span></div>
+                <div class="summary-row"><span class="summary-row__label">Case</span><span class="summary-row__name empty" id="s-casing">—</span><span class="summary-row__price" id="s-casing-p"></span></div>
+              </div>
+              <div class="summary-total">
+                <span class="summary-total__label">Total Estimasi</span>
+                <span class="summary-total__value" id="total-price">Rp 0</span>
+              </div>
+              <div class="summary-watt">
+                <span class="summary-watt__label">Estimasi Konsumsi Daya</span>
+                <span class="summary-watt__value" id="total-watt">— W</span>
+              </div>
+            </div>
+
+            
+            <div class="compat-card">
+              <div class="compat-card__header">
+                <svg viewBox="0 0 16 16" fill="none" width="14" height="14" aria-hidden="true"><path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4L2 5h4L8 1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                <span class="compat-card__title">Cek Kompatibilitas</span>
+                <div class="compat-status-dot idle" id="compat-dot" aria-label="Status kompatibilitas"></div>
+              </div>
+              <div class="compat-list" id="compat-list" role="list" aria-live="polite">
+                <div class="compat-item idle" role="listitem">
+                  <svg class="compat-item__icon" viewBox="0 0 14 14" fill="none" width="12" height="12" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M7 5v2.5L8.5 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  Pilih komponen untuk mulai pengecekan
+                </div>
+              </div>
+            </div>
+
+            
+            <button class="simulasi-reset-btn" id="reset-btn" type="button" aria-label="Reset semua komponen">
+              <svg viewBox="0 0 16 16" fill="none" width="14" height="14" aria-hidden="true"><path d="M2 8a6 6 0 1 0 1.5-4M2 2v4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Reset Semua Komponen
+            </button>
+
+          </div>
+
+        </div>
+      </main>
+
+      
+      <footer class="simulasi-footer">
+        <a class="simulasi-footer__logo" href="<?= site_url('/') ?>" aria-label="TechFixAr">
+          <img class="simulasi-footer__logo-img" src="<?= base_url('assets/css/img/Logo.jpg') ?>" alt="" />
+          <span class="simulasi-footer__logo-name">TechFix<span class="accent">Ar</span></span>
+        </a>
+        <nav class="simulasi-footer__nav" aria-label="Navigasi footer">
+          <a class="simulasi-footer__link" href="<?= site_url('/') ?>">Beranda</a>
+          <a class="simulasi-footer__link" href="<?= site_url('/panduan') ?>">Panduan</a>
+          <a class="simulasi-footer__link" href="<?= site_url('/komunitas') ?>">Komunitas</a>
+          <a class="simulasi-footer__link" href="<?= site_url('/tentang') ?>">Tentang</a>
+        </nav>
+        <small class="simulasi-footer__copy">© 2026 TechFixAr</small>
+      </footer>
+
+      
+            <?php if (session()->get('logged_in')): ?>
+      <a class="admin-fab" href="<?= site_url('/admin/panduan') ?>" aria-label="Masuk ke area admin" title="Admin Panel">
+        <span class="admin-fab__icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <span class="admin-fab__label">Admin</span>
+      </a>
+      <?php endif ?>
+
+    </div>
+    <script src="<?= base_url('assets/js/simulasi.js') ?>"></script>
+  </body>
+</html>

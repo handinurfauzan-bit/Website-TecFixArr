@@ -1,10 +1,16 @@
 <?php
 
 /**
- * Sinkronkan frontend statis (Website-TecFixArr) ke backend CodeIgniter.
+ * Sinkronkan halaman HTML frontend → PHP view CodeIgniter.
  *
- * Jalankan setelah mengubah file di Website-TecFixArr/pages atau assets:
+ * CSS/JS tidak disalin ke backend — disajikan langsung dari
+ * Website-TecFixArr/assets/ lewat AssetsController.
+ *
+ * Jalankan dari folder techfixar-backend:
  *   php sync-frontend.php
+ *
+ * Atau dari root repo:
+ *   sync-frontend.bat
  */
 
 declare(strict_types=1);
@@ -17,43 +23,17 @@ if (! is_dir($frontendRoot)) {
     exit(1);
 }
 
-function copyDirectory(string $source, string $destination): int
-{
-    if (! is_dir($source)) {
-        return 0;
-    }
-
-    if (! is_dir($destination) && ! mkdir($destination, 0755, true) && ! is_dir($destination)) {
-        throw new RuntimeException("Gagal membuat folder: {$destination}");
-    }
-
-    $count = 0;
-    $iterator = new RecursiveIteratorIterator(
-        new RecursiveDirectoryIterator($source, FilesystemIterator::SKIP_DOTS),
-        RecursiveIteratorIterator::SELF_FIRST
-    );
-
-    foreach ($iterator as $item) {
-        $target = $destination . DIRECTORY_SEPARATOR . $iterator->getSubPathName();
-
-        if ($item->isDir()) {
-            if (! is_dir($target)) {
-                mkdir($target, 0755, true);
-            }
-            continue;
-        }
-
-        if (! copy($item->getPathname(), $target)) {
-            throw new RuntimeException("Gagal menyalin: {$item->getPathname()}");
-        }
-        $count++;
-    }
-
-    return $count;
-}
+/** Halaman publik yang disalin HTML → PHP view */
+const PUBLIC_PAGES = [
+    'Landing.html'   => 'landing.php',
+    'Tentang.html'   => 'tentang.php',
+    'Komunitas.html' => 'komunitas.php',
+    'Simulasi.html'  => 'simulasi.php',
+];
 
 function convertHtmlToPhpView(string $html): string
 {
+    // CSS & JS
     $html = preg_replace(
         '#(href|src)="../assets/css/([^"]+)"#',
         '$1="<?= base_url(\'assets/css/$2\') ?>"',
@@ -66,25 +46,55 @@ function convertHtmlToPhpView(string $html): string
         $html
     ) ?? $html;
 
+    // Navigasi internal → route backend
     $linkMap = [
-        'Landing.html'            => "<?= site_url('/') ?>",
-        'Panduan.html'            => "<?= site_url('/panduan') ?>",
-        'Tutorial_panduan.html'   => "<?= site_url('/panduan') ?>",
-        'login_admin.html'        => "<?= site_url('/login') ?>",
-        'Registerasi_admin.html'  => "<?= site_url('/register') ?>",
+        'Landing.html'              => "<?= site_url('/') ?>",
+        'Panduan.html'              => "<?= site_url('/panduan') ?>",
+        'Tutorial_panduan.html'     => "<?= site_url('/panduan') ?>",
+        'Tentang.html'              => "<?= site_url('/tentang') ?>",
+        'Komunitas.html'            => "<?= site_url('/komunitas') ?>",
+        'Simulasi.html'             => "<?= site_url('/simulasi') ?>",
+        'login_admin.html'          => "<?= site_url('/login') ?>",
+        'Registerasi_admin.html'    => "<?= site_url('/register') ?>",
         'Kelola_panduan_admin.html' => "<?= site_url('/admin/panduan') ?>",
-        'Panduan_baru_admin.html' => "<?= site_url('/admin/panduan/baru') ?>",
-        'Edit_panduan_admin.html' => "<?= site_url('/admin/panduan/edit/1') ?>",
-        'verifikasi_admin.html'   => "<?= site_url('/admin/verifikasi') ?>",
-        'Tentang.html'            => '#tentang',
-        'Komunitas.html'          => '#komunitas',
-        'Simulasi.html'           => '#simulasi',
+        'Panduan_baru_admin.html'   => "<?= site_url('/admin/panduan/baru') ?>",
+        'Edit_panduan_admin.html'   => "<?= site_url('/admin/panduan/edit/1') ?>",
+        'verifikasi_admin.html'     => "<?= site_url('/admin/verifikasi') ?>",
     ];
 
     foreach ($linkMap as $file => $url) {
         $html = str_replace('href="' . $file . '"', 'href="' . $url . '"', $html);
         $html = str_replace("href='" . $file . "'", "href='" . $url . "'", $html);
     }
+
+    // Anchor lama di footer landing → route halaman
+    $anchorMap = [
+        '#tentang'   => "<?= site_url('/tentang') ?>",
+        '#komunitas' => "<?= site_url('/komunitas') ?>",
+        '#simulasi'  => "<?= site_url('/simulasi') ?>",
+    ];
+
+    foreach ($anchorMap as $anchor => $url) {
+        $html = str_replace('href="' . $anchor . '"', 'href="' . $url . '"', $html);
+        $html = str_replace("href='" . $anchor . "'", "href='" . $url . "'", $html);
+    }
+
+    // Form statis yang masih pakai localhost hardcoded
+    $html = str_replace(
+        'action="http://localhost:8080/login"',
+        'action="<?= site_url(\'/login\') ?>"',
+        $html
+    );
+    $html = str_replace(
+        'action="http://localhost:8080/register"',
+        'action="<?= site_url(\'/register\') ?>"',
+        $html
+    );
+    $html = str_replace(
+        'action="http://localhost:8080/panduan/simpan"',
+        'action="<?= site_url(\'/admin/panduan/simpan\') ?>"',
+        $html
+    );
 
     $adminFabPhp = <<<'PHP'
       <?php if (session()->get('logged_in')): ?>
@@ -128,24 +138,20 @@ function syncView(string $htmlFile, string $phpFile, string $frontendRoot, strin
     }
 
     file_put_contents($target, $converted);
-    echo "  - View disinkronkan: {$htmlFile} -> app/Views/{$phpFile}\n";
+    echo "  - View: {$htmlFile} → app/Views/{$phpFile}\n";
 }
 
-echo "TechFixAr — sinkronisasi frontend ke backend\n";
-echo str_repeat('-', 48) . "\n";
+echo "TechFixAr — sinkronisasi view frontend → backend\n";
+echo "Sumber : {$frontendRoot}\n";
+echo "Target : {$backendRoot}\n";
+echo str_repeat('-', 56) . "\n";
 
-echo "1) Menyalin assets/css ...\n";
-$cssCount = copyDirectory($frontendRoot . '/assets/css', $backendRoot . '/public/assets/css');
-echo "   {$cssCount} file CSS disalin.\n";
+echo "1) Menyinkronkan halaman publik ke app/Views ...\n";
+foreach (PUBLIC_PAGES as $html => $php) {
+    syncView($html, $php, $frontendRoot, $backendRoot);
+}
 
-echo "2) Menyalin assets/js ...\n";
-$jsCount = copyDirectory($frontendRoot . '/assets/js', $backendRoot . '/public/assets/js');
-echo "   {$jsCount} file JS disalin.\n";
-
-echo "3) Menyinkronkan halaman statis ke app/Views ...\n";
-syncView('Landing.html', 'landing.php', $frontendRoot, $backendRoot);
-
-echo "4) Membersihkan cache CodeIgniter ...\n";
+echo "2) Membersihkan cache CodeIgniter ...\n";
 $cacheDir = $backendRoot . '/writable/cache';
 $cleared  = 0;
 
@@ -159,7 +165,10 @@ if (is_dir($cacheDir)) {
 }
 
 echo "   {$cleared} file cache dihapus.\n";
-echo str_repeat('-', 48) . "\n";
-echo "Selesai. Restart `php spark serve` lalu hard-refresh browser (Ctrl+Shift+R).\n";
-echo "\nCatatan: halaman admin/auth/panduan punya logika PHP — hanya CSS/JS yang otomatis ikut.\n";
-echo "         Untuk landing page, HTML terbaru sudah disalin ke app/Views/landing.php.\n";
+echo str_repeat('-', 56) . "\n";
+echo "Selesai.\n";
+echo "  • CSS/JS tetap di Website-TecFixArr/assets/ (disajikan lewat route /assets/)\n";
+echo "  • Development : serve.bat  atau  composer dev\n";
+echo "\nAturan edit:\n";
+echo "  • CSS/JS/HTML publik → Website-TecFixArr/\n";
+echo "  • PHP/logic/admin    → techfixar-backend/app/\n";

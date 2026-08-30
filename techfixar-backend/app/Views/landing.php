@@ -45,9 +45,7 @@
           <nav class="navbar__nav" aria-label="Navigasi utama">
             <a class="navbar__link navbar__link--active" href="#beranda" aria-current="page">Beranda</a>
             <a class="navbar__link" href="<?= site_url('/panduan') ?>">Panduan &amp; Servis</a>
-            <a class="navbar__link" href="#komunitas">Komunitas</a>
-            <a class="navbar__link" href="#simulasi">Simulasi PC</a>
-            <a class="navbar__link" href="#tentang">Tentang</a>
+            <a class="navbar__link" href="<?= site_url('/tentang') ?>">Tentang</a>
           </nav>
           <button
             class="navbar__theme-toggle"
@@ -98,7 +96,7 @@
             </p>
           </div>
           <div class="container-3">
-            <a class="button" href="#simulasi">
+            <a class="button" href="<?= site_url('/simulasi') ?>">
               <span class="icon-simulate" aria-hidden="true">
                 <svg
                   viewBox="0 0 16 16"
@@ -957,13 +955,13 @@
             </a>
           </div>
           <nav class="container-42" aria-label="Navigasi footer">
-            <a class="button-7" href="#tentang">
+            <a class="button-7" href="<?= site_url('/tentang') ?>">
               <span class="text-wrapper-36">Tentang</span>
             </a>
             <a class="button-8" href="#tutorial">
               <span class="text-wrapper-37">Panduan</span>
             </a>
-            <a class="button-9" href="#komunitas">
+            <a class="button-9" href="<?= site_url('/komunitas') ?>">
               <span class="text-wrapper-38">Komunitas</span>
             </a>
           </nav>

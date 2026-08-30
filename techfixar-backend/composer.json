@@ -38,6 +38,10 @@
         "sort-packages": true
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "sync": "php sync-frontend.php",
+        "dev": "php dev.php",
+        "serve": "php dev.php",
+        "deploy": "php deploy.php"
     }
 }
