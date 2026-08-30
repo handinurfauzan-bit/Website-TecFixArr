@@ -130,8 +130,10 @@
                PANEL: GUIDE
           ══════════════════════════ -->
           <div id="panel-guide" role="tabpanel" aria-labelledby="tab-guide">
-            <form id="form-panduan" action="<?= site_url('/admin/panduan/simpan') ?>" method="post">
+            <form id="form-panduan" action="<?= site_url('/admin/panduan/simpan') ?>" method="post" enctype="multipart/form-data">
               <?= csrf_field() ?>
+              <div id="step-fields-container" hidden></div>
+              <div id="step-files-container" hidden></div>
 
               <div class="guide-form">
 
@@ -252,7 +254,9 @@
                       <label class="media-drop" id="media-drop-label">
                         <input type="file" accept="image/*" style="display:none"
                                id="media-file-input" onchange="handleMediaUpload(this)" />
-                        <svg viewBox="0 0 24 24" fill="none" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <img id="media-preview" class="media-preview editor-panel--hidden" alt="Preview gambar langkah"
+                             style="max-width:100%;max-height:120px;border-radius:8px;object-fit:cover" />
+                        <svg id="media-drop-icon" viewBox="0 0 24 24" fill="none" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         <span class="media-drop__title" id="media-drop-title">Upload Gambar</span>
                         <span class="media-drop__hint">Drag &amp; drop atau klik • Maks 5 MB</span>
                       </label>
@@ -288,7 +292,7 @@
     (() => {
       'use strict';
 
-      let steps = [];
+      let steps = [];          // [{id, title, lines, imagePath, pendingFile}]
       let activeStepId = null;
 
       /* TAB SWITCHING */
@@ -337,31 +341,63 @@
         else btn.closest('.tool-row').querySelectorAll('input').forEach(i => i.value = '');
       };
 
+      function stepsToKonten() {
+        return steps.map((s, i) => {
+          const header = `Langkah ${i + 1}${s.title ? ': ' + s.title : ''}`;
+          const lines  = s.lines.map(l => (l.isWarn ? '[PERINGATAN] ' : '') + l.text).filter(Boolean).join('\n');
+          return header + (lines ? '\n' + lines : '');
+        }).join('\n\n');
+      }
+
+      function injectStepFields() {
+        const form = document.getElementById('form-panduan');
+        const fieldsContainer = document.getElementById('step-fields-container');
+        const filesContainer  = document.getElementById('step-files-container');
+        fieldsContainer.innerHTML = '';
+        filesContainer.innerHTML  = '';
+
+        steps.forEach((step, i) => {
+          const addHidden = (name, value) => {
+            const input = document.createElement('input');
+            input.type  = 'hidden';
+            input.name  = name;
+            input.value = value;
+            fieldsContainer.appendChild(input);
+          };
+
+          addHidden(`steps[${i}][title]`, step.title);
+
+          step.lines.forEach((line, j) => {
+            addHidden(`steps[${i}][lines][${j}][text]`, line.text);
+            if (line.isWarn) {
+              addHidden(`steps[${i}][lines][${j}][is_warn]`, '1');
+            }
+          });
+
+          if (step.pendingFile) {
+            const fileInput = document.createElement('input');
+            fileInput.type  = 'file';
+            fileInput.name  = `steps[${i}][image]`;
+            fileInput.accept = 'image/*';
+            fileInput.style.display = 'none';
+            const dt = new DataTransfer();
+            dt.items.add(step.pendingFile);
+            fileInput.files = dt.files;
+            filesContainer.appendChild(fileInput);
+          }
+        });
+
+        if (steps.length > 0) {
+          const kontenEl = form.querySelector('[name="konten"]');
+          if (kontenEl) kontenEl.value = stepsToKonten();
+        }
+      }
+
       document.getElementById('form-panduan').addEventListener('submit', () => {
-        // Sync alat
         const names = [...document.querySelectorAll('#tools-list .tool-name')]
           .map(i => i.value.trim()).filter(Boolean);
         document.getElementById('alat-hidden').value = names.join(', ');
-
-        // Sync konten dari steps (jika ada steps)
-        if (steps.length > 0) {
-          const konten = steps.map((s, i) => {
-            const header = `Langkah ${i + 1}${s.title ? ': ' + s.title : ''}`;
-            const lines  = s.lines.map(l => (l.isWarn ? '[PERINGATAN] ' : '') + l.text).filter(Boolean).join('\n');
-            return header + (lines ? '\n' + lines : '');
-          }).join('\n\n');
-          const kontenEl = document.querySelector('[name="konten"]');
-          if (kontenEl) kontenEl.value = konten;
-        }
-
-        // Simpan steps_json
-        let el = document.getElementById('steps-json-hidden');
-        if (!el) {
-          el = document.createElement('input');
-          el.type = 'hidden'; el.name = 'steps_json'; el.id = 'steps-json-hidden';
-          document.getElementById('form-panduan').appendChild(el);
-        }
-        el.value = JSON.stringify(steps);
+        injectStepFields();
       });
 
       /* STEPS */
@@ -401,7 +437,30 @@
         document.getElementById('canvas-step-pill').textContent  = `LANGKAH ${index + 1}`;
         document.getElementById('canvas-step-title').value       = step.title;
         renderLines(step);
+        updateMediaPreview(step);
         renderRail();
+      }
+
+      function updateMediaPreview(step) {
+        const titleEl = document.getElementById('media-drop-title');
+        const preview = document.getElementById('media-preview');
+        const icon    = document.getElementById('media-drop-icon');
+        const input   = document.getElementById('media-file-input');
+
+        input.value = '';
+
+        if (step.pendingFile) {
+          titleEl.textContent = step.pendingFile.name;
+          preview.src = URL.createObjectURL(step.pendingFile);
+          preview.classList.remove('editor-panel--hidden');
+          icon.classList.add('editor-panel--hidden');
+          return;
+        }
+
+        titleEl.textContent = 'Upload Gambar';
+        preview.src = '';
+        preview.classList.add('editor-panel--hidden');
+        icon.classList.remove('editor-panel--hidden');
       }
 
       window.syncStepTitle = function(val) {
@@ -413,7 +472,7 @@
       };
 
       window.addStep = function() {
-        const s = { id: genId(), title: '', lines: [{ text: '', isWarn: false }], mediaName: null };
+        const s = { id: genId(), title: '', lines: [{ text: '', isWarn: false }], imagePath: null, pendingFile: null };
         steps.push(s);
         renderRail();
         openStep(s.id);
@@ -479,8 +538,10 @@
         if (!file) return;
         if (file.size > 5 * 1024 * 1024) { alert('File melebihi 5 MB!'); input.value = ''; return; }
         const step = steps.find(s => s.id === activeStepId);
-        if (step) step.mediaName = file.name;
-        document.getElementById('media-drop-title').textContent = file.name;
+        if (!step) return;
+        step.pendingFile = file;
+        step.imagePath   = null;
+        updateMediaPreview(step);
       };
 
       window.addVideoLink = function() {

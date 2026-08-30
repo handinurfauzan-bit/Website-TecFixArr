@@ -15,6 +15,7 @@ class PanduanModel extends Model
         'kategori',
         'deskripsi',
         'konten',
+        'steps_data',
         'alat_dibutuhkan',
         'jumlah_dibaca',
         'admin_id',

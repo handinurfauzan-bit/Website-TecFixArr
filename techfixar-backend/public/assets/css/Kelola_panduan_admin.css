@@ -1,10 +1,3 @@
-/* ===========================================
-   KELOLA PANDUAN ADMIN — page-specific
-   Theme tokens/sidebar: admin_theme.css
-   =========================================== */
-
-/* ---------- Main ---------- */
-
 .admin-main {
   flex: 1;
   min-width: 0;
@@ -12,7 +5,7 @@
   background:
     radial-gradient(
       ellipse 60% 40% at 90% -10%,
-      rgba(16, 185, 129, 0.06) 0%,
+      rgba(124, 92, 252, 0.06) 0%,
       transparent 55%
     ),
     radial-gradient(
@@ -79,12 +72,12 @@
   flex-shrink: 0;
   padding: 12px 18px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: #f7f4f0;
+  background: linear-gradient(135deg, #7c5cfc 0%, #5b3df0 100%);
+  color: #ffffff;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.28);
+  box-shadow: 0 8px 24px rgba(124, 92, 252, 0.28);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -92,10 +85,8 @@
 
 .admin-header__cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(16, 185, 129, 0.36);
+  box-shadow: 0 10px 28px rgba(124, 92, 252, 0.36);
 }
-
-/* ---------- Filters ---------- */
 
 .admin-filters {
   display: flex;
@@ -123,26 +114,33 @@
 
 .admin-filter:hover {
   color: var(--text);
-  border-color: #57534e;
+  border-color: #4a4458;
 }
 
 .admin-filter--active {
   background: #e0dbd2;
   border-color: #e0dbd2;
-  color: #1c1917;
+  color: #15121f;
 }
 
 .admin-filter--active:hover {
-  color: #1c1917;
+  color: #15121f;
 }
-
-/* ---------- Article grid ---------- */
 
 .article-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-bottom: 32px;
+}
+
+.article-grid:empty::after {
+  content: "Tidak ada artikel pada kategori ini.";
+  grid-column: 1 / -1;
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted, #8a8597);
+  font-size: 14px;
 }
 
 .article-card {
@@ -160,7 +158,7 @@
 
 .article-card:hover {
   transform: translateY(-3px);
-  border-color: #57534e;
+  border-color: #4a4458;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -174,27 +172,52 @@
 }
 
 .article-card__cover--purple {
-  background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);
+  background-image: url("https://images.unsplash.com/photo-1591799264550-6d7be9d0d7e3?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--teal {
-  background: linear-gradient(135deg, #0d9488 0%, #115e59 100%);
+  background-image: url("https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--orange {
-  background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+  background-image: url("https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--red {
-  background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--blue {
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  background-image: url("https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
 }
 
 .article-card__cover--cyan {
-  background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%);
+  background-image: url("https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=70");
+  background-size: cover;
+  background-position: center;
+}
+
+.article-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.article-card__cover .article-card__tag {
+  z-index: 1;
 }
 
 .article-card__tag {
@@ -203,24 +226,13 @@
   left: 12px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: #fde68a;
-}
-
-.article-card__emoji {
-  font-size: 48px;
-  line-height: 1;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s ease;
-}
-
-.article-card:hover .article-card__emoji {
-  transform: scale(1.08);
+  color: #ffffff;
 }
 
 .article-card__body {
@@ -239,6 +251,7 @@
   color: var(--text);
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 2.8em;
@@ -278,13 +291,13 @@
 }
 
 .article-btn--edit {
-  border: 1px solid #57534e;
+  border: 1px solid #4a4458;
   color: var(--muted);
 }
 
 .article-btn--edit:hover {
   background: rgba(148, 163, 184, 0.1);
-  border-color: #78716c;
+  border-color: #6f6a85;
   color: var(--text);
 }
 
@@ -297,8 +310,6 @@
   background: var(--danger-dim);
   border-color: var(--danger);
 }
-
-/* ---------- Footer / Pagination ---------- */
 
 .admin-footer {
   display: flex;
@@ -317,6 +328,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.admin-pagination[hidden] {
+  display: none;
 }
 
 .admin-page {
@@ -340,7 +355,7 @@
 }
 
 .admin-page:hover {
-  border-color: #57534e;
+  border-color: #4a4458;
   color: var(--text);
 }
 
@@ -363,8 +378,6 @@
   color: var(--faint);
   border: none;
 }
-
-/* ---------- Motion ---------- */
 
 @keyframes admin-rise {
   from {
@@ -389,14 +402,12 @@
 @keyframes status-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 0 0 3px rgba(124, 92, 252, 0.2);
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 0 6px rgba(124, 92, 252, 0.08);
   }
 }
-
-/* ---------- Responsive ---------- */
 
 @media (max-width: 1100px) {
   .article-grid {
@@ -465,43 +476,36 @@
   }
 }
 
-/* ===========================================
-   LIGHT THEME — Kelola Panduan Admin
-   =========================================== */
-
 [data-theme="light"] .admin-main {
   background:
-    radial-gradient(ellipse 60% 40% at 90% -10%, rgba(5, 150, 105, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% -10%, rgba(91, 61, 240, 0.05) 0%, transparent 55%),
     radial-gradient(ellipse 50% 35% at 0% 100%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
-    #f2f2f0;
+    #f5f4fa;
 }
 
-/* Filter tombol aktif */
 [data-theme="light"] .admin-filter--active {
-  background: #1c1917;
-  border-color: #1c1917;
-  color: #f2f2f0;
+  background: #15121f;
+  border-color: #15121f;
+  color: #f5f4fa;
 }
 [data-theme="light"] .admin-filter--active:hover {
-  color: #f2f2f0;
+  color: #f5f4fa;
 }
 
-/* Cards artikel */
 [data-theme="light"] .article-card {
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 [data-theme="light"] .article-card:hover {
-  border-color: #a8a29e;
+  border-color: #9c96b8;
   box-shadow: 0 8px 28px rgba(0,0,0,0.12);
 }
 
-/* Tombol edit & delete */
 [data-theme="light"] .article-btn--edit {
-  border-color: #d4d4d4;
-  color: #57534e;
+  border-color: #d3cfe6;
+  color: #4a4458;
 }
 [data-theme="light"] .article-btn--edit:hover {
   background: rgba(71, 85, 105, 0.07);
-  border-color: #a8a29e;
-  color: #1c1917;
+  border-color: #9c96b8;
+  color: #15121f;
 }

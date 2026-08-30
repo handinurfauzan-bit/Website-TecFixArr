@@ -3,32 +3,38 @@
   flex-direction: column;
   min-height: 100vh;
   position: relative;
-  background-color: var(--color-bg);
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-elevated) 50%, var(--color-bg) 100%);
 }
 
-/* hide Figma placeholder divs */
+.halaman-panduannya::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124, 92, 252, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .halaman-panduannya .app,
 .halaman-panduannya .placeholder-for,
 .halaman-panduannya .div {
   display: none;
 }
 
-/*Subtle grid background (sama dengan Landing)*/
 .halaman-panduannya .grid-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
 }
 
-/*main page*/
 .halaman-panduannya .detail-panduan-page {
   display: flex;
   flex-direction: column;
@@ -42,7 +48,6 @@
   box-sizing: border-box;
 }
 
-/*Breadcrumb*/
 .halaman-panduannya .navigation {
   display: flex;
   align-items: center;
@@ -71,7 +76,7 @@
 .halaman-panduannya .text-wrapper {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 500;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 12.8px;
   line-height: 19.2px;
   white-space: nowrap;
@@ -80,7 +85,7 @@
 .halaman-panduannya .text-wrapper-3 {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 500;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 12.8px;
   line-height: 19.2px;
   white-space: nowrap;
@@ -94,7 +99,7 @@
 .halaman-panduannya .text-wrapper-2 {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 11.2px;
   line-height: 16.8px;
 }
@@ -105,7 +110,6 @@
   opacity: 0.55;
 }
 
-/*Main content grid (article + sidebar)*/
 .halaman-panduannya .container-margin {
   display: flex;
   flex-direction: column;
@@ -129,7 +133,6 @@
   min-width: 0;
 }
 
-/* ---- Article heading ---- */
 .halaman-panduannya .heading {
   display: flex;
   flex-direction: column;
@@ -142,13 +145,12 @@
   margin: 0;
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 28px;
   letter-spacing: -0.56px;
   line-height: 1.3;
 }
 
-/* ---- Article meta bar ---- */
 .halaman-panduannya .container-wrapper {
   display: flex;
   flex-direction: column;
@@ -162,7 +164,7 @@
   align-items: center;
   gap: 14px;
   padding: 0 0 18px;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #2b2b45;
   flex-wrap: wrap;
 }
 
@@ -179,7 +181,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  background: linear-gradient(117deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(117deg, #7c5cfc 0%, #5b3df0 100%);
   flex-shrink: 0;
 }
 
@@ -191,7 +193,7 @@
 .halaman-panduannya .text-wrapper-4 {
   font-family: "DM Mono", "DM Mono-Medium", monospace;
   font-weight: 500;
-  color: #f7f4f0;
+  color: #ffffff;
   font-size: 9.6px;
   line-height: 14.4px;
 }
@@ -204,7 +206,7 @@
 .halaman-panduannya .tech-team {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 12.8px;
   line-height: 19.2px;
   white-space: nowrap;
@@ -213,7 +215,7 @@
 .halaman-panduannya .text-4 {
   width: 1px;
   height: 18px;
-  background-color: #334155;
+  background-color: #2b2b45;
   flex-shrink: 0;
 }
 
@@ -225,7 +227,7 @@
 .halaman-panduannya .text-wrapper-5 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 10.9px;
   line-height: 16.3px;
   white-space: nowrap;
@@ -252,7 +254,7 @@
 .halaman-panduannya .text-wrapper-6 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 10.9px;
   line-height: 16.3px;
   white-space: nowrap;
@@ -280,15 +282,15 @@
   display: flex;
   align-items: center;
   padding: 2px 8px;
-  background-color: #10b98126;
+  background-color: #7c5cfc26;
   border-radius: 5px;
-  border: 1px solid #10b98147;
+  border: 1px solid #7c5cfc47;
 }
 
 .halaman-panduannya .text-wrapper-8 {
   font-family: "DM Mono", "DM Mono-Medium", monospace;
   font-weight: 500;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 9.6px;
   line-height: 14.4px;
   white-space: nowrap;
@@ -318,13 +320,12 @@
 .halaman-panduannya .text-wrapper-9 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 10.4px;
   line-height: 15.6px;
   white-space: nowrap;
 }
 
-/*Intro Selction*/
 .halaman-panduannya .container-6 {
   display: flex;
   flex-direction: column;
@@ -349,7 +350,7 @@
 .halaman-panduannya .text-wrapper-10 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 11.2px;
   line-height: 16.8px;
   white-space: nowrap;
@@ -358,7 +359,7 @@
 .halaman-panduannya .text-wrapper-11 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 16.8px;
   line-height: 25.2px;
 }
@@ -376,12 +377,11 @@
   margin: 0;
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 14.1px;
   line-height: 24.6px;
 }
 
-/* STEP SECTIONS */
 .halaman-panduannya .container-7 {
   display: flex;
   flex-direction: column;
@@ -394,7 +394,7 @@
   position: relative;
   width: 100%;
   height: 37px;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #2b2b45;
 }
 
 .halaman-panduannya .text-11 {
@@ -405,15 +405,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #10b98126;
+  background-color: #7c5cfc26;
   border-radius: 5px;
-  border: 1px solid #10b9814c;
+  border: 1px solid #7c5cfc4c;
 }
 
 .halaman-panduannya .text-wrapper-12 {
   font-family: "DM Mono", "DM Mono-Medium", monospace;
   font-weight: 500;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 10.9px;
   line-height: 16.3px;
   white-space: nowrap;
@@ -425,7 +425,7 @@
   left: 89px;
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 16px;
   line-height: 20.8px;
   white-space: nowrap;
@@ -438,7 +438,6 @@
   width: 100%;
 }
 
-/* Step image + list grid*/
 .halaman-panduannya .container-9 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
@@ -446,17 +445,16 @@
   width: 100%;
 }
 
-/* Image card */
 .halaman-panduannya .container-10 {
   position: relative;
   width: 100%;
   min-height: 280px;
   display: flex;
   flex-direction: column;
-  background-color: #243144;
+  background-color: #1e1e38;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid #334155;
+  border: 1px solid #2b2b45;
 }
 
 .halaman-panduannya .image-tuas-retention,
@@ -470,19 +468,32 @@
   background-position: 50% 50%;
 }
 
+ 
+.halaman-panduannya .step-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+ 
 .halaman-panduannya .image-tuas-retention {
-  background-image: url(../img/image-tuas-retention-arm-socket-am5-posisi-terbuka-135.png);
+  background-image: url('https://images.unsplash.com/photo-1515630278258-407f66498911?w=700&q=80&fit=crop&crop=center');
 }
 
+ 
 .halaman-panduannya .image-segitiga-emas {
-  background-image: url(../img/image-segitiga-emas-di-sudut-CPU-sejajar-dengan-tanda-di-socket.png);
+  background-image: url('https://images.unsplash.com/photo-1721332154191-ba5f1534266e?w=700&q=80&fit=crop&crop=center');
 }
 
+ 
 .halaman-panduannya .image-tuas {
-  background-image: url(../img/image-tuas-dikembalikan-ke-posisi-terkunci-di-bawah-kait-plastik.png);
+  background-image: url('https://images.unsplash.com/photo-1778333895677-8fc2d642a768?w=700&q=80&fit=crop&crop=center');
 }
 
-/* Caption overlay */
 .halaman-panduannya .container-11 {
   width: 100%;
   padding: 20px 12px 10px;
@@ -491,8 +502,8 @@
   left: 0;
   background: linear-gradient(
     0deg,
-    rgba(15, 23, 42, 0.9) 0%,
-    rgba(15, 23, 42, 0) 100%
+    rgba(10, 10, 20, 0.9) 0%,
+    rgba(10, 10, 20, 0) 100%
   );
 }
 
@@ -505,7 +516,6 @@
   line-height: 13.4px;
 }
 
-/* Step list column */
 .halaman-panduannya .container-12,
 .halaman-panduannya .container-16 {
   display: flex;
@@ -515,7 +525,6 @@
   padding: 2px 0 0;
 }
 
-/* List items */
 .halaman-panduannya ol,
 .halaman-panduannya ul {
   display: contents;
@@ -547,12 +556,11 @@
 .halaman-panduannya .container-14 {
   width: 6px;
   height: 6px;
-  background-color: #78716c;
+  background-color: #6f6a85;
   border-radius: 3px;
   flex-shrink: 0;
 }
 
-/* List item text wrappers */
 .halaman-panduannya .letakkan-motherboard-wrapper,
 .halaman-panduannya .cari-tuas-logam-wrapper,
 .halaman-panduannya .tekan-tuas-ke-bawah-wrapper,
@@ -583,12 +591,11 @@
 .halaman-panduannya .text-wrapper-18 {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 13.8px;
   line-height: 23.4px;
 }
 
-/* Warning box (red) */
 .halaman-panduannya .container-15,
 .halaman-panduannya .container-24 {
   display: flex;
@@ -634,7 +641,6 @@
   line-height: 22.2px;
 }
 
-/* Tips box (green) */
 .halaman-panduannya .container-18,
 .halaman-panduannya .container-23 {
   display: flex;
@@ -642,9 +648,9 @@
   align-items: flex-start;
   gap: 10px;
   padding: 10px 14px;
-  background-color: #10b98112;
+  background-color: #7c5cfc12;
   border-radius: 8px;
-  border: 1px solid #10b98133;
+  border: 1px solid #7c5cfc33;
   box-sizing: border-box;
 }
 
@@ -658,7 +664,7 @@
 .halaman-panduannya .text-wrapper-19 {
   font-family: "Nunito", Helvetica, sans-serif;
   font-weight: 400;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 11.5px;
   line-height: 17.3px;
 }
@@ -680,7 +686,6 @@
   line-height: 22.2px;
 }
 
-/*Troubleshooting*/
 .halaman-panduannya .container-19 {
   display: flex;
   flex-direction: column;
@@ -702,10 +707,9 @@
   padding: 2px 0 0;
 }
 
-/*sidebar*/
 .halaman-panduannya .container-25 {
   position: sticky;
-  top: 89px; /* header height + gap */
+  top: 89px;
   width: 340px;
   display: flex;
   flex-direction: column;
@@ -717,19 +721,18 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #1e293b;
+  background-color: #16162a;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid #334155;
+  border: 1px solid #2b2b45;
 }
 
-/* Sidebar header row */
 .halaman-panduannya .container-27 {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 13px 16px;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #2b2b45;
 }
 
 .halaman-panduannya .icon {
@@ -755,13 +758,12 @@
 .halaman-panduannya .text-wrapper-20 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 13.8px;
   line-height: 20.6px;
   white-space: nowrap;
 }
 
-/* Sidebar list */
 .halaman-panduannya .container-28 {
   display: flex;
   flex-direction: column;
@@ -776,7 +778,7 @@
   align-items: flex-start;
   gap: 10px;
   padding: 9px 6px;
-  border-bottom: 1px solid #33415599;
+  border-bottom: 1px solid #2b2b4599;
   box-sizing: border-box;
 }
 
@@ -795,11 +797,10 @@
   flex-shrink: 0;
 }
 
-/* Colored dot indicators */
 .halaman-panduannya .container-30 {
   width: 7px;
   height: 7px;
-  background-color: #78716c;
+  background-color: #6f6a85;
   border-radius: 3.5px;
   box-shadow: 0 0 5px #64748b60;
 }
@@ -815,9 +816,9 @@
 .halaman-panduannya .container-37 {
   width: 7px;
   height: 7px;
-  background-color: #10b981;
+  background-color: #7c5cfc;
   border-radius: 3.5px;
-  box-shadow: 0 0 5px #10b98160;
+  box-shadow: 0 0 5px #7c5cfc60;
 }
 
 .halaman-panduannya .container-39 {
@@ -828,7 +829,6 @@
   box-shadow: 0 0 5px #3b82f660;
 }
 
-/* Sidebar item text blocks */
 .halaman-panduannya .container-31,
 .halaman-panduannya .container-35,
 .halaman-panduannya .container-38,
@@ -852,7 +852,7 @@
 .halaman-panduannya .text-wrapper-26 {
   font-family: "Nunito", "Nunito-SemiBold", Helvetica, sans-serif;
   font-weight: 600;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 13.1px;
   line-height: 17px;
 }
@@ -872,20 +872,19 @@
 .halaman-panduannya .text-wrapper-27 {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 9.3px;
   line-height: 13.9px;
 }
 
-/*footer*/
 .halaman-panduannya .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   padding: 24px 48px;
-  border-top: 1px solid #334155;
-  background-color: #0f172af2;
+  border-top: 1px solid #2b2b45;
+  background-color: #0a0a14f2;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -943,24 +942,23 @@
   border-radius: 8px;
   font-family: "Nunito", "Nunito-SemiBold", Helvetica, sans-serif;
   font-weight: 600;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 14px;
   line-height: 21px;
 }
 
 .halaman-panduannya .footer-link:hover {
-  color: #f0ede8;
+  color: #f5f4fa;
 }
 
 .halaman-panduannya .footer-copy small {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #57534e;
+  color: #4a4458;
   font-size: 11px;
   line-height: 16px;
 }
 
-/*global untilities*/
 .halaman-panduannya a {
   color: inherit;
   text-decoration: none;
@@ -968,11 +966,10 @@
 
 .halaman-panduannya .button:focus-visible,
 .halaman-panduannya .button-2:focus-visible {
-  outline: 2px solid #10b981;
+  outline: 2px solid #7c5cfc;
   outline-offset: 3px;
 }
 
-/*respnsive*/
 @media (max-width: 1024px) {
   .halaman-panduannya .container {
     grid-template-columns: 1fr;
@@ -1020,90 +1017,72 @@
   }
 }
 
-/* ===========================================
-   LIGHT THEME — Tutorial / Detail Panduan
-   =========================================== */
-
 [data-theme="light"] body,
 [data-theme="light"] .halaman-panduannya {
-  background-color: #ededed;
-  color: #1c1917;
+  background-color: #ececf5;
+  color: #15121f;
 }
 
-/* Grid background */
-[data-theme="light"] .halaman-panduannya .grid-bg {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-}
-
-/* Breadcrumb */
 [data-theme="light"] .halaman-panduannya .text-wrapper,
 [data-theme="light"] .halaman-panduannya .text-wrapper-3 {
-  color: #78716c;
+  color: #6f6a85;
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-2 {
-  color: #a8a29e;
+  color: #9c96b8;
 }
 
-/* Article heading */
 [data-theme="light"] .halaman-panduannya .panduan-lengkap-cara {
-  color: #1c1917;
+  color: #15121f;
 }
 
-/* Meta bar */
 [data-theme="light"] .halaman-panduannya .container-3 {
   border-bottom-color: #e0dbd2;
 }
 [data-theme="light"] .halaman-panduannya .tech-team {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduannya .text-4 {
-  background-color: #e2e2e2;
+  background-color: #e2dff2;
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-5,
 [data-theme="light"] .halaman-panduannya .text-wrapper-6 {
-  color: #78716c;
+  color: #6f6a85;
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-9 {
-  color: #a8a29e;
+  color: #9c96b8;
 }
 
-/* Section intro text */
 [data-theme="light"] .halaman-panduannya .text-wrapper-10 {
-  color: #a8a29e;
+  color: #9c96b8;
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-11 {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduannya .socket {
-  color: #57534e;
+  color: #4a4458;
 }
 
-/* Step divider */
 [data-theme="light"] .halaman-panduannya .container-8 {
   border-bottom-color: #e0dbd2;
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-12 {
-  /* badge warna emerald — tetap */
+  
 }
 [data-theme="light"] .halaman-panduannya .p {
-  color: #1c1917;
+  color: #15121f;
 }
 
-/* Step image card */
 [data-theme="light"] .halaman-panduannya .container-10 {
-  background-color: #e2e2e2;
-  border-color: #d4d4d4;
+  background-color: #e2dff2;
+  border-color: #d3cfe6;
 }
 [data-theme="light"] .halaman-panduannya .container-11 {
-  background: linear-gradient(0deg, rgba(240, 237, 232, 0.9) 0%, rgba(240, 237, 232, 0) 100%);
+  background: linear-gradient(0deg, rgba(245, 244, 250, 0.9) 0%, rgba(245, 244, 250, 0) 100%);
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-13 {
-  color: rgba(15, 23, 42, 0.55);
+  color: rgba(10, 10, 20, 0.55);
 }
 
-/* Step list text */
 [data-theme="light"] .halaman-panduannya .letakkan-motherboard,
 [data-theme="light"] .halaman-panduannya .cari-tanda-segitiga,
 [data-theme="light"] .halaman-panduannya .tekan-tuas-ke-bawah,
@@ -1115,15 +1094,13 @@
 [data-theme="light"] .halaman-panduannya .text-wrapper-14,
 [data-theme="light"] .halaman-panduannya .text-wrapper-17,
 [data-theme="light"] .halaman-panduannya .text-wrapper-18 {
-  color: #57534e;
+  color: #4a4458;
 }
 
-/* Bullet dots list */
 [data-theme="light"] .halaman-panduannya .container-14 {
-  background-color: #a8a29e;
+  background-color: #9c96b8;
 }
 
-/* Warning box */
 [data-theme="light"] .halaman-panduannya .container-15,
 [data-theme="light"] .halaman-panduannya .container-24 {
   background-color: rgba(220, 38, 38, 0.06);
@@ -1137,30 +1114,28 @@
   color: #b91c1c;
 }
 
-/* Tips box */
 [data-theme="light"] .halaman-panduannya .container-18,
 [data-theme="light"] .halaman-panduannya .container-23 {
-  background-color: rgba(5, 150, 105, 0.07);
-  border-color: rgba(5, 150, 105, 0.25);
+  background-color: rgba(91, 61, 240, 0.07);
+  border-color: rgba(91, 61, 240, 0.25);
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-19 {
-  color: #059669;
+  color: #5b3df0;
 }
 [data-theme="light"] .halaman-panduannya .jika-CPU-tidak-mau,
 [data-theme="light"] .halaman-panduannya .jika-menggunakan-CPU {
-  color: #047857;
+  color: #4c1d95;
 }
 
-/* Sidebar */
 [data-theme="light"] .halaman-panduannya .container-26 {
-  background-color: #f4f4f4;
-  border-color: #e2e2e2;
+  background-color: #f1f0fa;
+  border-color: #e2dff2;
 }
 [data-theme="light"] .halaman-panduannya .container-27 {
   border-bottom-color: #e0dbd2;
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-20 {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduannya .container-29 {
   border-bottom-color: rgba(203, 213, 225, 0.7);
@@ -1169,25 +1144,24 @@
 [data-theme="light"] .halaman-panduannya .text-wrapper-23,
 [data-theme="light"] .halaman-panduannya .text-wrapper-24,
 [data-theme="light"] .halaman-panduannya .text-wrapper-26 {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduannya .text-wrapper-22,
 [data-theme="light"] .halaman-panduannya .text-wrapper-25,
 [data-theme="light"] .halaman-panduannya .text-wrapper-27 {
-  color: #a8a29e;
+  color: #9c96b8;
 }
 
-/* Footer */
 [data-theme="light"] .halaman-panduannya .footer {
-  background-color: #e2e2e2;
-  border-top-color: #d6d0c8;
+  background-color: #e2dff2;
+  border-top-color: #d0c9e6;
 }
 [data-theme="light"] .halaman-panduannya .footer-link {
-  color: #57534e;
+  color: #4a4458;
 }
 [data-theme="light"] .halaman-panduannya .footer-link:hover {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduannya .footer-copy small {
-  color: #78716c;
+  color: #6f6a85;
 }

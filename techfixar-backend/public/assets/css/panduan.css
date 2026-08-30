@@ -1,6 +1,3 @@
-/* ===========================================
-   RESET & BASE (sama dengan globals)
-   =========================================== */
 *,
 *::before,
 *::after {
@@ -19,17 +16,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Grid kotak-kotak latar */
 .halaman-panduan .grid-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
 }
@@ -56,17 +48,30 @@ a {
   border: 0;
 }
 
-/* ===========================================
-   ROOT WRAPPER
-   =========================================== */
 .halaman-panduan {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: var(--color-bg);
+  background: linear-gradient(180deg,
+    rgba(10, 10, 20, 1) 0%,
+    rgba(14, 14, 27, 1) 50%,
+    rgba(10, 10, 20, 1) 100%);
   overflow-x: hidden;
   position: relative;
+}
+
+.halaman-panduan::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(91, 61, 240, 0.06) 0%, rgba(124, 92, 252, 0.03) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .halaman-panduan .app,
@@ -75,7 +80,6 @@ a {
   display: none;
 }
 
-/* Dekorasi background radial */
 .halaman-panduan .container,
 .halaman-panduan .container-2 {
   position: fixed;
@@ -103,14 +107,11 @@ a {
   height: 400px;
   background: radial-gradient(
     50% 50% at 50% 50%,
-    rgba(16, 185, 129, 0.05) 0%,
+    rgba(124, 92, 252, 0.05) 0%,
     transparent 65%
   );
 }
 
-/* ===========================================
-   MAIN CONTAINER
-   =========================================== */
 .halaman-panduan .container-3 {
   display: flex;
   flex-direction: column;
@@ -123,9 +124,6 @@ a {
   z-index: 1;
 }
 
-/* ===========================================
-   HERO / PAGE TITLE SECTION
-   =========================================== */
 .halaman-panduan .container-4 {
   display: flex;
   flex-direction: column;
@@ -144,9 +142,9 @@ a {
 .halaman-panduan .dot {
   width: 6px;
   height: 6px;
-  background-color: #10b981;
+  background-color: #7c5cfc;
   border-radius: 50%;
-  box-shadow: 0 0 7px #10b981;
+  box-shadow: 0 0 7px #7c5cfc;
   flex-shrink: 0;
 }
 
@@ -157,7 +155,7 @@ a {
 .halaman-panduan .text-wrapper {
   font-family: "DM Mono", "DM Mono-Regular", monospace;
   font-weight: 400;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 10.4px;
   letter-spacing: 0.94px;
   white-space: nowrap;
@@ -171,7 +169,7 @@ a {
 .halaman-panduan .pusat-panduan-servis {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: clamp(24px, 3.5vw, 36px);
   letter-spacing: -0.96px;
   line-height: 1.2;
@@ -184,14 +182,11 @@ a {
 .halaman-panduan .kumpulan-artikel {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 15px;
   line-height: 1.65;
 }
 
-/* ===========================================
-   FILTER BAR (SEARCH + FILTER TOMBOL)
-   =========================================== */
 .halaman-panduan .container-6 {
   display: flex;
   flex-direction: column;
@@ -208,7 +203,6 @@ a {
   flex-wrap: wrap;
 }
 
-/* Search bar */
 .halaman-panduan .container-8 {
   display: flex;
   align-items: center;
@@ -216,15 +210,15 @@ a {
   padding: 11px 16px;
   background-color: #ffffff08;
   border-radius: 10px;
-  border: 1px solid #334155;
+  border: 1px solid #2b2b45;
   flex: 0 1 480px;
   min-width: 0;
   transition: border-color 0.2s;
 }
 
 .halaman-panduan .container-8:focus-within {
-  border-color: #10b981;
-  box-shadow: 0 0 0 3px #10b98120;
+  border-color: #7c5cfc;
+  box-shadow: 0 0 0 3px #7c5cfc20;
 }
 
 .halaman-panduan .icon-wrapper {
@@ -268,7 +262,7 @@ a {
   border: 0;
   outline: 0;
   background: transparent;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-family: "Nunito", Helvetica, sans-serif;
   font-size: 13.8px;
   padding: 0;
@@ -289,7 +283,6 @@ a {
   text-overflow: ellipsis;
 }
 
-/* Jumlah artikel */
 .halaman-panduan .div-wrapper {
   display: flex;
   align-items: center;
@@ -299,12 +292,11 @@ a {
 .halaman-panduan .text-wrapper-3 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 10.4px;
   white-space: nowrap;
 }
 
-/* Filter tombol */
 .halaman-panduan .container-9 {
   display: flex;
   align-items: center;
@@ -317,9 +309,9 @@ a {
   align-items: center;
   gap: 7px;
   padding: 8px 16px;
-  background-color: #10b98126;
+  background-color: #7c5cfc26;
   border-radius: 9px;
-  border: 1px solid #10b98166;
+  border: 1px solid #7c5cfc66;
   cursor: pointer;
   transition: opacity 0.2s;
 }
@@ -331,7 +323,7 @@ a {
 .halaman-panduan .text-wrapper-4 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 13px;
   white-space: nowrap;
 }
@@ -339,7 +331,7 @@ a {
 .halaman-panduan .text-wrapper-5 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 9.9px;
   opacity: 0.75;
 }
@@ -350,22 +342,22 @@ a {
   align-items: center;
   gap: 7px;
   padding: 8px 16px;
-  background-color: #1e293b;
+  background-color: #16162a;
   border-radius: 9px;
-  border: 1px solid #334155;
+  border: 1px solid #2b2b45;
   cursor: pointer;
   transition: border-color 0.2s;
 }
 
 .halaman-panduan .button-2:hover,
 .halaman-panduan .button-3:hover {
-  border-color: #57534e;
+  border-color: #4a4458;
 }
 
 .halaman-panduan .text-wrapper-6 {
   font-family: "Nunito", "Nunito-SemiBold", Helvetica, sans-serif;
   font-weight: 600;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 13px;
   white-space: nowrap;
 }
@@ -373,7 +365,7 @@ a {
 .halaman-panduan .text-wrapper-7 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 9.9px;
   opacity: 0.75;
 }
@@ -395,19 +387,16 @@ a {
   width: 100%;
 }
 
-/* ===========================================
-   KARTU ARTIKEL
-   =========================================== */
 .halaman-panduan .container-11,
 .halaman-panduan .container-17,
 .halaman-panduan .container-20,
 .halaman-panduan .container-21,
 .halaman-panduan .container-23,
 .halaman-panduan .container-24 {
-  background-color: #1e293b;
+  background-color: #16162a;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid #334155;
+  border: 1px solid #2b2b45;
   display: flex;
   flex-direction: column;
   transition:
@@ -421,16 +410,15 @@ a {
 .halaman-panduan .container-21:hover,
 .halaman-panduan .container-23:hover,
 .halaman-panduan .container-24:hover {
-  border-color: #57534e;
+  border-color: #4a4458;
   transform: translateY(-2px);
 }
 
-/* Gambar atas kartu */
 .halaman-panduan .container-12 {
   position: relative;
   width: 100%;
   height: 170px;
-  background-color: #1c1917;
+  background-color: #15121f;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -446,29 +434,56 @@ a {
   opacity: 0.68;
   background-size: cover;
   background-position: 50% 50%;
+  position: relative;
 }
 
-/* Warna placeholder jika gambar tidak ada */
+ 
+.halaman-panduan .card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+ 
 .halaman-panduan .image-solusi-PC {
   background-color: #1e3a5f;
-}
-.halaman-panduan .image-cara-memasang {
-  background-color: #1e3527;
-}
-.halaman-panduan .image-panduan-ganti {
-  background-color: #2d1e3e;
-}
-.halaman-panduan .image-cara-fix-lampu {
-  background-color: #3a1e1e;
-}
-.halaman-panduan .image-panduan-pasang {
-  background-color: #1e2a3a;
-}
-.halaman-panduan .image-optimasi-fan {
-  background-color: #1a2a1e;
+  background-image: url('https://images.unsplash.com/photo-1580584126903-c17d41830450?w=600&q=75&fit=crop&crop=entropy');
 }
 
-/* Overlay gelap bawah gambar */
+ 
+.halaman-panduan .image-cara-memasang {
+  background-color: #1e3527;
+  background-image: url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&q=75&fit=crop&crop=entropy');
+}
+
+ 
+.halaman-panduan .image-panduan-ganti {
+  background-color: #2d1e3e;
+  background-image: url('https://images.unsplash.com/photo-1705494833979-9377fbdee229?w=600&q=75&fit=crop&crop=entropy');
+}
+
+ 
+.halaman-panduan .image-cara-fix-lampu {
+  background-color: #3a1e1e;
+  background-image: url('https://images.unsplash.com/photo-1515630278258-407f66498911?w=600&q=75&fit=crop&crop=entropy');
+}
+
+ 
+.halaman-panduan .image-panduan-pasang {
+  background-color: #1e2a3a;
+  background-image: url('https://images.unsplash.com/photo-1541029071515-84cc54f84dc5?w=600&q=75&fit=crop&crop=entropy');
+}
+
+ 
+.halaman-panduan .image-optimasi-fan {
+  background-color: #1a2a1e;
+  background-image: url('https://images.unsplash.com/photo-1760631731124-69d85bdd195d?w=600&q=75&fit=crop&crop=entropy');
+}
+
 .halaman-panduan .container-13 {
   position: absolute;
   top: 0;
@@ -477,13 +492,12 @@ a {
   height: 100%;
   background: linear-gradient(
     0deg,
-    rgba(15, 23, 42, 0.88) 0%,
-    rgba(15, 23, 42, 0.08) 55%
+    rgba(10, 10, 20, 0.88) 0%,
+    rgba(10, 10, 20, 0.08) 55%
   );
   pointer-events: none;
 }
 
-/* Badge kategori di atas gambar */
 .halaman-panduan .container-14,
 .halaman-panduan .container-18,
 .halaman-panduan .servis-perawatan-wrapper {
@@ -494,7 +508,7 @@ a {
   align-items: center;
   padding: 4px 10px;
   border-radius: 6px;
-  background-color: rgba(15, 23, 42, 0.75);
+  background-color: rgba(10, 10, 20, 0.75);
   border: 1px solid;
 }
 
@@ -503,7 +517,7 @@ a {
 }
 .halaman-panduan .container-18,
 .halaman-panduan .servis-perawatan-wrapper {
-  border-color: #10b98166;
+  border-color: #7c5cfc66;
 }
 
 .halaman-panduan .text-wrapper-8 {
@@ -518,13 +532,12 @@ a {
 .halaman-panduan .text-wrapper-12 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 9.6px;
   letter-spacing: 0.38px;
   white-space: nowrap;
 }
 
-/* Body kartu */
 .halaman-panduan .container-15 {
   display: flex;
   flex-direction: column;
@@ -543,7 +556,7 @@ a {
 .halaman-panduan .panduan-ganti {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: 14.7px;
   letter-spacing: -0.15px;
   line-height: 1.5;
@@ -558,18 +571,17 @@ a {
 .halaman-panduan .text-wrapper-9 {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 12.5px;
   line-height: 1.6;
 }
 
-/* Footer kartu: waktu baca + views */
 .halaman-panduan .container-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 12px;
-  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  border-top: 1px solid rgba(43, 43, 69, 0.6);
   margin-top: auto;
   width: 100%;
 }
@@ -589,7 +601,6 @@ a {
   gap: 5px;
 }
 
-/* Icon clock */
 .halaman-panduan .icon-clock {
   display: flex;
   align-items: center;
@@ -602,25 +613,22 @@ a {
   display: block;
 }
 
-/* Lama baca */
 .halaman-panduan .text-wrapper-10,
 .halaman-panduan .text-wrapper-13 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 9.9px;
   white-space: nowrap;
 }
 
-/* Separator vertikal */
 .halaman-panduan .text-4 {
   width: 1px;
   height: 10px;
-  background-color: #334155;
+  background-color: #2b2b45;
   flex-shrink: 0;
 }
 
-/* Views */
 .halaman-panduan .text-5,
 .halaman-panduan .text-7 {
   display: flex;
@@ -644,12 +652,11 @@ a {
 .halaman-panduan .text-wrapper-14 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 9.9px;
   white-space: nowrap;
 }
 
-/* Legacy img refs — sembunyikan jika ada */
 .halaman-panduan .img,
 .halaman-panduan .vector-2,
 .halaman-panduan .vector-3,
@@ -659,9 +666,6 @@ a {
   display: none;
 }
 
-/* ===========================================
-   TOMBOL MUAT LEBIH
-   =========================================== */
 .halaman-panduan .button-wrapper {
   display: flex;
   justify-content: center;
@@ -677,19 +681,19 @@ a {
   padding: 12px 36px;
   background-color: #ffffff0a;
   border-radius: 10px;
-  border: 1px solid #334155;
+  border: 1px solid #2b2b45;
   cursor: pointer;
   transition: border-color 0.2s;
 }
 
 .halaman-panduan .button-4:hover {
-  border-color: #57534e;
+  border-color: #4a4458;
 }
 
 .halaman-panduan .text-wrapper-15 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 14px;
   white-space: nowrap;
 }
@@ -706,11 +710,8 @@ a {
 }
 .halaman-panduan .vector-7 {
   display: none;
-} /* legacy img */
+} 
 
-/* ===========================================
-   CTA BANNER — SIMULASI
-   =========================================== */
 .halaman-panduan .container-margin-2 {
   width: 100%;
   margin-bottom: 0;
@@ -723,10 +724,10 @@ a {
   gap: 24px;
   padding: 32px 40px;
   border-radius: 16px;
-  border: 1px solid #10b98138;
+  border: 1px solid #7c5cfc38;
   background: linear-gradient(
     117deg,
-    rgba(16, 185, 129, 0.1) 0%,
+    rgba(124, 92, 252, 0.1) 0%,
     rgba(59, 130, 246, 0.07) 100%
   );
   flex-wrap: wrap;
@@ -740,7 +741,6 @@ a {
   min-width: 260px;
 }
 
-/* Badge "FITUR INTERAKTIF" */
 .halaman-panduan .text-8 {
   display: flex;
 }
@@ -748,7 +748,7 @@ a {
 .halaman-panduan .text-wrapper-16 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #10b981;
+  color: #7c5cfc;
   font-size: 10.4px;
   letter-spacing: 0.83px;
   white-space: nowrap;
@@ -762,7 +762,7 @@ a {
 .halaman-panduan .text-wrapper-17 {
   font-family: "Nunito", "Nunito-ExtraBold", Helvetica, sans-serif;
   font-weight: 800;
-  color: #f0ede8;
+  color: #f5f4fa;
   font-size: clamp(18px, 2.5vw, 22px);
   letter-spacing: -0.45px;
   line-height: 1.4;
@@ -776,20 +776,19 @@ a {
 .halaman-panduan .gunakan-simulasi {
   font-family: "Nunito", "Nunito-Regular", Helvetica, sans-serif;
   font-weight: 400;
-  color: #a8a29e;
+  color: #9c96b8;
   font-size: 13.8px;
   line-height: 1.6;
 }
 
-/* Tombol CTA simulasi */
 .halaman-panduan .button-5 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 12px 26px;
   border-radius: 10px;
-  box-shadow: 0 4px 20px #10b98126;
-  background: linear-gradient(117deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 20px #7c5cfc26;
+  background: linear-gradient(117deg, #7c5cfc 0%, #5b3df0 100%);
   text-decoration: none;
   flex-shrink: 0;
   white-space: nowrap;
@@ -807,7 +806,6 @@ a {
   display: block;
 }
 
-/* Legacy img di icon-simulate */
 .halaman-panduan .vector-8,
 .halaman-panduan .vector-9,
 .halaman-panduan .vector-10,
@@ -818,13 +816,10 @@ a {
 .halaman-panduan .text-wrapper-18 {
   font-family: "Nunito", "Nunito-Bold", Helvetica, sans-serif;
   font-weight: 700;
-  color: #f7f4f0;
+  color: #ffffff;
   font-size: 14.4px;
 }
 
-/* ===========================================
-   ADMIN BUTTON (FIXED)
-   =========================================== */
 .halaman-panduan .app-2 {
   position: fixed;
   bottom: 20px;
@@ -832,8 +827,8 @@ a {
   display: flex;
   align-items: center;
   padding: 8px 14px;
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #16162a;
+  border: 1px solid #2b2b45;
   border-radius: 8px;
   text-decoration: none;
   z-index: 200;
@@ -841,20 +836,49 @@ a {
 }
 
 .halaman-panduan .app-2:hover {
-  border-color: #10b981;
+  border-color: #7c5cfc;
 }
 
 .halaman-panduan .text-wrapper-23 {
   font-family: "DM Mono", monospace;
   font-weight: 400;
-  color: #78716c;
+  color: #6f6a85;
   font-size: 9.6px;
   letter-spacing: 0.67px;
 }
 
-/* ===========================================
-   RESPONSIVE — TABLET (max 1024px)
-   =========================================== */
+ 
+.halaman-panduan .filter-btn--active {
+  background-color: #7c5cfc26 !important;
+  border-color: #7c5cfc66 !important;
+}
+.halaman-panduan .filter-btn--active .text-wrapper-6 {
+  color: #7c5cfc !important;
+}
+.halaman-panduan .filter-btn--active .text-wrapper-7 {
+  color: #7c5cfc !important;
+}
+
+ 
+.halaman-panduan .panduan-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  color: #6f6a85;
+  width: 100%;
+}
+.halaman-panduan .panduan-empty__icon svg {
+  stroke: #4a4458;
+}
+.halaman-panduan .panduan-empty__text {
+  font-family: "Nunito", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #6f6a85;
+}
+
 @media (max-width: 1024px) {
   .halaman-panduan .container-3 {
     padding: 90px 24px 60px;
@@ -865,9 +889,6 @@ a {
   }
 }
 
-/* ===========================================
-   RESPONSIVE — MOBILE (max 640px)
-   =========================================== */
 @media (max-width: 640px) {
   .halaman-panduan .container-3 {
     padding: 80px 16px 48px;
@@ -888,7 +909,6 @@ a {
   }
 }
 
-/* ---- Artikel card link wrapper ---- */
 .halaman-panduan .artikel-link {
   display: contents;
   color: inherit;
@@ -907,86 +927,75 @@ a {
 .halaman-panduan .artikel-link:focus-visible > article {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  border-color: #57534e;
+  border-color: #4a4458;
 }
 
 .halaman-panduan .artikel-link:focus-visible > article {
-  outline: 2px solid #10b981;
+  outline: 2px solid #7c5cfc;
   outline-offset: 2px;
 }
 
-/* ===========================================
-   LIGHT THEME — Halaman Panduan
-   =========================================== */
-
 [data-theme="light"] body,
 [data-theme="light"] .halaman-panduan {
-  background-color: #ededed;
-  color: #1c1917;
+  background: linear-gradient(180deg,
+    #f5f4fa 0%,
+    #ececf5 50%,
+    #f5f4fa 100%);
+  color: #15121f;
 }
 
-[data-theme="light"] .halaman-panduan .grid-bg {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-}
-
-/* Hero text */
 [data-theme="light"] .halaman-panduan .pusat-panduan-servis {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduan .kumpulan-artikel {
-  color: #57534e;
+  color: #4a4458;
 }
 
-/* Filter bar — search */
 [data-theme="light"] .halaman-panduan .container-8 {
-  background-color: #f4f4f4;
-  border-color: #d4d4d4;
+  background-color: #f1f0fa;
+  border-color: #d3cfe6;
 }
 [data-theme="light"] .halaman-panduan .container-8:focus-within {
-  border-color: #059669;
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+  border-color: #5b3df0;
+  box-shadow: 0 0 0 3px rgba(91, 61, 240, 0.12);
 }
 [data-theme="light"] .halaman-panduan .text-input input {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduan .text-input input::placeholder {
-  color: rgba(15, 23, 42, 0.35);
+  color: rgba(10, 10, 20, 0.35);
 }
 [data-theme="light"] .halaman-panduan .text-wrapper-2 {
-  color: rgba(15, 23, 42, 0.4);
+  color: rgba(10, 10, 20, 0.4);
 }
 [data-theme="light"] .halaman-panduan .text-wrapper-3 {
-  color: #a8a29e;
+  color: #9c96b8;
 }
 
-/* Filter tombol non-aktif */
 [data-theme="light"] .halaman-panduan .button-2,
 [data-theme="light"] .halaman-panduan .button-3 {
-  background-color: #f4f4f4;
-  border-color: #d4d4d4;
+  background-color: #f1f0fa;
+  border-color: #d3cfe6;
 }
 [data-theme="light"] .halaman-panduan .button-2:hover,
 [data-theme="light"] .halaman-panduan .button-3:hover {
-  border-color: #a8a29e;
+  border-color: #9c96b8;
 }
 [data-theme="light"] .halaman-panduan .text-wrapper-6 {
-  color: #57534e;
+  color: #4a4458;
 }
 [data-theme="light"] .halaman-panduan .text-wrapper-7 {
-  color: #57534e;
+  color: #4a4458;
 }
 
-/* Cards artikel */
 [data-theme="light"] .halaman-panduan .container-11,
 [data-theme="light"] .halaman-panduan .container-17,
 [data-theme="light"] .halaman-panduan .container-20,
 [data-theme="light"] .halaman-panduan .container-21,
 [data-theme="light"] .halaman-panduan .container-23,
 [data-theme="light"] .halaman-panduan .container-24 {
-  background-color: #f4f4f4;
-  border-color: #e2e2e2;
+  background-color: #f1f0fa;
+  border-color: #e2dff2;
 }
 [data-theme="light"] .halaman-panduan .container-11:hover,
 [data-theme="light"] .halaman-panduan .container-17:hover,
@@ -994,27 +1003,33 @@ a {
 [data-theme="light"] .halaman-panduan .container-21:hover,
 [data-theme="light"] .halaman-panduan .container-23:hover,
 [data-theme="light"] .halaman-panduan .container-24:hover {
-  border-color: #a8a29e;
+  border-color: #9c96b8;
 }
 
-/* Image placeholder lebih terang */
 [data-theme="light"] .halaman-panduan .container-12 {
-  background-color: #e2e2e2;
+  background-color: #e2dff2;
 }
 [data-theme="light"] .halaman-panduan .container-13 {
-  background: linear-gradient(0deg, rgba(240, 237, 232, 0.88) 0%, rgba(240, 237, 232, 0.08) 55%);
+  background: linear-gradient(0deg, rgba(240, 238, 250, 0.82) 0%, rgba(240, 238, 250, 0.05) 50%);
+}
+ 
+[data-theme="light"] .halaman-panduan .image-solusi-PC,
+[data-theme="light"] .halaman-panduan .image-cara-memasang,
+[data-theme="light"] .halaman-panduan .image-panduan-ganti,
+[data-theme="light"] .halaman-panduan .image-cara-fix-lampu,
+[data-theme="light"] .halaman-panduan .image-panduan-pasang,
+[data-theme="light"] .halaman-panduan .image-optimasi-fan {
+  opacity: 0.82;
 }
 
-/* Judul & deskripsi kartu */
 [data-theme="light"] .halaman-panduan .p,
 [data-theme="light"] .halaman-panduan .panduan-ganti {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduan .text-wrapper-9 {
-  color: #78716c;
+  color: #6f6a85;
 }
 
-/* Footer kartu */
 [data-theme="light"] .halaman-panduan .container-wrapper {
   border-top-color: rgba(203, 213, 225, 0.8);
 }
@@ -1022,41 +1037,38 @@ a {
 [data-theme="light"] .halaman-panduan .text-wrapper-13,
 [data-theme="light"] .halaman-panduan .text-wrapper-11,
 [data-theme="light"] .halaman-panduan .text-wrapper-14 {
-  color: #a8a29e;
+  color: #9c96b8;
 }
 [data-theme="light"] .halaman-panduan .text-4 {
-  background-color: #d6d0c8;
+  background-color: #d0c9e6;
 }
 
-/* Tombol muat lebih */
 [data-theme="light"] .halaman-panduan .button-4 {
-  background-color: #f4f4f4;
-  border-color: #d4d4d4;
+  background-color: #f1f0fa;
+  border-color: #d3cfe6;
 }
 [data-theme="light"] .halaman-panduan .button-4:hover {
-  border-color: #a8a29e;
+  border-color: #9c96b8;
 }
 [data-theme="light"] .halaman-panduan .text-wrapper-15 {
-  color: #57534e;
+  color: #4a4458;
 }
 
-/* Banner CTA simulasi */
 [data-theme="light"] .halaman-panduan .container-25 {
-  background: linear-gradient(117deg, rgba(5, 150, 105, 0.07) 0%, rgba(37, 99, 235, 0.05) 100%);
-  border-color: rgba(5, 150, 105, 0.25);
+  background: linear-gradient(117deg, rgba(91, 61, 240, 0.07) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border-color: rgba(91, 61, 240, 0.25);
 }
 [data-theme="light"] .halaman-panduan .text-wrapper-17 {
-  color: #1c1917;
+  color: #15121f;
 }
 [data-theme="light"] .halaman-panduan .gunakan-simulasi {
-  color: #57534e;
+  color: #4a4458;
 }
 
-/* Admin fixed button */
 [data-theme="light"] .halaman-panduan .app-2 {
-  background-color: #f4f4f4;
-  border-color: #d4d4d4;
+  background-color: #f1f0fa;
+  border-color: #d3cfe6;
 }
 [data-theme="light"] .halaman-panduan .text-wrapper-23 {
-  color: #78716c;
+  color: #6f6a85;
 }

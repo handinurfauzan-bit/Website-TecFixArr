@@ -1,105 +1,70 @@
-/* GLOBALS — Reset, base, font setup, dan design tokens bersama */
-
-/* ===========================================
-   DESIGN TOKENS — TechFixAr
-   Dipakai di seluruh halaman (landing, login,
-   registrasi, dan semua halaman admin).
-   Warna primer: slate gelap + emerald accent.
-   =========================================== */
 :root {
-  /* Background */
-  --color-bg:          #0f172a;
-  --color-bg-elevated: #111827;
-  --color-panel:       #1e293b;
-  --color-panel-2:     #243447;
+  
+  --color-bg:          #0a0a14;
+  --color-bg-elevated: #0e0e1b;
+  --color-panel:       #16162a;
+  --color-panel-2:     #1e1e38;
 
-  /* Border & divider */
-  --color-border:      #334155;
-  --color-border-soft: #1e293b;
+  --color-border:      #2b2b45;
+  --color-border-soft: #16162a;
 
-  /* Text */
   --color-text:        #f8fafc;
   --color-muted:       #94a3b8;
   --color-faint:       #64748b;
 
-  /* Accent — emerald (warna primer) */
-  --color-accent:        #10b981;
-  --color-accent-bright: #34d399;
-  --color-accent-deep:   #059669;
-  --color-accent-dim:    rgba(16, 185, 129, 0.14);
-  --color-accent-border: rgba(16, 185, 129, 0.45);
-  --color-accent-glow:   rgba(16, 185, 129, 0.10);
+  --color-accent:        #7c5cfc;
+  --color-accent-bright: #a78bfa;
+  --color-accent-deep:   #5b3df0;
+  --color-accent-dim:    rgba(124, 92, 252, 0.14);
+  --color-accent-border: rgba(124, 92, 252, 0.45);
+  --color-accent-glow:   rgba(124, 92, 252, 0.10);
 
-  /* Danger — merah */
   --color-danger:      #ef4444;
   --color-danger-dim:  rgba(239, 68, 68, 0.12);
 
-  /* Blue — hanya sebagai aksen sekunder / badge */
   --color-blue:        #3b82f6;
   --color-blue-dim:    rgba(59, 130, 246, 0.14);
 
-  /* Typography */
   --font-sans:  "Nunito", Helvetica, sans-serif;
   --font-mono:  "DM Mono", monospace;
 
-  /* Radius */
   --radius-sm:  8px;
   --radius-md:  10px;
   --radius-lg:  14px;
   --radius-xl:  18px;
   --radius-full: 999px;
 
-  /* Transition */
   --transition-fast: 0.15s ease;
   --transition-base: 0.2s ease;
-
-  /* Grid overlay color (dark default) */
-  --grid-line-color: rgba(255, 255, 255, 0.03);
 }
 
-/* ===========================================
-   LIGHT THEME OVERRIDE
-   Aktif saat <html data-theme="light">
-   Palet: neutral off-white — lembut di mata,
-   tidak coklat, tidak menyilaukan.
-   =========================================== */
 [data-theme="light"] {
-  /* Background */
-  --color-bg:          #ededed;   /* bg utama halaman (selain navbar) */
-  --color-bg-elevated: #f9f9f9;   /* sedikit lebih terang */
-  --color-panel:       #f4f4f4;   /* panel / card */
-  --color-panel-2:     #e8e8e8;   /* panel sekunder */
+  
+  --color-bg:          #ececf5;   
+  --color-bg-elevated: #f9f8fc;   
+  --color-panel:       #f1f0fa;   
+  --color-panel-2:     #e6e4f2;   
 
-  /* Border & divider */
-  --color-border:      #d4d4d4;
-  --color-border-soft: #e4e4e4;
+  --color-border:      #d3cfe6;
+  --color-border-soft: #e3e0f2;
 
-  /* Text — warm near-black, tidak kontras keras */
-  --color-text:        #1c1917;
-  --color-muted:       #57534e;
-  --color-faint:       #78716c;
+  --color-text:        #15121f;
+  --color-muted:       #4a4458;
+  --color-faint:       #6f6a85;
 
-  /* Accent — emerald sedikit lebih dalam agar terbaca di bg terang */
-  --color-accent:        #059669;
-  --color-accent-bright: #10b981;
-  --color-accent-deep:   #047857;
-  --color-accent-dim:    rgba(5, 150, 105, 0.10);
-  --color-accent-border: rgba(5, 150, 105, 0.38);
-  --color-accent-glow:   rgba(5, 150, 105, 0.06);
+  --color-accent:        #5b3df0;
+  --color-accent-bright: #7c5cfc;
+  --color-accent-deep:   #4c1d95;
+  --color-accent-dim:    rgba(91, 61, 240, 0.10);
+  --color-accent-border: rgba(91, 61, 240, 0.38);
+  --color-accent-glow:   rgba(91, 61, 240, 0.06);
 
-  /* Danger */
   --color-danger:      #dc2626;
   --color-danger-dim:  rgba(220, 38, 38, 0.09);
 
-  /* Blue */
   --color-blue:        #2563eb;
   --color-blue-dim:    rgba(37, 99, 235, 0.09);
-
-  /* Grid overlay color (light) */
-  --grid-line-color: rgba(0, 0, 0, 0.045);
 }
-
-
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -120,7 +85,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Fallback fonts jika custom font tidak load */
 @font-face {
   font-family: "Nunito-Regular";
   src: local("Nunito"), local("Nunito Regular");
@@ -167,9 +131,6 @@ ul, ol {
   list-style: none;
 }
 
-/* ===========================================
-   ADMIN FAB — tombol admin fixed kanan bawah
-   =========================================== */
 .admin-fab {
   position: fixed;
   bottom: 24px;
@@ -179,11 +140,11 @@ ul, ol {
   align-items: center;
   gap: 8px;
   padding: 10px 16px 10px 12px;
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: #16162a;
+  border: 1px solid #2b2b45;
   border-radius: 12px;
   text-decoration: none;
-  color: #a8a29e;
+  color: #9c96b8;
   font-family: "DM Mono", monospace;
   font-size: 11px;
   font-weight: 500;
@@ -194,15 +155,15 @@ ul, ol {
 }
 
 .admin-fab:hover {
-  background-color: #243447;
-  border-color: rgba(16, 185, 129, 0.5);
-  color: #10b981;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.15);
+  background-color: #1e1e38;
+  border-color: rgba(124, 92, 252, 0.5);
+  color: #7c5cfc;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(124, 92, 252, 0.15);
   transform: translateY(-2px);
 }
 
 .admin-fab:focus-visible {
-  outline: 2px solid #10b981;
+  outline: 2px solid #7c5cfc;
   outline-offset: 3px;
 }
 
@@ -213,42 +174,41 @@ ul, ol {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background-color: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #10b981;
+  background-color: rgba(124, 92, 252, 0.12);
+  border: 1px solid rgba(124, 92, 252, 0.3);
+  color: #7c5cfc;
   flex-shrink: 0;
   transition: background-color 0.2s ease;
 }
 
 .admin-fab:hover .admin-fab__icon {
-  background-color: rgba(16, 185, 129, 0.2);
+  background-color: rgba(124, 92, 252, 0.2);
 }
 
 .admin-fab__label {
   white-space: nowrap;
 }
 
-/* Light theme */
 [data-theme="light"] .admin-fab {
-  background-color: #f4f4f4;
-  border-color: #d4d4d4;
-  color: #57534e;
+  background-color: #f1f0fa;
+  border-color: #d3cfe6;
+  color: #4a4458;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
 }
 
 [data-theme="light"] .admin-fab:hover {
-  background-color: #efefef;
-  border-color: rgba(5, 150, 105, 0.45);
-  color: #059669;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(5, 150, 105, 0.12);
+  background-color: #eeecf7;
+  border-color: rgba(91, 61, 240, 0.45);
+  color: #5b3df0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(91, 61, 240, 0.12);
 }
 
 [data-theme="light"] .admin-fab__icon {
-  background-color: rgba(5, 150, 105, 0.10);
-  border-color: rgba(5, 150, 105, 0.25);
-  color: #059669;
+  background-color: rgba(91, 61, 240, 0.10);
+  border-color: rgba(91, 61, 240, 0.25);
+  color: #5b3df0;
 }
 
 [data-theme="light"] .admin-fab:hover .admin-fab__icon {
-  background-color: rgba(5, 150, 105, 0.18);
+  background-color: rgba(91, 61, 240, 0.18);
 }
