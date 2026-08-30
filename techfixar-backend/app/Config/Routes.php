@@ -4,8 +4,16 @@ use CodeIgniter\Router\RouteCollection;
 
 /** @var RouteCollection $routes */
 
+// ── Assets frontend (CSS/JS dari Website-TecFixArr/, bukan public/) ──
+$routes->addPlaceholder('asset', '.+');
+$routes->get('assets/css/(:asset)', 'AssetsController::css/$1');
+$routes->get('assets/js/(:asset)',  'AssetsController::js/$1');
+
 // ── Halaman Publik ───────────────────────────────────────────────────
 $routes->get('/',               'HomeController::index');
+$routes->get('/tentang',        'HomeController::tentang');
+$routes->get('/komunitas',      'HomeController::komunitas');
+$routes->get('/simulasi',       'HomeController::simulasi');
 $routes->get('/panduan',        'PanduanController::publik');
 $routes->get('/panduan/(:num)', 'PanduanController::detail/$1');
 

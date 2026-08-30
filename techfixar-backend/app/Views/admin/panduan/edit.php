@@ -154,9 +154,10 @@
                PANEL: GUIDE
           ══════════════════════════ -->
           <div id="panel-guide" role="tabpanel" aria-labelledby="tab-guide">
-            <form id="form-guide" action="<?= site_url('/admin/panduan/update/' . $panduan['id']) ?>" method="post">
+            <form id="form-guide" action="<?= site_url('/admin/panduan/update/' . $panduan['id']) ?>" method="post" enctype="multipart/form-data">
               <?= csrf_field() ?>
-              <!-- hidden fields dari steps akan di-inject JS saat submit -->
+              <div id="step-fields-container" hidden></div>
+              <div id="step-files-container" hidden></div>
 
               <div class="guide-form">
 
@@ -291,7 +292,9 @@
                     <div class="media-block">
                       <label class="media-drop" id="media-drop-label">
                         <input type="file" accept="image/*" style="display:none" id="media-file-input" onchange="handleMediaUpload(this)" />
-                        <svg viewBox="0 0 24 24" fill="none" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <img id="media-preview" class="media-preview editor-panel--hidden" alt="Preview gambar langkah"
+                             style="max-width:100%;max-height:120px;border-radius:8px;object-fit:cover" />
+                        <svg id="media-drop-icon" viewBox="0 0 24 24" fill="none" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         <span class="media-drop__title" id="media-drop-title">Upload Gambar</span>
                         <span class="media-drop__hint">Drag & drop atau klik • Maks 5 MB</span>
                       </label>
@@ -328,14 +331,26 @@
     <!-- ═══════════════════════════════════════
          JAVASCRIPT
     ════════════════════════════════════════ -->
+    <?php
+      $initialSteps = [];
+      if (! empty($panduan['steps_data'])) {
+          $decoded = json_decode($panduan['steps_data'], true);
+          if (is_array($decoded)) {
+              $initialSteps = $decoded;
+          }
+      }
+    ?>
     <script>
     (() => {
       'use strict';
 
+      const uploadBaseUrl = <?= json_encode(rtrim(base_url(), '/')) ?>;
+      const initialSteps  = <?= json_encode($initialSteps, JSON_UNESCAPED_UNICODE) ?>;
+
       /* ──────────────────────────
          STATE
       ────────────────────────── */
-      let steps = [];          // [{id, title, lines: [{text, isWarn}], mediaName}]
+      let steps = [];          // [{id, title, lines, imagePath, pendingFile}]
       let activeStepId = null;
 
       /* ──────────────────────────
@@ -449,7 +464,39 @@
         document.getElementById('canvas-step-title').value       = step.title;
 
         renderLines(step);
+        updateMediaPreview(step);
         renderRail();
+      }
+
+      function updateMediaPreview(step) {
+        const titleEl = document.getElementById('media-drop-title');
+        const preview = document.getElementById('media-preview');
+        const icon    = document.getElementById('media-drop-icon');
+        const input   = document.getElementById('media-file-input');
+
+        input.value = '';
+
+        if (step.pendingFile) {
+          titleEl.textContent = step.pendingFile.name;
+          preview.src = URL.createObjectURL(step.pendingFile);
+          preview.classList.remove('editor-panel--hidden');
+          icon.classList.add('editor-panel--hidden');
+          return;
+        }
+
+        if (step.imagePath) {
+          const name = step.imagePath.split('/').pop();
+          titleEl.textContent = name;
+          preview.src = `${uploadBaseUrl}/${step.imagePath}`;
+          preview.classList.remove('editor-panel--hidden');
+          icon.classList.add('editor-panel--hidden');
+          return;
+        }
+
+        titleEl.textContent = 'Upload Gambar';
+        preview.src = '';
+        preview.classList.add('editor-panel--hidden');
+        icon.classList.remove('editor-panel--hidden');
       }
 
       function syncStepTitle(val) {
@@ -464,7 +511,7 @@
       window.syncStepTitle = syncStepTitle;
 
       window.addStep = function() {
-        const newStep = { id: genId(), title: '', lines: [{ text: '', isWarn: false }], mediaName: null };
+        const newStep = { id: genId(), title: '', lines: [{ text: '', isWarn: false }], imagePath: null, pendingFile: null };
         steps.push(newStep);
         renderRail();
         openStep(newStep.id);
@@ -559,10 +606,11 @@
           return;
         }
         const step = steps.find(s => s.id === activeStepId);
-        if (step) step.mediaName = file.name;
+        if (!step) return;
 
-        const titleEl = document.getElementById('media-drop-title');
-        titleEl.textContent = file.name;
+        step.pendingFile = file;
+        step.imagePath   = null;
+        updateMediaPreview(step);
       };
 
       window.addVideoLink = function() {
@@ -597,25 +645,53 @@
       function injectHiddenFields() {
         const form = document.getElementById('form-guide');
 
-        // Sync alat
         syncAlatHidden();
 
-        // Sync konten dari steps (jika ada steps)
         if (steps.length > 0) {
           const kontenEl = form.querySelector('[name="konten"]');
           if (kontenEl) kontenEl.value = stepsToKonten();
         }
 
-        // Simpan steps_json untuk referensi
-        let el = document.getElementById('steps-json-hidden');
-        if (!el) {
-          el = document.createElement('input');
-          el.type = 'hidden';
-          el.name = 'steps_json';
-          el.id   = 'steps-json-hidden';
-          form.appendChild(el);
-        }
-        el.value = JSON.stringify(steps);
+        // Field array steps + file upload per langkah (bukan JSON)
+        const fieldsContainer = document.getElementById('step-fields-container');
+        const filesContainer  = document.getElementById('step-files-container');
+        fieldsContainer.innerHTML = '';
+        filesContainer.innerHTML  = '';
+
+        steps.forEach((step, i) => {
+          const addHidden = (name, value) => {
+            const input = document.createElement('input');
+            input.type  = 'hidden';
+            input.name  = name;
+            input.value = value;
+            fieldsContainer.appendChild(input);
+          };
+
+          addHidden(`steps[${i}][title]`, step.title);
+
+          if (step.imagePath && !step.pendingFile) {
+            addHidden(`steps[${i}][existing_image]`, step.imagePath);
+          }
+
+          step.lines.forEach((line, j) => {
+            addHidden(`steps[${i}][lines][${j}][text]`, line.text);
+            if (line.isWarn) {
+              addHidden(`steps[${i}][lines][${j}][is_warn]`, '1');
+            }
+          });
+
+          if (step.pendingFile) {
+            const fileInput = document.createElement('input');
+            fileInput.type  = 'file';
+            fileInput.name  = `steps[${i}][image]`;
+            fileInput.accept = 'image/*';
+            fileInput.style.display = 'none';
+            const dt = new DataTransfer();
+            dt.items.add(step.pendingFile);
+            fileInput.files = dt.files;
+            filesContainer.appendChild(fileInput);
+          }
+        });
       }
 
       // Tombol "Simpan Draft"
@@ -629,8 +705,28 @@
         injectHiddenFields();
       });
 
-      /* Init: langsung tampilkan Langkah 1 */
-      addStep();
+      // Init: muat steps dari database atau buat langkah baru
+      if (initialSteps.length > 0) {
+        initialSteps.forEach(s => {
+          const lines = (s.lines || []).map(l => ({
+            text: l.text || '',
+            isWarn: Boolean(l.is_warn),
+          }));
+          if (lines.length === 0) lines.push({ text: '', isWarn: false });
+
+          steps.push({
+            id: genId(),
+            title: s.title || '',
+            lines,
+            imagePath: s.image_path || null,
+            pendingFile: null,
+          });
+        });
+        renderRail();
+        openStep(steps[0].id);
+      } else {
+        addStep();
+      }
 
     })();
     </script>

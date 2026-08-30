@@ -124,9 +124,50 @@
                   <div class="text-10"><span class="text-wrapper-10">ISI PANDUAN</span></div>
                   <h2 class="text-wrapper-11" id="isi-panduan">Langkah-Langkah</h2>
                 </div>
-                <div class="paragraph-margin" style="white-space: pre-line; line-height: 1.8; color: var(--text);">
-                  <?= esc($panduan['konten']) ?>
-                </div>
+
+                <?php
+                  $stepsData = [];
+                  if (! empty($panduan['steps_data'])) {
+                      $decoded = json_decode($panduan['steps_data'], true);
+                      if (is_array($decoded)) {
+                          $stepsData = $decoded;
+                      }
+                  }
+                ?>
+
+                <?php if ($stepsData !== []): ?>
+                  <div class="paragraph-margin panduan-steps">
+                    <?php foreach ($stepsData as $i => $step): ?>
+                      <article class="panduan-step" style="margin-bottom:32px;">
+                        <h3 style="font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text);">
+                          Langkah <?= $i + 1 ?><?= ! empty($step['title']) ? ': ' . esc($step['title']) : '' ?>
+                        </h3>
+
+                        <?php if (! empty($step['image_path'])): ?>
+                          <figure style="margin:0 0 16px;">
+                            <img src="<?= base_url($step['image_path']) ?>"
+                                 alt="<?= esc($step['title'] ?? 'Gambar langkah ' . ($i + 1)) ?>"
+                                 style="max-width:100%;border-radius:12px;border:1px solid var(--border);" />
+                          </figure>
+                        <?php endif ?>
+
+                        <?php foreach ($step['lines'] ?? [] as $line): ?>
+                          <?php if (! empty($line['is_warn'])): ?>
+                            <p style="padding:12px 14px;background:rgba(234,179,8,.12);border:1px solid rgba(234,179,8,.35);border-radius:8px;color:var(--text);line-height:1.7;margin:0 0 10px;">
+                              ⚠️ <?= esc($line['text'] ?? '') ?>
+                            </p>
+                          <?php else: ?>
+                            <p style="line-height:1.8;color:var(--text);margin:0 0 10px;"><?= esc($line['text'] ?? '') ?></p>
+                          <?php endif ?>
+                        <?php endforeach ?>
+                      </article>
+                    <?php endforeach ?>
+                  </div>
+                <?php else: ?>
+                  <div class="paragraph-margin" style="white-space: pre-line; line-height: 1.8; color: var(--text);">
+                    <?= esc($panduan['konten']) ?>
+                  </div>
+                <?php endif ?>
               </section>
             </article>
 
@@ -184,9 +225,9 @@
           </a>
         </div>
         <nav class="footer-nav" aria-label="Navigasi footer">
-          <a class="footer-link" href="#tentang"><span>Tentang</span></a>
+          <a class="footer-link" href="<?= site_url('/tentang') ?>"><span>Tentang</span></a>
           <a class="footer-link" href="<?= site_url('/panduan') ?>"><span>Panduan</span></a>
-          <a class="footer-link" href="#komunitas"><span>Komunitas</span></a>
+          <a class="footer-link" href="<?= site_url('/komunitas') ?>"><span>Komunitas</span></a>
           <a class="footer-link" href="#kontak"><span>Kontak</span></a>
         </nav>
         <div class="footer-copy"><small>© 2026 TechFixAr</small></div>

@@ -9,6 +9,12 @@ techfixar-backend/writable/uploads/*
 !techfixar-backend/writable/**/.gitkeep
 !techfixar-backend/writable/**/index.html
 
+# ── Frontend assets (hanya di Website-TecFixArr/, disajikan lewat route) ──
+techfixar-backend/public/assets/
+
+# ── Deploy packages ────────────────────────
+release/
+
 # ── OS & Editor ────────────────────────────
 .DS_Store
 Thumbs.db
